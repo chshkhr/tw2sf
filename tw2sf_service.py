@@ -50,13 +50,13 @@ class PySvc(win32serviceutil.ServiceFramework):
                 try:
                     teamworker.run()
                 except Exception as e:
-                    log(e);
+                    log(e)
 
                 log('Run Shopifier')
                 try:
                     shopifier.run()
                 except Exception as e:
-                    log(e);
+                    log(e)
 
                 # block and listen for a stop event
                 log('Sleep for 5 minutes')
