@@ -17,18 +17,33 @@ def log(s):
     f.flush()
 
 try:
-    log('Init Teamworker')
-    teamworker.init()
-
-    log('Init Shopifier')
-    shopifier.init()
 
     while True:
-        log('Run Teamworker')
-        teamworker.run()
+        try:
+            log('Init Teamworker')
+            teamworker.init()
+            log('Run Teamworker')
+            teamworker.run()
+        except Exception as e:
+            log(e)
+        finally:
+            try:
+                teamworker.db.close()
+            except Exception:
+                pass
 
-        log('Run Shopifier')
-        shopifier.run()
+        try:
+            log('Init Shopifier')
+            shopifier.init()
+            log('Run Shopifier')
+            shopifier.run()
+        except Exception as e:
+            log(e)
+        finally:
+            try:
+                shopifier.db.close()
+            except Exception:
+                pass
 
         log('Sleep for 5 minutes')
         time.sleep(300)

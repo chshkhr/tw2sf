@@ -37,26 +37,35 @@ class PySvc(win32serviceutil.ServiceFramework):
             f.flush()
 
         try:
-            log('Init Teamworker')
-            teamworker.init()
-
-            log('Init Shopifier')
-            shopifier.init()
             rc = None
 
             # if the stop event hasn't been fired keep looping
             while rc != win32event.WAIT_OBJECT_0:
-                log('Run Teamworker')
                 try:
+                    log('Init Teamworker')
+                    teamworker.init()
+                    log('Run Teamworker')
                     teamworker.run()
                 except Exception as e:
                     log(e)
+                finally:
+                    try:
+                        teamworker.db.close()
+                    except Exception:
+                        pass
 
-                log('Run Shopifier')
                 try:
+                    log('Init Shopifier')
+                    shopifier.init()
+                    log('Run Shopifier')
                     shopifier.run()
                 except Exception as e:
                     log(e)
+                finally:
+                    try:
+                        shopifier.db.close()
+                    except Exception:
+                        pass
 
                 # block and listen for a stop event
                 log('Sleep for 5 minutes')
