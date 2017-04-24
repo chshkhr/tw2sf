@@ -47,10 +47,16 @@ class PySvc(win32serviceutil.ServiceFramework):
             # if the stop event hasn't been fired keep looping
             while rc != win32event.WAIT_OBJECT_0:
                 log('Run Teamworker')
-                teamworker.run()
+                try:
+                    teamworker.run()
+                except Exception as e:
+                    log(e);
 
                 log('Run Shopifier')
-                shopifier.run()
+                try:
+                    shopifier.run()
+                except Exception as e:
+                    log(e);
 
                 # block and listen for a stop event
                 log('Sleep for 5 minutes')
