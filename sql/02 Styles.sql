@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Styles (
   Title varchar(255),
   StyleXml LONGTEXT NOT NULL,
   ProductID BIGINT, # If ProductID is not null - Product sent successfully
-  ProductSent TIMESTAMP(3) NULL, # Clean this to ReSend this Style (modify StyleXml if need)
+  ProductSent TIMESTAMP(3) NULL, # Clean it to ReSend this Style (modify StyleXml if need)
   OldProductID BIGINT, # Null - New, OldProductID=ProductID - Updated, OldProductID<>ProductID - ReCreated
   VariantsCount INT,
   ErrMes TEXT,  # Null if the product sent successfully

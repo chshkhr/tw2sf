@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="">
+    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="Exception handling on MsSql disconnection">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pyqt_test.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/git_init.bat" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/twmysql.py" afterPath="$PROJECT_DIR$/twmysql.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_service.bat" afterPath="$PROJECT_DIR$/start_service.bat" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,12 +16,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1492817382243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1493045980466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$guardian.coverage" NAME="guardian Coverage Results" MODIFIED="1492816412704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$test.coverage" NAME="test Coverage Results" MODIFIED="1492529966292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$shopifier_cleanup.coverage" NAME="shopifier+cleanup Coverage Results" MODIFIED="1493033479151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1493646086567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$multiprocessing_test.coverage" NAME="multiprocessing_test Coverage Results" MODIFIED="1492531071028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1492814344209" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1493046002155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1492805623681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamwork.coverage" NAME="teamwork Coverage Results" MODIFIED="1492702760322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$TW2SF.coverage" NAME="TW2SF Coverage Results" MODIFIED="1492786731215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -39,8 +43,8 @@
       <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shopifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
-              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="1760">
+              <caret line="52" column="55" lean-forward="false" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <marker date="1492814582712" expanded="true" signature="1057:1129" ph="SELECT * FRO... Styles" />
@@ -55,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twmysql.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="twmysql.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/twmysql.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -83,8 +87,8 @@
       <file leaf-file-name="tw2sf_runner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+            <state relative-caret-position="1000">
+              <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -95,10 +99,22 @@
       <file leaf-file-name="tw2sf_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="2160">
+              <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
               <folding>
                 <element signature="e#63#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pyqt_test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pyqt_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,9 +184,10 @@
         <option value="$PROJECT_DIR$/shopifier.py" />
         <option value="$PROJECT_DIR$/teamworker.py" />
         <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/twmysql.py" />
         <option value="$PROJECT_DIR$/tw2sf_runner.py" />
         <option value="$PROJECT_DIR$/tw2sf_service.py" />
-        <option value="$PROJECT_DIR$/twmysql.py" />
+        <option value="$PROJECT_DIR$/pyqt_test.py" />
       </list>
     </option>
   </component>
@@ -183,10 +200,12 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-16" />
     <option name="y" value="-16" />
-    <option name="width" value="3232" />
-    <option name="height" value="1732" />
+    <option name="width" value="3872" />
+    <option name="height" value="2092" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -223,6 +242,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -246,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.teamworker">
+  <component name="RunManager" selected="Python.pyqt_test">
     <configuration default="false" name="TW2SF" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -299,6 +319,25 @@
       <module name="tw2sf" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tw2sf_runner.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pyqt_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tw2sf" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pyqt_test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -528,7 +567,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <list size="7">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="Python.shopifier+cleanup" />
       <item index="1" class="java.lang.String" itemvalue="Python.shopifier" />
       <item index="2" class="java.lang.String" itemvalue="Python.teamworker+drop" />
@@ -536,12 +575,14 @@
       <item index="4" class="java.lang.String" itemvalue="Python.TW2SF" />
       <item index="5" class="java.lang.String" itemvalue="Python.guardian" />
       <item index="6" class="java.lang.String" itemvalue="Python.tw2sf_runner" />
+      <item index="7" class="java.lang.String" itemvalue="Python.pyqt_test" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.tw2sf_runner" />
-        <item index="1" class="java.lang.String" itemvalue="Python.guardian" />
-        <item index="2" class="java.lang.String" itemvalue="Python.TW2SF" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.pyqt_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tw2sf_runner" />
+        <item index="2" class="java.lang.String" itemvalue="Python.guardian" />
+        <item index="3" class="java.lang.String" itemvalue="Python.TW2SF" />
       </list>
     </recent_temporary>
   </component>
@@ -598,7 +639,28 @@
       <option name="project" value="LOCAL" />
       <updated>1493025531384</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="MySql 95.47.116.157">
+      <created>1493045810142</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1493045810142</updated>
+    </task>
+    <task id="LOCAL-00008" summary="MySql 95.47.116.157">
+      <created>1493045833344</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1493045833344</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Exception handling on MsSql disconnection">
+      <created>1493054782695</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1493054782695</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -611,20 +673,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
+    <frame x="-16" y="-16" width="3872" height="2092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17193548" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15508021" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953104" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953104" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26198438" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39888424" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3983353" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -671,10 +733,18 @@
     <MESSAGE value="Separate threads for receiving and sending. MySQL stores records for each received entity" />
     <MESSAGE value="Service is working" />
     <MESSAGE value="MySql 95.47.116.157" />
-    <option name="LAST_COMMIT_MESSAGE" value="MySql 95.47.116.157" />
+    <MESSAGE value="Exception handling on MsSql disconnection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exception handling on MsSql disconnection" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/shopifier.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -685,25 +755,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="54" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -972,36 +1028,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teamworker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6320">
-          <caret line="169" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding>
-            <marker date="1492814777472" expanded="true" signature="2048:2096" ph="INSERT INTO SyncRuns... " />
-            <marker date="1492814777472" expanded="true" signature="2658:2791" ph="INSERT INTO Styles... " />
-            <marker date="1492814777472" expanded="true" signature="3119:3354" ph="UPDATE SyncR... " />
-            <marker date="1492814777472" expanded="true" signature="4422:4470" ph="select max(R... Styles" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#63#82#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,10 +1042,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/twmysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/shopifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="1760">
+          <caret line="52" column="55" lean-forward="false" selection-start-line="52" selection-start-column="55" selection-end-line="52" selection-end-column="55" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <marker date="1492814582712" expanded="true" signature="1057:1129" ph="SELECT * FRO... Styles" />
@@ -1029,21 +1067,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/teamworker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6320">
+          <caret line="169" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding>
+            <marker date="1492814777472" expanded="true" signature="2048:2096" ph="INSERT INTO SyncRuns... " />
+            <marker date="1492814777472" expanded="true" signature="2658:2791" ph="INSERT INTO Styles... " />
+            <marker date="1492814777472" expanded="true" signature="3119:3354" ph="UPDATE SyncR... " />
+            <marker date="1492814777472" expanded="true" signature="4422:4470" ph="select max(R... Styles" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="1000">
+          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twmysql.py">
+    <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="56" column="13" lean-forward="false" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding>
+            <element signature="e#63#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/PyQt5/QtGui.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-900">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyqt_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

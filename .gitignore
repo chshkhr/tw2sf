@@ -6,3 +6,4 @@ db.sqlite3
 *.pickle
 *.log
 tw2sf/
+git_init.bat

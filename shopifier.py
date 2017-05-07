@@ -39,11 +39,12 @@ def run():
     global tot_count, err_count
 
     print(f'Looking for not sent Styles in DB {twmysql._DB}')
-    # Copy Styles to Items
+    # Copy Styles to Items!
     with db.cursor() as cursor:
-        cursor.execute('SELECT * FROM Styles '
-                       'WHERE ProductSent IS NULL '
-                       'ORDER BY RecModified')
+        cursor.execute('SELECT s.ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
+                       'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
+                       'FROM Styles s WHERE s.ProductSent IS NULL '
+                       'ORDER BY s.RecModified') 
         while True:
             row = cursor.fetchone()
             if not row:
