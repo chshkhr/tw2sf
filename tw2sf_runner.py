@@ -16,6 +16,7 @@ def log(s):
     f.write(f'{utils.time_str()}: {s}\n')
     f.flush()
 
+
 try:
 
     while True:

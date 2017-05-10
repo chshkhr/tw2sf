@@ -3,7 +3,7 @@ import glob
 import argparse
 import xml.etree.ElementTree as ET
 
-import shopify  # pip install --upgrade ShopifyAPI
+import shopify  # pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
 
 import twmysql
 import utils
@@ -19,7 +19,7 @@ recreate = False  # False - Delete existent product and create the new one, True
 
 shop_url = f'https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin'
 
-err_count = 0  # total number of errors from firs run (persistent)
+err_count = 0  # total number of errors from first run (persistent)
 db = None
 
 def init():

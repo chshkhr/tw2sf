@@ -1,4 +1,4 @@
-import pymysql
+import pymysql # sudo python3.6 -m pip install pymysql
 
 _HOST = '95.47.116.157'
 _PORT = 33063

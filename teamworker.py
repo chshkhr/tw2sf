@@ -4,8 +4,8 @@ import glob
 import time
 import argparse
 import datetime
-import dateutil.parser
-import requests
+import dateutil.parser # sudo python3.6 -m pip install python-dateutil
+import requests # sudo python3.6 -m pip install requests
 import xml.etree.ElementTree as ET
 
 import twmysql
