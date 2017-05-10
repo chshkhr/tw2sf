@@ -7,3 +7,5 @@ db.sqlite3
 *.log
 tw2sf/
 git_init.bat
+build/
+dist/
