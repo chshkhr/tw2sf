@@ -4,7 +4,6 @@ _HOST = '95.47.116.157'
 _PORT = 33063
 _USER = 'teamwork'
 _PASSWORD = 'teamwork123'
-_PASSWORD = 'teamwork123'
 _DB = 'teamwork'
 
 

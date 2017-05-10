@@ -118,12 +118,12 @@ def run():
                 done += 1
                 with db.cursor() as upd:
                     upd.execute('UPDATE Styles SET '
-                                'ProductSent=CURRENT_TIMESTAMP(3), '
-                                'ProductID=%s, '
-                                'OldProductID=%s, '
-                                'VariantsCount=%s, '
-                                'ErrMes=%s '
-                                'WHERE ID=%s',
+                                'ProductSent = CURRENT_TIMESTAMP(3), '
+                                'ProductID = %s, '
+                                'OldProductID = %s, '
+                                'VariantsCount = %s, '
+                                'ErrMes = %s '
+                                'WHERE ID = %s',
                                 (product.id,
                                  oldProductID,
                                  varcount,
@@ -132,11 +132,10 @@ def run():
                                  )
                                 )
                     upd.execute('UPDATE SyncRuns SET '
-                                'LastUpdateDateTime=CURRENT_TIMESTAMP(3), '
-                                'ProcessedEntities=ProcessedEntities+1, '
-                                #'LastRecModified=%s, '
-                                'ErrCount=ErrCount+%s '
-                                'WHERE ID=%s',
+                                'DstLastSendTime = CURRENT_TIMESTAMP(3), '
+                                'DstProcessedEntities = DstProcessedEntities + 1, '
+                                'DstErrorCount = DstErrorCount + %s '
+                                'WHERE ID = %s',
                                 (#recmod,
                                  err_delta,
                                  row['SyncRunsID']
@@ -162,8 +161,8 @@ def cleanup():
                        'VariantsCount = NULL, '
                        'ErrMes = NULL;')
         cursor.execute('UPDATE SyncRuns SET '
-                       'ProcessedEntities = 0, '
-                       'ErrCount = 0;')
+                       'DstProcessedEntities = 0, '
+                       'DstErrorCount = 0;')
 
     # Delete ALL Products on Shopify
     products = True

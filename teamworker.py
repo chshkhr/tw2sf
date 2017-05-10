@@ -21,6 +21,7 @@ shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 start_date_ = None  # start_date_ = start_date + shift_ms
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
+skip = 0
 
 apiDocumentId = None
 syncRunsID = None
@@ -43,10 +44,26 @@ def get_root(r):
 
 def request_styles(req):
     # Get XML from Teamwork and Save to MySqL
-    global chunk_num, apiDocumentId, syncRunsID, start_date, start_date_
+    global chunk_num, skip, apiDocumentId, syncRunsID, start_date, start_date_
     global db
     chunk_num += 1
     done = 0
+
+    with db.cursor() as cursor:
+        if not apiDocumentId:
+            cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
+            data = cursor.fetchone()
+            syncRunsID = data['SyncRunsID']
+            if syncRunsID is not None:
+                cursor.execute('SELECT StylesFound, SessionFinishTime FROM SyncRuns WHERE ID=%s', (syncRunsID,))
+                data = cursor.fetchone()
+            if syncRunsID is None or data['StylesFound'] > 0 or data['SessionFinishTime'] is None:
+                # 'SrcFinishTime is Null' means simultaneous execution or interrupted process (we keep this info)
+                cursor.execute('INSERT INTO SyncRuns (ApiDocumentId) VALUES (Null)')
+                cursor.execute('SELECT LAST_INSERT_ID() as SyncRunsID')
+                data = cursor.fetchone()
+                syncRunsID = data['SyncRunsID']
+
     print(f'Requesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
     data = {'Data': req,
             'Source': 'VC_Test', 'UseApiVersion2': 'true',
@@ -63,37 +80,53 @@ def request_styles(req):
         r = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
         root = get_root(r)
         status = root.attrib['Status']
-    save_xml(r)
 
-    with db.cursor() as cursor:
-        if not apiDocumentId:
-            apiDocumentId = a
-            cursor.execute('INSERT INTO SyncRuns (ApiDocumentId) VALUES (%s)',(apiDocumentId,))
-            cursor.execute('SELECT LAST_INSERT_ID() as SyncRunsID')
-            data = cursor.fetchone()
-            syncRunsID = data['SyncRunsID']
+    try:
+        with db.cursor() as cursor:
+            if not apiDocumentId:
+                apiDocumentId = a
+                cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
+                data = cursor.fetchone()
+                syncRunsID = data['SyncRunsID']
+                cursor.execute('UPDATE SyncRuns SET '
+                               'SessionNum = SessionNum + 1, '
+                               'ApiDocumentId = %s, ' 
+                               'SessionStartTime = CURRENT_TIMESTAMP(3), '
+                               'SessionFinishTime = Null '
+                               'WHERE ID = %s',
+                               (apiDocumentId,
+                                syncRunsID,))
 
-        # Copy Styles to Items
-        for style in root.iter('Style'):
-            try:
-                title = style.find('Description4').text
-                start_date = style.find('RecModified').text  # next time we'll start from this date
-                styleno = style.find('StyleNo').text
-                print('\t', done, start_date, styleno, title)
-                cursor.execute("INSERT INTO Styles (SyncRunsID, StyleNo, RecModified, Title, StyleXml)"+
-                               " VALUES (%s, %s, %s, %s, %s)",
-                               (syncRunsID, styleno, start_date, title, ET.tostring(style), ))
-            except Exception as e:
-                print('\t\t', e)
-            finally:
-                done += 1
-        print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
-        cursor.execute('UPDATE SyncRuns SET '
-                       'StylesFound = StylesFound + %s, '
-                       'LastChunkTime = CURRENT_TIMESTAMP(3), '
-                       'ChunkCount = ChunkCount + 1 '
-                       'where ID = %s;',
-                       (done,syncRunsID))
+            # Copy Styles to Items
+            for style in root.iter('Style'):
+                try:
+                    title = style.find('Description4').text
+                    start_date = style.find('RecModified').text  # next time we'll start from this date
+                    styleno = style.find('StyleNo').text
+                    print('\t', skip+done, start_date, styleno, title)
+                    cursor.execute("INSERT INTO Styles (SyncRunsID, StyleNo, RecModified, Title, StyleXml)"+
+                                   " VALUES (%s, %s, %s, %s, %s)",
+                                   (syncRunsID, styleno, start_date, title, ET.tostring(style), ))
+                except Exception as e:
+                    print('\t\t', e)
+                finally:
+                    done += 1
+            print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
+            cursor.execute('UPDATE SyncRuns SET '                      
+                           'SessionFinishTime = case when %s = 0 then CURRENT_TIMESTAMP(3) else SessionFinishTime end, '
+                           'StylesFound = StylesFound + %s, '
+                           'ChunkCount = ChunkCount + %s, '
+                           'LastChunkTime = case when %s > 0 then CURRENT_TIMESTAMP(3) else LastChunkTime end '
+                           'where ID = %s;',
+                           (int(done > 0),
+                            done,
+                            int(done > 0),
+                            done,
+                            syncRunsID,
+                            ))
+    finally:
+        if done:
+            save_xml(r)
 
     return done
 
@@ -136,7 +169,7 @@ def init(drop=False):
 
 
 def run():
-    global start_date_, apiDocumentId, chunk_size, chunk_num
+    global start_date_, apiDocumentId, chunk_size, chunk_num, skip
     apiDocumentId = None
     chunk_num = 0
     # Main Loop
