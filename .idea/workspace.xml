@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pyqt_test.py" afterPath="$PROJECT_DIR$/pyqt_test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shopifier.py" afterPath="$PROJECT_DIR$/shopifier.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +18,11 @@
     <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1494416978655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$guardian.coverage" NAME="guardian Coverage Results" MODIFIED="1492816412704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$test.coverage" NAME="test Coverage Results" MODIFIED="1492529966292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1493646086567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier_cleanup.coverage" NAME="shopifier+cleanup Coverage Results" MODIFIED="1494445142965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1494508658545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier_cleanup.coverage" NAME="shopifier+cleanup Coverage Results" MODIFIED="1494511188468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$multiprocessing_test.coverage" NAME="multiprocessing_test Coverage Results" MODIFIED="1492531071028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1494445159434" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1494443261886" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1494513375407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1494509660983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamwork.coverage" NAME="teamwork Coverage Results" MODIFIED="1492702760322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$TW2SF.coverage" NAME="TW2SF Coverage Results" MODIFIED="1492786731215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamworker.coverage" NAME="teamworker Coverage Results" MODIFIED="1494443654934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -36,19 +39,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shopifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state relative-caret-position="2540">
+              <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1494443791607" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
-                <marker date="1494443791607" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-                <marker date="1494443791607" expanded="true" signature="4351:4695" ph="UPDATE Style... " />
-                <marker date="1494443791607" expanded="true" signature="5019:5316" ph="UPDATE SyncR... " />
-                <marker date="1494443791607" expanded="true" signature="5854:6094" ph="UPDATE Style... " />
-                <marker date="1494443791607" expanded="true" signature="6122:6237" ph="UPDATE SyncR... " />
+                <marker date="1494513285031" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
+                <marker date="1494513285031" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
+                <marker date="1494513285031" expanded="true" signature="5065:5409" ph="UPDATE Style... " />
+                <marker date="1494513285031" expanded="true" signature="5733:6030" ph="UPDATE SyncR... " />
+                <marker date="1494513285031" expanded="true" signature="6568:6808" ph="UPDATE Style... " />
+                <marker date="1494513285031" expanded="true" signature="6836:6951" ph="UPDATE SyncR... " />
               </folding>
             </state>
           </provider>
@@ -67,7 +70,7 @@
       <file leaf-file-name="teamworker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teamworker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1121">
+            <state relative-caret-position="2380">
               <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
               <folding>
                 <marker date="1494442170839" expanded="true" signature="1470:1512" ph="SELECT Max(I... SyncRuns" />
@@ -84,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="01 SyncRuns.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="01 SyncRuns.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+            <state relative-caret-position="51">
+              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -97,7 +100,7 @@
       <file leaf-file-name="02 Styles.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
+            <state relative-caret-position="221">
               <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding />
             </state>
@@ -107,8 +110,8 @@
       <file leaf-file-name="tw2sf_runner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+            <state relative-caret-position="595">
+              <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -119,7 +122,7 @@
       <file leaf-file-name="tw2sf_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
+            <state relative-caret-position="1173">
               <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
               <folding>
                 <element signature="e#63#82#0" expanded="true" />
@@ -131,8 +134,8 @@
       <file leaf-file-name="pyqt_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyqt_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -205,11 +208,11 @@
         <option value="$PROJECT_DIR$/stop_service.bat" />
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/twmysql.py" />
-        <option value="$PROJECT_DIR$/tw2sf_runner.py" />
         <option value="$PROJECT_DIR$/tw2sf_service.py" />
-        <option value="$PROJECT_DIR$/pyqt_test.py" />
         <option value="$PROJECT_DIR$/teamworker.py" />
         <option value="$PROJECT_DIR$/sql/01 SyncRuns.sql" />
+        <option value="$PROJECT_DIR$/tw2sf_runner.py" />
+        <option value="$PROJECT_DIR$/pyqt_test.py" />
         <option value="$PROJECT_DIR$/shopifier.py" />
       </list>
     </option>
@@ -244,8 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,6 +275,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -529,25 +532,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="shopifier+cleanup" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tw2sf" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shopifier.py" />
-      <option name="PARAMETERS" value="--cleanup=True" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="shopifier" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -563,25 +547,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shopifier.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="teamworker+drop" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="tw2sf" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teamworker.py" />
-      <option name="PARAMETERS" value="--drop=True" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
@@ -605,11 +570,49 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
+    <configuration default="false" name="shopifier --cleanup" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tw2sf" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shopifier.py" />
+      <option name="PARAMETERS" value="--cleanup=True" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="teamworker --drop" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="tw2sf" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teamworker.py" />
+      <option name="PARAMETERS" value="--drop=True" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
     <list size="8">
-      <item index="0" class="java.lang.String" itemvalue="Python.shopifier+cleanup" />
-      <item index="1" class="java.lang.String" itemvalue="Python.shopifier" />
-      <item index="2" class="java.lang.String" itemvalue="Python.teamworker+drop" />
-      <item index="3" class="java.lang.String" itemvalue="Python.teamworker" />
+      <item index="0" class="java.lang.String" itemvalue="Python.shopifier" />
+      <item index="1" class="java.lang.String" itemvalue="Python.teamworker" />
+      <item index="2" class="java.lang.String" itemvalue="Python.shopifier --cleanup" />
+      <item index="3" class="java.lang.String" itemvalue="Python.teamworker --drop" />
       <item index="4" class="java.lang.String" itemvalue="Python.TW2SF" />
       <item index="5" class="java.lang.String" itemvalue="Python.guardian" />
       <item index="6" class="java.lang.String" itemvalue="Python.tw2sf_runner" />
@@ -617,8 +620,8 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.tw2sf_runner" />
-        <item index="1" class="java.lang.String" itemvalue="Python.pyqt_test" />
+        <item index="0" class="java.lang.String" itemvalue="Python.pyqt_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tw2sf_runner" />
         <item index="2" class="java.lang.String" itemvalue="Python.guardian" />
         <item index="3" class="java.lang.String" itemvalue="Python.TW2SF" />
       </list>
@@ -705,7 +708,14 @@
       <option name="project" value="LOCAL" />
       <updated>1494445878169</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="test">
+      <created>1494497734634</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1494497734634</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -720,17 +730,17 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1270" height="687" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15629984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23923445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5407279" sideWeight="0.24242425" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42807627" sideWeight="0.5119617" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26109937" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42807627" sideWeight="0.48803827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5407279" sideWeight="0.75757575" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5407279" sideWeight="0.7432217" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -743,6 +753,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -771,10 +791,28 @@
     <MESSAGE value="MySql 95.47.116.157" />
     <MESSAGE value="Exception handling on MsSql disconnection" />
     <MESSAGE value="SyncRuns metadata changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="SyncRuns metadata changed" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/shopifier.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/shopifier.py</url>
+          <line>136</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/shopifier.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -785,29 +823,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="58" />
+      <option name="time" value="66" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/teamworker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="104" column="18" lean-forward="false" selection-start-line="104" selection-start-column="18" selection-end-line="104" selection-end-column="18" />
-          <folding>
-            <marker date="1494442170839" expanded="true" signature="1470:1512" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="1667:1730" ph="SELECT Style... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="2034:2084" ph="INSERT INTO SyncRuns... " />
-            <marker date="1494442170839" expanded="true" signature="3031:3073" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="3197:3516" ph="UPDATE SyncR... " />
-            <marker date="1494442170839" expanded="true" signature="3203:3516" ph="INSERT INTO SyncRuns... " />
-            <marker date="1494442170839" expanded="true" signature="4042:4179" ph="INSERT INTO Styles... " />
-            <marker date="1494442170839" expanded="true" signature="4535:4975" ph="UPDATE SyncR... " />
-            <marker date="1494442170839" expanded="true" signature="6280:6328" ph="select max(R... Styles" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -828,12 +848,12 @@
           <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1494443791607" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
-            <marker date="1494443791607" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-            <marker date="1494443791607" expanded="true" signature="4351:4695" ph="UPDATE Style... " />
-            <marker date="1494443791607" expanded="true" signature="5019:5316" ph="UPDATE SyncR... " />
-            <marker date="1494443791607" expanded="true" signature="5854:6094" ph="UPDATE Style... " />
-            <marker date="1494443791607" expanded="true" signature="6122:6237" ph="UPDATE SyncR... " />
+            <marker date="1494513285031" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
+            <marker date="1494513285031" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
+            <marker date="1494513285031" expanded="true" signature="5065:5409" ph="UPDATE Style... " />
+            <marker date="1494513285031" expanded="true" signature="5733:6030" ph="UPDATE SyncR... " />
+            <marker date="1494513285031" expanded="true" signature="6568:6808" ph="UPDATE Style... " />
+            <marker date="1494513285031" expanded="true" signature="6836:6951" ph="UPDATE SyncR... " />
           </folding>
         </state>
       </provider>
@@ -851,12 +871,12 @@
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1494443791607" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
-            <marker date="1494443791607" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-            <marker date="1494443791607" expanded="true" signature="4351:4695" ph="UPDATE Style... " />
-            <marker date="1494443791607" expanded="true" signature="5019:5316" ph="UPDATE SyncR... " />
-            <marker date="1494443791607" expanded="true" signature="5854:6094" ph="UPDATE Style... " />
-            <marker date="1494443791607" expanded="true" signature="6122:6237" ph="UPDATE SyncR... " />
+            <marker date="1494513285031" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
+            <marker date="1494513285031" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
+            <marker date="1494513285031" expanded="true" signature="5065:5409" ph="UPDATE Style... " />
+            <marker date="1494513285031" expanded="true" signature="5733:6030" ph="UPDATE SyncR... " />
+            <marker date="1494513285031" expanded="true" signature="6568:6808" ph="UPDATE Style... " />
+            <marker date="1494513285031" expanded="true" signature="6836:6951" ph="UPDATE SyncR... " />
           </folding>
         </state>
       </provider>
@@ -993,16 +1013,6 @@
       </provider>
     </entry>
     <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/PyQt5/QtGui.pyi" />
-    <entry file="file://$PROJECT_DIR$/pyqt_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1019,15 +1029,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="221">
           <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
+          <folding>
+            <element signature="e#63#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pyqt_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/teamworker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
+        <state relative-caret-position="2380">
           <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
           <folding>
             <marker date="1494442170839" expanded="true" signature="1470:1512" ph="SELECT Max(I... SyncRuns" />
@@ -1043,47 +1091,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
+    <entry file="file://C:/Miniconda3/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="31" column="17" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="232">
+          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+        <state relative-caret-position="2540">
+          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1494443791607" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
-            <marker date="1494443791607" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-            <marker date="1494443791607" expanded="true" signature="4351:4695" ph="UPDATE Style... " />
-            <marker date="1494443791607" expanded="true" signature="5019:5316" ph="UPDATE SyncR... " />
-            <marker date="1494443791607" expanded="true" signature="5854:6094" ph="UPDATE Style... " />
-            <marker date="1494443791607" expanded="true" signature="6122:6237" ph="UPDATE SyncR... " />
+            <marker date="1494513285031" expanded="true" signature="1112:1437" ph="SELECT s.ID,... Styles" />
+            <marker date="1494513285031" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
+            <marker date="1494513285031" expanded="true" signature="5065:5409" ph="UPDATE Style... " />
+            <marker date="1494513285031" expanded="true" signature="5733:6030" ph="UPDATE SyncR... " />
+            <marker date="1494513285031" expanded="true" signature="6568:6808" ph="UPDATE Style... " />
+            <marker date="1494513285031" expanded="true" signature="6836:6951" ph="UPDATE SyncR... " />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
-          <folding>
-            <element signature="e#63#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>

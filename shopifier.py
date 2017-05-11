@@ -51,7 +51,9 @@ def run():
                 break
             style = ET.fromstring(row['StyleXml'])
             try:
-                title = style.find('Description4').text
+                title = style.find('CustomText5').text
+                if title is None:  # Debug, remove it
+                    title = style.find('Description4').text
                 recmod = style.find('RecModified').text
                 styleno = style.find('StyleNo').text
                 print('\t', done, err_count, recmod, styleno, title)
@@ -68,17 +70,33 @@ def run():
                             product = shopify.Product()
                 else:
                     product = shopify.Product()
+
                 product.title = title
-                val = style.find('Class')
+
+                val = style.find('CustomText1').text
                 if val is not None:
-                    product.product_type = val.text
+                    product.body_html = val
+
+                # ??? Style SKU	- Style No
+
+                val = style.find('AttributeSet1').text
+                if val is not None:
+                    product.option1 = val
+                val = style.find('AttributeSet2').text
+                if val is not None:
+                    product.option2 = val
+                val = style.find('AttributeSet3').text
+                if val is not None:
+                    product.option3 = val
+
                 product.vendor = style.find('PrimaryVendor').text
-                product.option1 = style.find('AttributeSet1').text
-                product.option2 = style.find('AttributeSet2').text
+
+                # League - (CustomLookup3) Team - (CustomLookup1)
+                product.tags = style.find('CustomLookup3').text + style.find('CustomLookup1').text
 
                 # Copy Items to Variants
                 items = style.iter('Item')
-                variants = []
+                variants = dict()
                 varcount = 0
                 for item in items:
                     varcount += 1
@@ -86,15 +104,15 @@ def run():
                     #     print('\t\tMax number of Variants reached!')
                     #     break
                     variant = dict()
-                    variant['sku'] = item.find('PLU').text
-                    variant['option1'] = item.find('Attribute1').text
-                    t = item.find('Attribute2').text
-                    if t:
-                        variant['option1'] += ' ' + t
+                    variant['sku'] = item.find('PLU').text  # ??? variant['barcode']
+                    variant['title'] = style.find('CustomText5').text + \
+                                       item.find('Attribute1').text + \
+                                       item.find('Attribute1').text + \
+                                       item.find('Attribute1').text
                     variant['price'] = float(item.find('BasePrice').text)
-                    for upc in item.iter('UPC'):
-                        variant['barcode'] = upc.attrib['Value']
-                        break
+                    # for upc in item.iter('UPC'):
+                    #     variant['barcode'] = upc.attrib['Value']
+                    #     break
                     variants.append(variant)
                 product.variants = variants
 

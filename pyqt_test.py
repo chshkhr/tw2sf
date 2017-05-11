@@ -1,5 +1,5 @@
 import sys
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets  # sudo python3.6 -m pip install pyqt5 / win - install_ipython_notebook.bat ?
 
 app = QtWidgets.QApplication(sys.argv)
 
