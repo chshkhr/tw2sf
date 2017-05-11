@@ -1,51 +1,41 @@
 import time
-import os
-import sys
 
 import utils
 import teamworker
 import shopifier
 
-utils.mkdirs()
-
 
 def log(s):
     print(f'{utils.time_str()}: {s}')
 
+utils.mkdirs()
 
-try:
-
-    while True:
+while True:
+    try:
+        log('Init Teamworker')
+        teamworker.init()
+        log('Run Teamworker')
+        teamworker.run()
+    except Exception as e:
+        log(e)
+    finally:
         try:
-            log('Init Teamworker')
-            teamworker.init()
-            log('Run Teamworker')
-            teamworker.run()
-        except Exception as e:
-            log(e)
-        finally:
-            try:
-                teamworker.db.close()
-            except Exception:
-                pass
+            teamworker.db.close()
+        except Exception:
+            pass
 
+    try:
+        log('Init Shopifier')
+        shopifier.init()
+        log('Run Shopifier')
+        shopifier.run()
+    except Exception as e:
+        log(e)
+    finally:
         try:
-            log('Init Shopifier')
-            shopifier.init()
-            log('Run Shopifier')
-            shopifier.run()
-        except Exception as e:
-            log(e)
-        finally:
-            try:
-                shopifier.db.close()
-            except Exception:
-                pass
+            shopifier.db.close()
+        except Exception:
+            pass
 
-        log('Sleep for 5 minutes')
-        time.sleep(300)
-
-except Exception as e:
-    log(e)
-finally:
-    log('SHUTTING DOWN')
+    log('Sleep for 5 minutes')
+    time.sleep(300)
