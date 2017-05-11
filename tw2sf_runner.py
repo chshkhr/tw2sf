@@ -7,14 +7,15 @@ import teamworker
 import shopifier
 
 utils.mkdirs()
-fn = os.path.join(utils._DIR, 'log', utils.time_str() + '.log')
-f = open(fn, 'w')
-sys.stdout = f
+# fn = os.path.join(utils._DIR, 'log', utils.time_str() + '.log')
+# f = open(fn, 'w')
+# sys.stdout = f
 
 
 def log(s):
-    f.write(f'{utils.time_str()}: {s}\n')
-    f.flush()
+    # f.write(f'{utils.time_str()}: {s}\n')
+    # f.flush()
+    print(f'{utils.time_str()}: {s}')
 
 
 try:
@@ -53,5 +54,5 @@ except Exception as e:
     log(e)
 finally:
     log('SHUTTING DOWN')
-    sys.stdout = sys.__stdout__
-    f.close()
+    # sys.stdout = sys.__stdout__
+    # f.close()
