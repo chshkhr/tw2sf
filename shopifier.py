@@ -43,7 +43,8 @@ def run():
     with db.cursor() as cursor:
         cursor.execute('SELECT s.ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
                        'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
-                       'FROM Styles s WHERE s.ProductSent IS NULL '
+                       'FROM Styles s '
+                       #DEBUG 'WHERE s.ProductSent IS NULL '
                        'ORDER BY s.RecModified') 
         while True:
             row = cursor.fetchone()
@@ -51,64 +52,60 @@ def run():
                 break
             style = ET.fromstring(row['StyleXml'])
             try:
-                title = style.find('CustomText5').text
-                if title is None:  # Debug, remove it
-                    title = style.find('Description4').text
+                title = style.find('CustomText5').text \
+                        or style.find('Description4').text  # Debug, remove it
                 recmod = style.find('RecModified').text
                 styleno = style.find('StyleNo').text
-                print('\t', done, err_count, recmod, styleno, title)
                 oldProductID = row['ProductID']
                 if oldProductID:
                     try:
                         product = shopify.Product.find(oldProductID)
-                    except Exception:
+                    except Exception as e:  # PyCharm BUG: do not remove "as e"
                         product = shopify.Product()
                     else:
                         if recreate:
+                            oldProductID = None
                             print('\t\tDeleting...')
                             product.destroy()
                             product = shopify.Product()
                 else:
                     product = shopify.Product()
+                print('\t', oldProductID or '- New -', done, err_count, recmod, styleno, title)
 
                 product.title = title
 
-                val = style.find('CustomText1').text
-                if val is not None:
-                    product.body_html = val
+                product.body_html = style.find('CustomText1').text or \
+                                    title + ' <font color="RED">Empty CustomText1!</font>'
 
                 # ??? Style SKU	- Style No
 
-                val = style.find('AttributeSet1').text
-                if val is not None:
-                    product.option1 = val
-                val = style.find('AttributeSet2').text
-                if val is not None:
-                    product.option2 = val
-                val = style.find('AttributeSet3').text
-                if val is not None:
-                    product.option3 = val
+                product.option1 = style.find('AttributeSet1').text or 'Empty AttributeSet1'
+                product.option2 = style.find('AttributeSet2').text or 'Empty AttributeSet2'
+                product.option3 = style.find('AttributeSet3').text or 'Empty AttributeSet3'
 
-                product.vendor = style.find('PrimaryVendor').text
+                product.vendor = style.find('PrimaryVendor').text or 'Empty PrimaryVendor'
 
                 # League - (CustomLookup3) Team - (CustomLookup1)
-                product.tags = style.find('CustomLookup3').text + style.find('CustomLookup1').text
+                product.tags = ', '.join(filter(None, (
+                               style.find('CustomLookup3').text,
+                               style.find('CustomLookup1').text,
+                               )))
 
                 # Copy Items to Variants
                 items = style.iter('Item')
-                variants = dict()
+                variants = []
                 varcount = 0
                 for item in items:
                     varcount += 1
-                    # if varcount>100:
-                    #     print('\t\tMax number of Variants reached!')
-                    #     break
                     variant = dict()
-                    variant['sku'] = item.find('PLU').text  # ??? variant['barcode']
-                    variant['title'] = style.find('CustomText5').text + \
-                                       item.find('Attribute1').text + \
-                                       item.find('Attribute1').text + \
-                                       item.find('Attribute1').text
+                    variant['sku'] = item.find('PLU').text or 'Empty PLU'
+                    # ??? variant['barcode']
+                    variant['title'] = ' '.join(filter(None, (
+                                       style.find('CustomText5').text,
+                                       item.find('Attribute1').text,
+                                       item.find('Attribute2').text,
+                                       item.find('Attribute3').text,
+                                       ))) or 'Empty CustomText5 Attribute1 Attribute2 Attribute3'
                     variant['price'] = float(item.find('BasePrice').text)
                     # for upc in item.iter('UPC'):
                     #     variant['barcode'] = upc.attrib['Value']
