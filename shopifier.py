@@ -10,12 +10,15 @@ import shopify
 
 import twmysql
 import utils
+import time
 
 # Shopify
 API_KEY = 'ed295b157652f8fbe1ca8de4b8db4e72'
 PASSWORD = 'bf7c0c7e9e085459c3eeb022d32e8202'
 SHARED_SECRET = '5f6f9d277b736295637ca8e9fa642b41'
 SHOP_NAME = 'vicrom'
+# https://help.shopify.com/api/getting-started/response-status-codes
+MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
 
 # Global
 recreate = False  # False - Delete existent product and create the new one, True - update old product
@@ -46,18 +49,26 @@ def run():
     done = 0
     global tot_count, err_count
 
-    print(f'\tLooking for not sent Styles in DB {twmysql._DB}')
+    print(f'\tLooking for not sent Styles in DB "{pymysql._HOST}:{twmysql._DB}"')
     # Copy Styles to Items!
     with db.cursor() as cursor:
         cursor.execute('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
                        'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
                        'FROM Styles s '
-                       #DEBUG 'WHERE s.ProductSent IS NULL '
-                       'WHERE s.ID BETWEEN 119 AND 123 ' #DEBUG
+                       'WHERE s.ProductSent IS NULL '
+                       #DEBUG 'WHERE s.ID BETWEEN 119 AND 123 '
                        'ORDER BY s.RecModified')
-        print('\t\t', '\t'.join(('#', 'ID', 'VN', 'Er', 'Style', 'Prod', 'Modif', 'Title', 'ErrMes')))
+        print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Title', 'ErrMes')))
+        repeat = 0
         while True:
-            row = cursor.fetchone()
+            if repeat > 0:
+                repeat += 1
+                if repeat <= MAX_REPEAT:
+                    time.sleep(repeat*repeat)
+                else:
+                    repeat = 0
+            if repeat == 0:
+                row = cursor.fetchone()
             if not row:
                 break
             style = ET.fromstring(row['StyleXml'])
@@ -128,40 +139,54 @@ def run():
                 product.save()
 
             except Exception as e:
-                #print('\t\t\t', e, shopify.Session.responce.code)
                 err_count += 1
-                errmes = e
+                err_mes = e
+                err_code = -1  # means "it's Exception"
+                repeat = 0  # do not retry on any Exception
                 err_delta = 1
 
             else:
                 if product.errors:
-                    err_count += 1
-                    errmes = product.errors.full_messages()
+                    err_mes = product.errors.full_messages()
+                    err_code = product.errors.code
+                    if err_code in [429, 503, 504]:
+                        if repeat==0:
+                            repeat = 1
+                        elif repeat >= MAX_REPEAT:
+                            err_count += 1
+                    else:
+                        err_count += 1
                     err_delta = 1
-                    # print('\t\t\t', errmes)
                 else:
-                    errmes = None
+                    err_mes = None
+                    err_code = 0
                     err_delta = 0
+                    repeat = 0
             finally:
-                done += 1
-                print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), styleno,
-                                         str(oldProductID or '-New-'),
+                if repeat <= 1:
+                    done += 1
+                print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), str(err_code),
+                                         styleno, str(oldProductID or '-New-'),
                                          modif_time,
                                          title,
-                                         str(errmes or ''))))
+                                         str(err_mes or ''))))
                 with db.cursor() as upd:
-                    if product and product.id:
+                    if product:
                         upd.execute('UPDATE Styles SET '
-                                    'ProductSent = CURRENT_TIMESTAMP(3), '
+                                    'ProductSent = case when %s=0 then CURRENT_TIMESTAMP(3) else Null end, '
                                     'ProductID = %s, '
                                     'OldProductID = %s, '
                                     'VariantsCount = %s, '
-                                    'ErrMes = %s '
+                                    'ErrMes = %s, '
+                                    'ErrCode = %s, '
+                                    'RetryCount = RetryCount + 1 '
                                     'WHERE ID = %s',
-                                    (product.id,
+                                    (repeat,
+                                     product.id,
                                      oldProductID,
                                      varcount,
-                                     errmes,
+                                     err_mes,
+                                     err_code,
                                      row['ID']
                                      )
                                     )
@@ -170,12 +195,11 @@ def run():
                                 'DstProcessedEntities = DstProcessedEntities + 1, '
                                 'DstErrorCount = DstErrorCount + %s '
                                 'WHERE ID = %s',
-                                (#recmod,
-                                 err_delta,
+                                (err_delta,
                                  row['SyncRunsID']
                                  )
                                 )
-    print(f'\tStyles sent to "{shop_url_short}": {done-err_count}. Errors: {err_count} ')
+    print(f'\tProcessed: {done}. Sent to "{shop_url_short}": {done-err_count}. Errors: {err_count}.')
     return done
 
 

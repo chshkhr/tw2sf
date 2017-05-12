@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS Styles (
   OldProductID BIGINT, # Null - New, OldProductID=ProductID - Updated, OldProductID<>ProductID - ReCreated
   VariantsCount INT,
   ErrMes TEXT,  # Null if the product sent successfully
+  ErrCode INT DEFAULT 0,  # -1 - Exception, >200 https://help.shopify.com/api/getting-started/response-status-codes
+  RetryCount INT DEFAULT 0,
   PRIMARY KEY (ID),
   FOREIGN KEY fkSyncRuns(SyncRunsID) REFERENCES SyncRuns(ID) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin
@@ -25,4 +27,9 @@ CREATE INDEX ixStyles_Product ON Styles(ProductID, ProductSent);
 
 # select count(*) ... group by StyleNo
 CREATE INDEX ixStyles_StyleNo ON Styles(StyleNo);
+
+# select * ... where ErrCode=429
+CREATE INDEX ixStyles_ErrCode ON Styles(ErrCode);
+
+
 

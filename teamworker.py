@@ -31,7 +31,7 @@ db = None
 def save_xml(r):
     # Saving XML Response content to file
     fn = os.path.join(utils._DIR, 'xml', utils.time_str()+'.xml')
-    print('\t\tSaving Response to', fn, '...')
+    print('\tSaving Response to', fn, '...')
     with open(fn, 'bw') as f:
         f.write(r.content)
 
@@ -103,7 +103,7 @@ def request_styles(req):
                     title = style.find('Description4').text
                     start_date = style.find('RecModified').text  # next time we'll start from this date
                     styleno = style.find('StyleNo').text
-                    print('\t\t', skip+done, start_date, styleno, title)
+                    print('\t\t', skip+done+1, start_date, styleno, title)
                     cursor.execute("INSERT INTO Styles (SyncRunsID, StyleNo, RecModified, Title, StyleXml)"+
                                    " VALUES (%s, %s, %s, %s, %s)",
                                    (syncRunsID, styleno, start_date, title, ET.tostring(style), ))
@@ -150,7 +150,7 @@ def init(drop=False):
     with db.cursor() as cursor:
         # Execute SQL scripts from .\SQL folder (if SyncRuns table not found in DB)
         if not cursor.execute("SHOW TABLES LIKE 'SyncRuns'"):
-            for fn in glob.glob(os.path.join('sql','*.sql')):
+            for fn in sorted(glob.glob(os.path.join('sql','*.sql'))):
                 print(f'\tExecuting {fn}...')
                 with open(fn,'br') as f:
                         for sql in f.read().decode('utf-8').split('\r\n\r\n'):

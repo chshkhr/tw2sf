@@ -33,6 +33,7 @@ class Errors(object):
         """
         self.base = base
         self.errors = {}
+        self.code = 0
 
     @property
     def size(self):
@@ -71,6 +72,7 @@ class Errors(object):
             None
         """
         self.errors = {}
+        self.code = 0
 
     def from_array(self, messages):
         attribute_keys = self.base.attributes.keys()
@@ -463,7 +465,7 @@ class ActiveResource(six.with_metaclass(ResourceMeta, object)):
         Returns:
             A tuple containing (prefix_options, query_options)
         """
-        #TODO(mrroach): figure out prefix_options
+        #.TO DO(mrroach): figure out prefix_options
         prefix_options = {}
         query_options = {}
         for key, value in six.iteritems(options):
@@ -502,7 +504,7 @@ class ActiveResource(six.with_metaclass(ResourceMeta, object)):
         Raises:
             connection.ConnectionError: On any error condition.
         """
-        #TODO(mrroach): allow from_ to be a string-generating function
+        #.TO DO(mrroach): allow from_ to be a string-generating function
         path = from_ + cls._query_string(query_options)
         return cls._build_object(cls.connection.get(path, cls.headers))
 
@@ -834,6 +836,7 @@ class ActiveResource(six.with_metaclass(ResourceMeta, object)):
                 self.errors.from_xml(err.response.body)
             elif self.klass.format == formats.JSONFormat:
                 self.errors.from_json(err.response.body)
+            self.errors.code = err.code;
             return False
         try:
             attributes = self.klass.format.decode(response.body)
