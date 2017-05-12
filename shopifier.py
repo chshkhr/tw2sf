@@ -19,6 +19,8 @@ SHARED_SECRET = '5f6f9d277b736295637ca8e9fa642b41'
 SHOP_NAME = 'vicrom'
 # https://help.shopify.com/api/getting-started/response-status-codes
 MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
+# Only these channel will be transfered to Shopify
+CHANNELS = ['store','Amazon','Magento']
 
 # Global
 recreate = False  # False - Delete existent product and create the new one, True - update old product
@@ -47,7 +49,18 @@ def init():
 def run():
     # Send data from MySQL to Shopify
     done = 0
-    global tot_count, err_count
+    filtered = 0
+    global tot_count, err_count, db
+
+    # We'll send only the last version of each style (ErrCode=-2 means this Style is Obsolete)
+    with db.cursor() as cursor:
+        cursor.execute('UPDATE teamwork.Styles s1 ' 
+                       'JOIN teamwork.Styles s2 ON s1.StyleNo=s2.StyleNo '
+                       'SET s1.ProductSent = CURRENT_TIMESTAMP(3), '
+                       's1.ErrCode = -2 '
+                       'WHERE s1.ProductSent IS NULL '
+                       'AND s2.ProductSent IS NULL '
+                       'AND s1.RecModified < s2.RecModified')
 
     print(f'\tLooking for not sent Styles in DB "{twmysql._HOST}:{twmysql._DB}"')
     # Copy Styles to Items!
@@ -56,11 +69,11 @@ def run():
                        'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
                        'FROM Styles s '
                        'WHERE s.ProductSent IS NULL '
-                       #DEBUG 'WHERE s.ID BETWEEN 119 AND 123 '
+                       #DEBUG 'WHERE s.ID BETWEEN 130 AND 140 '
                        'ORDER BY s.RecModified')
         print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Title', 'ErrMes')))
         repeat = 0
-        while True:
+        while db:
             if repeat > 0:
                 repeat += 1
                 if repeat <= MAX_REPEAT:
@@ -72,6 +85,32 @@ def run():
             if not row:
                 break
             style = ET.fromstring(row['StyleXml'])
+
+            err_mes = None
+            product = None
+            productID = None
+            err_delta = 0
+            varcount = 0
+
+            # <EChannels>
+            #  <EChannel Name = "Amazon" Status = "EcOffer" ECommerceId = "15287" />
+            #  <EChannel Name = "Magento" Status = "EcSuspended" ECommerceId = "15287" />
+            # </EChannels>
+            # for channel in style.iter('EChannel'):
+            #     channel_active = channel.attrib['Name'] in CHANNELS \
+            #                      and channel.attrib['Status'] == 'EcOffer'
+            #     if channel_active:
+            #         break
+
+            # DEBUG Filter by !Variant! Channel
+            channel_active = False
+            for channel in style.iter('Channel'):
+                channel_active = channel.attrib['Name'] in CHANNELS
+                if channel_active:
+                    break
+            if not channel_active:
+                filtered += 1
+
             try:
                 title = style.find('CustomText5').text \
                         or style.find('Description4').text  # DEBUG, remove it
@@ -90,6 +129,8 @@ def run():
                             product.destroy()
                             product = shopify.Product()
                 else:
+                    if not channel_active:
+                        continue
                     product = shopify.Product()
 
                 product.title = title
@@ -114,15 +155,11 @@ def run():
                 # Copy Items to Variants
                 items = style.iter('Item')
                 variants = []
-                varcount = 0
                 for item in items:
                     varcount += 1
                     variant = dict()
                     variant['sku'] = item.find('PLU').text or 'Empty PLU'
                     # ??? 'barcode'
-                    # for upc in item.iter('UPC'):
-                    #     variant['barcode'] = upc.attrib['Value']
-                    #     break
 
                     # "option1" goes instead of "title": if "option1" not filled Shopify creates Empty Variant
                     variant['option1'] = ' '.join(filter(None, (
@@ -136,8 +173,13 @@ def run():
                     variants.append(variant)
                 product.variants = variants
 
+                if not channel_active:
+                    product.published_at = None
+
                 product.save()
 
+            except (KeyboardInterrupt, SystemExit) as e:
+                db = None
             except Exception as e:
                 err_count += 1
                 err_mes = e
@@ -163,15 +205,21 @@ def run():
                     err_delta = 0
                     repeat = 0
             finally:
-                if repeat <= 1:
-                    done += 1
-                print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), str(err_code),
-                                         styleno, str(oldProductID or '-New-'),
-                                         modif_time,
-                                         title,
-                                         str(err_mes or ''))))
-                with db.cursor() as upd:
+                if not db:
+                    print('\tUSER TERMINATION!')
+                else:
+                    if repeat <= 1:
+                        done += 1
+                    if not channel_active:
+                        err_code = -3  # ErrCode=-3 means this Style belongs to inactive Channel
                     if product:
+                        productID = product.id
+                    print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), str(err_code),
+                                             styleno, str(oldProductID or 'New-'+str(productID)),
+                                             modif_time,
+                                             title,
+                                             str(err_mes or ''))))
+                    with db.cursor() as upd:
                         upd.execute('UPDATE Styles SET '
                                     'ProductSent = case when %s=0 then CURRENT_TIMESTAMP(3) else Null end, '
                                     'ProductID = %s, '
@@ -182,7 +230,7 @@ def run():
                                     'RetryCount = RetryCount + 1 '
                                     'WHERE ID = %s',
                                     (repeat,
-                                     product.id,
+                                     productID,
                                      oldProductID,
                                      varcount,
                                      err_mes,
@@ -190,16 +238,16 @@ def run():
                                      row['ID']
                                      )
                                     )
-                    upd.execute('UPDATE SyncRuns SET '
-                                'DstLastSendTime = CURRENT_TIMESTAMP(3), '
-                                'DstProcessedEntities = DstProcessedEntities + 1, '
-                                'DstErrorCount = DstErrorCount + %s '
-                                'WHERE ID = %s',
-                                (err_delta,
-                                 row['SyncRunsID']
-                                 )
-                                )
-    print(f'\tProcessed: {done}. Sent to "{shop_url_short}": {done-err_count}. Errors: {err_count}.')
+                        upd.execute('UPDATE SyncRuns SET '
+                                    'DstLastSendTime = CURRENT_TIMESTAMP(3), '
+                                    'DstProcessedEntities = DstProcessedEntities + 1, '
+                                    'DstErrorCount = DstErrorCount + %s '
+                                    'WHERE ID = %s',
+                                    (err_delta,
+                                     row['SyncRunsID']
+                                     )
+                                    )
+    print(f'\tProcessed: {done}. Filtered/Deactivated: {filtered}. Errors: {err_count}. Sent to "{shop_url_short}": {done-err_count-filtered}.')
     return done
 
 
