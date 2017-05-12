@@ -3,7 +3,7 @@ import glob
 import argparse
 import xml.etree.ElementTree as ET
 
-import shopify  # pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
+import myshopify as shopify  # pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
 
 import twmysql
 import utils
@@ -56,7 +56,7 @@ def run():
             style = ET.fromstring(row['StyleXml'])
             try:
                 title = style.find('CustomText5').text \
-                        or style.find('Description4').text  # Debug, remove it
+                        or style.find('Description4').text  # DEBUG, remove it
                 modif_time = style.find('RecModified').text
                 styleno = style.find('StyleNo').text
                 oldProductID = row['ProductID']
@@ -101,23 +101,19 @@ def run():
                     varcount += 1
                     variant = dict()
                     variant['sku'] = item.find('PLU').text or 'Empty PLU'
-                    # variant['option1'] = item.find('Attribute1').text
-                    # t = item.find('Attribute2').text
-                    # if t:
-                    #     variant['option1'] += ' ' + t
-                    # ??? variant['barcode']
-                    for upc in item.iter('UPC'):
-                        variant['barcode'] = upc.attrib['Value']
-                        break
-                    # title
+                    # ??? 'barcode'
+                    # for upc in item.iter('UPC'):
+                    #     variant['barcode'] = upc.attrib['Value']
+                    #     break
+
+                    # "option1" goes instead of "title": if "option1" not filled Shopify creates Empty Variant
                     variant['option1'] = ' '.join(filter(None, (
-                                       styleno, #DEBUG
                                        style.find('CustomText5').text,
                                        item.find('Attribute1').text,
                                        item.find('Attribute2').text,
                                        item.find('Attribute3').text,
-                                       ))) or styleno + ' Empty CustomText5 Attribute1 Attribute2 Attribute3'
-                    # variant['option1'] = variant['title']
+                                       ))) or styleno + ' Empty CustomText5+Attribute1+Attribute2+Attribute3'
+
                     variant['price'] = float(item.find('BasePrice').text)
                     variants.append(variant)
                 product.variants = variants
@@ -125,10 +121,11 @@ def run():
                 product.save()
 
             except Exception as e:
-                print('\t\t\t', e)
+                print('\t\t\t', e, shopify.Session.responce.code)
                 err_count += 1
                 errmes = e
                 err_delta = 1
+
             else:
                 if product.errors:
                     err_count += 1
