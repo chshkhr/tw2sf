@@ -4,8 +4,8 @@ import argparse
 import xml.etree.ElementTree as ET
 
 # pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
-# pip uninstall ShopifyAPI / sudo python3.6 -m pip uninstall --upgrade ShopifyAPI
-# pip uninstall pyactiveresource / sudo python3.6 -m pip uninstall pyactiveresource
+# pip uninstall ShopifyAPI --yes / sudo python3.6 -m pip uninstall ShopifyAPI --yes
+# pip uninstall pyactiveresource --yes / sudo python3.6 -m pip uninstall pyactiveresource --yes
 import shopify
 
 import twmysql
@@ -49,7 +49,7 @@ def run():
     done = 0
     global tot_count, err_count
 
-    print(f'\tLooking for not sent Styles in DB "{pymysql._HOST}:{twmysql._DB}"')
+    print(f'\tLooking for not sent Styles in DB "{twmysql._HOST}:{twmysql._DB}"')
     # Copy Styles to Items!
     with db.cursor() as cursor:
         cursor.execute('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
