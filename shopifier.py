@@ -17,7 +17,8 @@ SHOP_NAME = 'vicrom'
 # Global
 recreate = False  # False - Delete existent product and create the new one, True - update old product
 
-shop_url = f'https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin'
+shop_url_short = f'{SHOP_NAME}.myshopify.com'
+shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
 
 err_count = 0  # total number of errors from first run (persistent)
 db = None
@@ -38,14 +39,16 @@ def run():
     done = 0
     global tot_count, err_count
 
-    print(f'Looking for not sent Styles in DB {twmysql._DB}')
+    print(f'\tLooking for not sent Styles in DB {twmysql._DB}')
     # Copy Styles to Items!
     with db.cursor() as cursor:
-        cursor.execute('SELECT s.ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
+        cursor.execute('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
                        'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
                        'FROM Styles s '
                        #DEBUG 'WHERE s.ProductSent IS NULL '
-                       'ORDER BY s.RecModified') 
+                       'WHERE s.ID BETWEEN 118 AND 123 ' #DEBUG
+                       'ORDER BY s.RecModified')
+        print('\t\t', '\t'.join(('#', 'ID', 'VN', 'Er', 'Style', 'Prod', 'Modif', 'Title', 'ErrMes')))
         while True:
             row = cursor.fetchone()
             if not row:
@@ -54,7 +57,7 @@ def run():
             try:
                 title = style.find('CustomText5').text \
                         or style.find('Description4').text  # Debug, remove it
-                recmod = style.find('RecModified').text
+                modif_time = style.find('RecModified').text
                 styleno = style.find('StyleNo').text
                 oldProductID = row['ProductID']
                 if oldProductID:
@@ -70,7 +73,6 @@ def run():
                             product = shopify.Product()
                 else:
                     product = shopify.Product()
-                print('\t', oldProductID or '- New -', done, err_count, recmod, styleno, title)
 
                 product.title = title
 
@@ -99,24 +101,31 @@ def run():
                     varcount += 1
                     variant = dict()
                     variant['sku'] = item.find('PLU').text or 'Empty PLU'
+                    # variant['option1'] = item.find('Attribute1').text
+                    # t = item.find('Attribute2').text
+                    # if t:
+                    #     variant['option1'] += ' ' + t
                     # ??? variant['barcode']
-                    variant['title'] = ' '.join(filter(None, (
+                    for upc in item.iter('UPC'):
+                        variant['barcode'] = upc.attrib['Value']
+                        break
+                    # title
+                    variant['option1'] = ' '.join(filter(None, (
+                                       styleno, #DEBUG
                                        style.find('CustomText5').text,
                                        item.find('Attribute1').text,
                                        item.find('Attribute2').text,
                                        item.find('Attribute3').text,
-                                       ))) or 'Empty CustomText5 Attribute1 Attribute2 Attribute3'
+                                       ))) or styleno + ' Empty CustomText5 Attribute1 Attribute2 Attribute3'
+                    # variant['option1'] = variant['title']
                     variant['price'] = float(item.find('BasePrice').text)
-                    # for upc in item.iter('UPC'):
-                    #     variant['barcode'] = upc.attrib['Value']
-                    #     break
                     variants.append(variant)
                 product.variants = variants
 
                 product.save()
 
             except Exception as e:
-                print('\t\t', e)
+                print('\t\t\t', e)
                 err_count += 1
                 errmes = e
                 err_delta = 1
@@ -125,12 +134,17 @@ def run():
                     err_count += 1
                     errmes = product.errors.full_messages()
                     err_delta = 1
-                    print('\t\t', errmes)
+                    # print('\t\t\t', errmes)
                 else:
                     errmes = None
                     err_delta = 0
             finally:
                 done += 1
+                print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), styleno,
+                                         str(oldProductID or '-New-'),
+                                         modif_time,
+                                         title,
+                                         str(errmes or ''))))
                 with db.cursor() as upd:
                     upd.execute('UPDATE Styles SET '
                                 'ProductSent = CURRENT_TIMESTAMP(3), '
@@ -156,12 +170,12 @@ def run():
                                  row['SyncRunsID']
                                  )
                                 )
-    print(f'\t{done} Styles sent to Shopify')
+    print(f'\tStyles sent to "{shop_url_short}": {done-err_count}. Errors: {err_count} ')
     return done
 
 
 def cleanup():
-    print('Cleanup started! Do not Interrupt please!...')
+    print('\tCleanup started! Do not Interrupt please!...')
 
     # Cleanup XML Received
     for f in glob.glob(os.path.join('xml', '*.xml')):
@@ -186,10 +200,10 @@ def cleanup():
         products = shopify.Product.find()
         for product in products:
             i += 1
-            print(i, product.title, 'Deleting...')
+            print('\t\t', i, product.title, 'Deleting...')
             product.destroy()
 
-    print('Cleanup finished.')
+    print('\tCleanup finished.')
 
 
 if __name__ == '__main__':

@@ -31,7 +31,7 @@ db = None
 def save_xml(r):
     # Saving XML Response content to file
     fn = os.path.join(utils._DIR, 'xml', utils.time_str()+'.xml')
-    print('\tSaving Response to', fn, '...')
+    print('\t\tSaving Response to', fn, '...')
     with open(fn, 'bw') as f:
         f.write(r.content)
 
@@ -64,7 +64,7 @@ def request_styles(req):
                 data = cursor.fetchone()
                 syncRunsID = data['SyncRunsID']
 
-    print(f'Requesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
+    print(f'\tRequesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
     data = {'Data': req,
             'Source': 'VC_Test', 'UseApiVersion2': 'true',
             'ApiKey': TW_API_KEY, 'Async': 'true',
@@ -103,12 +103,12 @@ def request_styles(req):
                     title = style.find('Description4').text
                     start_date = style.find('RecModified').text  # next time we'll start from this date
                     styleno = style.find('StyleNo').text
-                    print('\t', skip+done, start_date, styleno, title)
+                    print('\t\t', skip+done, start_date, styleno, title)
                     cursor.execute("INSERT INTO Styles (SyncRunsID, StyleNo, RecModified, Title, StyleXml)"+
                                    " VALUES (%s, %s, %s, %s, %s)",
                                    (syncRunsID, styleno, start_date, title, ET.tostring(style), ))
                 except Exception as e:
-                    print('\t\t', e)
+                    print('\t\t\t', e)
                 finally:
                     done += 1
             print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
@@ -144,14 +144,14 @@ def init(drop=False):
         with db.cursor() as cursor:
             for t in ['Styles','SyncRuns']:
                 sql = f'DROP TABLE IF EXISTS {t};'
-                print(sql)
+                print('\t', sql)
                 cursor.execute(sql)
 
     with db.cursor() as cursor:
         # Execute SQL scripts from .\SQL folder (if SyncRuns table not found in DB)
         if not cursor.execute("SHOW TABLES LIKE 'SyncRuns'"):
             for fn in glob.glob(os.path.join('sql','*.sql')):
-                print(f'Executing {fn}...')
+                print(f'\tExecuting {fn}...')
                 with open(fn,'br') as f:
                         for sql in f.read().decode('utf-8').split('\r\n\r\n'):
                             sql = sql.strip()
