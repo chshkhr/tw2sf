@@ -3,7 +3,10 @@ import glob
 import argparse
 import xml.etree.ElementTree as ET
 
-import myshopify as shopify  # pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
+# pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
+# pip uninstall ShopifyAPI / sudo python3.6 -m pip uninstall --upgrade ShopifyAPI
+# pip uninstall pyactiveresource / sudo python3.6 -m pip uninstall pyactiveresource
+import shopify
 
 import twmysql
 import utils
@@ -19,6 +22,7 @@ recreate = False  # False - Delete existent product and create the new one, True
 
 shop_url_short = f'{SHOP_NAME}.myshopify.com'
 shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
+session = None
 
 err_count = 0  # total number of errors from first run (persistent)
 db = None
@@ -27,6 +31,9 @@ def init():
     # Shopify init
     shopify.ShopifyResource.set_site(shop_url)
     shopify.Session.setup(api_key=API_KEY, secret=SHARED_SECRET)
+    # session = shopify.Session(shop_url_short)
+    # shopify.ShopifyResource.activate_session(session)
+    # shop = shopify.Shop.current()
 
     utils.mkdirs()
 
@@ -46,7 +53,7 @@ def run():
                        'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
                        'FROM Styles s '
                        #DEBUG 'WHERE s.ProductSent IS NULL '
-                       'WHERE s.ID BETWEEN 118 AND 123 ' #DEBUG
+                       'WHERE s.ID BETWEEN 119 AND 123 ' #DEBUG
                        'ORDER BY s.RecModified')
         print('\t\t', '\t'.join(('#', 'ID', 'VN', 'Er', 'Style', 'Prod', 'Modif', 'Title', 'ErrMes')))
         while True:
@@ -121,7 +128,7 @@ def run():
                 product.save()
 
             except Exception as e:
-                print('\t\t\t', e, shopify.Session.responce.code)
+                #print('\t\t\t', e, shopify.Session.responce.code)
                 err_count += 1
                 errmes = e
                 err_delta = 1
@@ -143,20 +150,21 @@ def run():
                                          title,
                                          str(errmes or ''))))
                 with db.cursor() as upd:
-                    upd.execute('UPDATE Styles SET '
-                                'ProductSent = CURRENT_TIMESTAMP(3), '
-                                'ProductID = %s, '
-                                'OldProductID = %s, '
-                                'VariantsCount = %s, '
-                                'ErrMes = %s '
-                                'WHERE ID = %s',
-                                (product.id,
-                                 oldProductID,
-                                 varcount,
-                                 errmes,
-                                 row['ID']
-                                 )
-                                )
+                    if product and product.id:
+                        upd.execute('UPDATE Styles SET '
+                                    'ProductSent = CURRENT_TIMESTAMP(3), '
+                                    'ProductID = %s, '
+                                    'OldProductID = %s, '
+                                    'VariantsCount = %s, '
+                                    'ErrMes = %s '
+                                    'WHERE ID = %s',
+                                    (product.id,
+                                     oldProductID,
+                                     varcount,
+                                     errmes,
+                                     row['ID']
+                                     )
+                                    )
                     upd.execute('UPDATE SyncRuns SET '
                                 'DstLastSendTime = CURRENT_TIMESTAMP(3), '
                                 'DstProcessedEntities = DstProcessedEntities + 1, '
@@ -215,3 +223,5 @@ if __name__ == '__main__':
         cleanup()
 
     run()
+
+    shopify.ShopifyResource.clear_session()

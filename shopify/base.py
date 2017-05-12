@@ -1,16 +1,17 @@
-import pyactiveresource.connection
-from pyactiveresource.activeresource import ActiveResource, ResourceMeta, formats
-import shopify.yamlobjects
-import shopify.mixins as mixins
-import shopify
-import threading
 import sys
-from six.moves import urllib
+import threading
+
 import six
+from six.moves import urllib
+
+import shopify
+import shopify.mixins as mixins
+import shopify.yamlobjects
+from shopify.pyactiveresource.activeresource import ActiveResource, ResourceMeta, formats
 
 
 # Store the response from the last request in the connection object
-class ShopifyConnection(pyactiveresource.connection.Connection):
+class ShopifyConnection(shopify.pyactiveresource.connection.Connection):
     response = None
 
     def __init__(self, site, user=None, password=None, timeout=None,
@@ -21,7 +22,7 @@ class ShopifyConnection(pyactiveresource.connection.Connection):
         self.response = None
         try:
             self.response = super(ShopifyConnection, self)._open(*args, **kwargs)
-        except pyactiveresource.connection.ConnectionError as err:
+        except shopify.pyactiveresource.connection.ConnectionError as err:
             self.response = err.response
             raise
         return self.response

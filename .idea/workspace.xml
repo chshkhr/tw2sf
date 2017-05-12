@@ -1,8 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/shopifier.py" line="32" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="">
+    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="Local Copy of pyactiveresource">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/connection.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/element_containers.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/fake_connection.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/formats.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/testing/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/testing/http_fake.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shopify/pyactiveresource/util.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/myshopify/__init__.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/base.py" afterPath="$PROJECT_DIR$/shopify/base.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/mixins.py" afterPath="$PROJECT_DIR$/shopify/mixins.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/__init__.py" afterPath="$PROJECT_DIR$/shopify/resources/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/address.py" afterPath="$PROJECT_DIR$/shopify/resources/address.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/application_charge.py" afterPath="$PROJECT_DIR$/shopify/resources/application_charge.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/article.py" afterPath="$PROJECT_DIR$/shopify/resources/article.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/asset.py" afterPath="$PROJECT_DIR$/shopify/resources/asset.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/billing_address.py" afterPath="$PROJECT_DIR$/shopify/resources/billing_address.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/blog.py" afterPath="$PROJECT_DIR$/shopify/resources/blog.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/carrier_service.py" afterPath="$PROJECT_DIR$/shopify/resources/carrier_service.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/cart.py" afterPath="$PROJECT_DIR$/shopify/resources/cart.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/checkout.py" afterPath="$PROJECT_DIR$/shopify/resources/checkout.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/collect.py" afterPath="$PROJECT_DIR$/shopify/resources/collect.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/comment.py" afterPath="$PROJECT_DIR$/shopify/resources/comment.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/country.py" afterPath="$PROJECT_DIR$/shopify/resources/country.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/custom_collection.py" afterPath="$PROJECT_DIR$/shopify/resources/custom_collection.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/customer.py" afterPath="$PROJECT_DIR$/shopify/resources/customer.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/customer_group.py" afterPath="$PROJECT_DIR$/shopify/resources/customer_group.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/customer_invite.py" afterPath="$PROJECT_DIR$/shopify/resources/customer_invite.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/customer_saved_search.py" afterPath="$PROJECT_DIR$/shopify/resources/customer_saved_search.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/discount.py" afterPath="$PROJECT_DIR$/shopify/resources/discount.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/draft_order.py" afterPath="$PROJECT_DIR$/shopify/resources/draft_order.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/draft_order_invoice.py" afterPath="$PROJECT_DIR$/shopify/resources/draft_order_invoice.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/event.py" afterPath="$PROJECT_DIR$/shopify/resources/event.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/fulfillment.py" afterPath="$PROJECT_DIR$/shopify/resources/fulfillment.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/fulfillment_service.py" afterPath="$PROJECT_DIR$/shopify/resources/fulfillment_service.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/gift_card.py" afterPath="$PROJECT_DIR$/shopify/resources/gift_card.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/image.py" afterPath="$PROJECT_DIR$/shopify/resources/image.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/line_item.py" afterPath="$PROJECT_DIR$/shopify/resources/line_item.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/location.py" afterPath="$PROJECT_DIR$/shopify/resources/location.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/metafield.py" afterPath="$PROJECT_DIR$/shopify/resources/metafield.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/note_attribute.py" afterPath="$PROJECT_DIR$/shopify/resources/note_attribute.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/option.py" afterPath="$PROJECT_DIR$/shopify/resources/option.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/order.py" afterPath="$PROJECT_DIR$/shopify/resources/order.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/order_risk.py" afterPath="$PROJECT_DIR$/shopify/resources/order_risk.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/page.py" afterPath="$PROJECT_DIR$/shopify/resources/page.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/payment_details.py" afterPath="$PROJECT_DIR$/shopify/resources/payment_details.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/policy.py" afterPath="$PROJECT_DIR$/shopify/resources/policy.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/product.py" afterPath="$PROJECT_DIR$/shopify/resources/product.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/product_search_engine.py" afterPath="$PROJECT_DIR$/shopify/resources/product_search_engine.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/province.py" afterPath="$PROJECT_DIR$/shopify/resources/province.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/receipt.py" afterPath="$PROJECT_DIR$/shopify/resources/receipt.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/recurring_application_charge.py" afterPath="$PROJECT_DIR$/shopify/resources/recurring_application_charge.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/redirect.py" afterPath="$PROJECT_DIR$/shopify/resources/redirect.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/refund.py" afterPath="$PROJECT_DIR$/shopify/resources/refund.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/report.py" afterPath="$PROJECT_DIR$/shopify/resources/report.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/rule.py" afterPath="$PROJECT_DIR$/shopify/resources/rule.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/script_tag.py" afterPath="$PROJECT_DIR$/shopify/resources/script_tag.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/shipping_address.py" afterPath="$PROJECT_DIR$/shopify/resources/shipping_address.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/shipping_line.py" afterPath="$PROJECT_DIR$/shopify/resources/shipping_line.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/shipping_zone.py" afterPath="$PROJECT_DIR$/shopify/resources/shipping_zone.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/shop.py" afterPath="$PROJECT_DIR$/shopify/resources/shop.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/smart_collection.py" afterPath="$PROJECT_DIR$/shopify/resources/smart_collection.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/tax_line.py" afterPath="$PROJECT_DIR$/shopify/resources/tax_line.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/theme.py" afterPath="$PROJECT_DIR$/shopify/resources/theme.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/transaction.py" afterPath="$PROJECT_DIR$/shopify/resources/transaction.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/usage_charge.py" afterPath="$PROJECT_DIR$/shopify/resources/usage_charge.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/variant.py" afterPath="$PROJECT_DIR$/shopify/resources/variant.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/resources/webhook.py" afterPath="$PROJECT_DIR$/shopify/resources/webhook.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/session.py" afterPath="$PROJECT_DIR$/shopify/session.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/version.py" afterPath="$PROJECT_DIR$/shopify/version.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/myshopify/yamlobjects.py" afterPath="$PROJECT_DIR$/shopify/yamlobjects.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/tw2sf.iml" afterPath="$PROJECT_DIR$/.idea/tw2sf.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/old/TW2SF.py" afterPath="$PROJECT_DIR$/old/TW2SF.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shopifier.py" afterPath="$PROJECT_DIR$/shopifier.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,17 +93,17 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1494416978655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$guardian.coverage" NAME="guardian Coverage Results" MODIFIED="1492816412704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$test.coverage" NAME="test Coverage Results" MODIFIED="1492529966292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1494508658545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$shopifier_cleanup.coverage" NAME="shopifier+cleanup Coverage Results" MODIFIED="1494511188468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier___cleanup.coverage" NAME="shopifier --cleanup Coverage Results" MODIFIED="1494518509237" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$multiprocessing_test.coverage" NAME="multiprocessing_test Coverage Results" MODIFIED="1492531071028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1494518744441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1494509660983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$teamwork.coverage" NAME="teamwork Coverage Results" MODIFIED="1492702760322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$guardian.coverage" NAME="guardian Coverage Results" MODIFIED="1492816412704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$TW2SF.coverage" NAME="TW2SF Coverage Results" MODIFIED="1492786731215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1494509660983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier___cleanup.coverage" NAME="shopifier --cleanup Coverage Results" MODIFIED="1494585715304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1494508658545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$multiprocessing_test.coverage" NAME="multiprocessing_test Coverage Results" MODIFIED="1492531071028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1494594733241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamworker.coverage" NAME="teamworker Coverage Results" MODIFIED="1494443654934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$test.coverage" NAME="test Coverage Results" MODIFIED="1492529966292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$teamwork.coverage" NAME="teamwork Coverage Results" MODIFIED="1492702760322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -38,41 +117,56 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shopifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-49">
-              <caret line="125" column="43" lean-forward="false" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="43" />
+            <state relative-caret-position="85">
+              <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1494518705283" expanded="true" signature="1112:1360" ph="SELECT s.ID,... Styles" />
-                <marker date="1494518705283" expanded="true" signature="1112:1470" ph="SELECT s.ID,... Styles" />
-                <marker date="1494518705283" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-                <marker date="1494518705283" expanded="true" signature="5278:5622" ph="UPDATE Style... " />
-                <marker date="1494518705283" expanded="true" signature="5946:6243" ph="UPDATE SyncR... " />
-                <marker date="1494518705283" expanded="true" signature="6781:7021" ph="UPDATE Style... " />
-                <marker date="1494518705283" expanded="true" signature="7049:7164" ph="UPDATE SyncR... " />
+                <marker date="1494593982652" expanded="true" signature="1471:1899" ph="SELECT s.ID,... Styles" />
+                <marker date="1494593982652" expanded="true" signature="1575:1673" ph="SELECT Produ... Styles" />
+                <marker date="1494593982652" expanded="true" signature="6266:6634" ph="UPDATE Style... " />
+                <marker date="1494593982652" expanded="true" signature="6986:7283" ph="UPDATE SyncR... " />
+                <marker date="1494593982652" expanded="true" signature="7867:8107" ph="UPDATE Style... " />
+                <marker date="1494593982652" expanded="true" signature="8135:8250" ph="UPDATE SyncR... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ssl.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Miniconda3/Lib/ssl.py">
+      <file leaf-file-name="activeresource.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="685" column="26" lean-forward="false" selection-start-line="685" selection-start-column="26" selection-end-line="685" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="130">
+              <caret line="504" column="9" lean-forward="false" selection-start-line="504" selection-start-column="9" selection-end-line="504" selection-end-column="9" />
+              <folding>
+                <element signature="e#145#154#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="twmysql.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/twmysql.py">
+      <file leaf-file-name="shop.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shopify/resources/shop.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="14" />
-              <folding />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shopify/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,39 +174,18 @@
       <file leaf-file-name="teamworker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teamworker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
-              <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
-              <folding>
-                <marker date="1494442170839" expanded="true" signature="1470:1512" ph="SELECT Max(I... SyncRuns" />
-                <marker date="1494442170839" expanded="true" signature="1667:1730" ph="SELECT Style... SyncRuns" />
-                <marker date="1494442170839" expanded="true" signature="2034:2084" ph="INSERT INTO SyncRuns... " />
-                <marker date="1494442170839" expanded="true" signature="3031:3073" ph="SELECT Max(I... SyncRuns" />
-                <marker date="1494442170839" expanded="true" signature="3197:3516" ph="UPDATE SyncR... " />
-                <marker date="1494442170839" expanded="true" signature="3203:3516" ph="INSERT INTO SyncRuns... " />
-                <marker date="1494442170839" expanded="true" signature="4042:4179" ph="INSERT INTO Styles... " />
-                <marker date="1494442170839" expanded="true" signature="4535:4975" ph="UPDATE SyncR... " />
-                <marker date="1494442170839" expanded="true" signature="6280:6328" ph="select max(R... Styles" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="01 SyncRuns.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="02 Styles.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-              <folding />
+              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <marker date="1494582337073" expanded="true" signature="1472:1514" ph="SELECT Max(I... SyncRuns" />
+                <marker date="1494582337073" expanded="true" signature="1669:1732" ph="SELECT Style... SyncRuns" />
+                <marker date="1494582337073" expanded="true" signature="2036:2086" ph="INSERT INTO SyncRuns... " />
+                <marker date="1494582337073" expanded="true" signature="3035:3077" ph="SELECT Max(I... SyncRuns" />
+                <marker date="1494582337073" expanded="true" signature="3201:3520" ph="UPDATE SyncR... " />
+                <marker date="1494582337073" expanded="true" signature="4048:4185" ph="INSERT INTO Styles... " />
+                <marker date="1494582337073" expanded="true" signature="4543:4983" ph="UPDATE SyncR... " />
+                <marker date="1494582337073" expanded="true" signature="6296:6344" ph="select max(R... Styles" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,7 +193,7 @@
       <file leaf-file-name="tw2sf_runner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="702">
               <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -129,23 +202,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tw2sf_service.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
-              <folding>
-                <element signature="e#63#82#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pyqt_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pyqt_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state relative-caret-position="126">
+              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -174,7 +235,6 @@
       <find>LastUpdateDateTime</find>
       <find>LastRecModified</find>
       <find>oldProductID</find>
-      <find>print</find>
       <find>styles saved to Shopify</find>
       <find>init</find>
       <find>save_xmlsave_xml</find>
@@ -183,10 +243,21 @@
       <find>SyncRunsID</find>
       <find>save_xml</find>
       <find>clean</find>
+      <find>print</find>
+      <find>Styles sent to Shopify</find>
+      <find>code</find>
+      <find>m</find>
+      <find>my</find>
+      <find>mys</find>
+      <find>mysh</find>
+      <find>errors</find>
     </findStrings>
     <replaceStrings>
       <replace>logger.info</replace>
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -219,11 +290,15 @@
         <option value="$PROJECT_DIR$/utils.py" />
         <option value="$PROJECT_DIR$/twmysql.py" />
         <option value="$PROJECT_DIR$/tw2sf_service.py" />
-        <option value="$PROJECT_DIR$/teamworker.py" />
         <option value="$PROJECT_DIR$/sql/01 SyncRuns.sql" />
         <option value="$PROJECT_DIR$/tw2sf_runner.py" />
         <option value="$PROJECT_DIR$/pyqt_test.py" />
+        <option value="$PROJECT_DIR$/teamworker.py" />
+        <option value="$PROJECT_DIR$/tw2sf_dev_install.sh" />
+        <option value="$PROJECT_DIR$/myshopify/__init__.py" />
+        <option value="$PROJECT_DIR$/shopify/base.py" />
         <option value="$PROJECT_DIR$/shopifier.py" />
+        <option value="$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py" />
       </list>
     </option>
   </component>
@@ -234,10 +309,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1270" />
-    <option name="height" value="687" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1703" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -279,14 +354,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sql" />
+              <option name="myItemId" value="shopify" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,13 +371,16 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\python my\tw2sf\old" />
-      <recent name="D:\python my\tw2sf\sql" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\python my\tw2sf\sql" />
       <recent name="D:\python my\tw2sf" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shopify" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/myshopify" />
+      <recent name="D:\python my\tw2sf\old" />
+      <recent name="D:\python my\tw2sf\sql" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -392,6 +470,17 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -732,10 +821,24 @@
       <option name="project" value="LOCAL" />
       <updated>1494513796829</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Mapping changed">
+      <created>1494586155490</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1494586155490</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Local Copy of Shopify API Python Interface">
+      <created>1494590660393</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1494590660393</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -745,27 +848,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1270" height="687" extended-state="6" />
+    <frame x="65" y="-4" width="1703" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23923445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953104" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5407279" sideWeight="0.261563" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.4979448" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.50205517" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42807627" sideWeight="0.48803827" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42807627" sideWeight="0.48803827" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17028773" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32735425" sideWeight="0.49559602" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53064275" sideWeight="0.8561362" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5407279" sideWeight="0.738437" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282636" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -810,15 +913,33 @@
     <MESSAGE value="Exception handling on MsSql disconnection" />
     <MESSAGE value="SyncRuns metadata changed" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="Mapping changed" />
+    <MESSAGE value="Local Copy of Shopify API Python Interface" />
+    <MESSAGE value="Local Copy of pyactiveresource" />
+    <option name="LAST_COMMIT_MESSAGE" value="Local Copy of pyactiveresource" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/shopify/session.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/shopify/session.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file:///usr/local/lib/python3.6/site-packages/pyactiveresource/activeresource.py</url>
+          <line>831</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/shopifier.py</url>
-          <line>124</line>
-          <option name="timeStamp" value="70" />
+          <line>127</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -831,115 +952,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="76" />
+      <option name="time" value="95" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1775">
-          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1494518705283" expanded="true" signature="1112:1360" ph="SELECT s.ID,... Styles" />
-            <marker date="1494518705283" expanded="true" signature="1112:1470" ph="SELECT s.ID,... Styles" />
-            <marker date="1494518705283" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-            <marker date="1494518705283" expanded="true" signature="5278:5622" ph="UPDATE Style... " />
-            <marker date="1494518705283" expanded="true" signature="5946:6243" ph="UPDATE SyncR... " />
-            <marker date="1494518705283" expanded="true" signature="6781:7021" ph="UPDATE Style... " />
-            <marker date="1494518705283" expanded="true" signature="7049:7164" ph="UPDATE SyncR... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/TW2SF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shopifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1494518705283" expanded="true" signature="1112:1360" ph="SELECT s.ID,... Styles" />
-            <marker date="1494518705283" expanded="true" signature="1112:1470" ph="SELECT s.ID,... Styles" />
-            <marker date="1494518705283" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-            <marker date="1494518705283" expanded="true" signature="5278:5622" ph="UPDATE Style... " />
-            <marker date="1494518705283" expanded="true" signature="5946:6243" ph="UPDATE SyncR... " />
-            <marker date="1494518705283" expanded="true" signature="6781:7021" ph="UPDATE Style... " />
-            <marker date="1494518705283" expanded="true" signature="7049:7164" ph="UPDATE SyncR... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/teamworker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2650">
-          <caret line="112" column="36" lean-forward="true" selection-start-line="112" selection-start-column="36" selection-end-line="112" selection-end-column="36" />
-          <folding>
-            <marker date="1494442170839" expanded="true" signature="1470:1512" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="1667:1730" ph="SELECT Style... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="2034:2084" ph="INSERT INTO SyncRuns... " />
-            <marker date="1494442170839" expanded="true" signature="3031:3073" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="3197:3516" ph="UPDATE SyncR... " />
-            <marker date="1494442170839" expanded="true" signature="3203:3516" ph="INSERT INTO SyncRuns... " />
-            <marker date="1494442170839" expanded="true" signature="4042:4179" ph="INSERT INTO Styles... " />
-            <marker date="1494442170839" expanded="true" signature="4535:4975" ph="UPDATE SyncR... " />
-            <marker date="1494442170839" expanded="true" signature="6280:6328" ph="select max(R... Styles" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/TW2SF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/TW2SF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/multiprocessing_test.py" />
-    <entry file="file://$PROJECT_DIR$/old/TW2SF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/multiprocessing/pool.py" />
     <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/multiprocessing_test.py" />
     <entry file="file://$PROJECT_DIR$/1.py" />
@@ -1007,58 +1024,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/twmysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/PyQt5/QtGui.pyi" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Miniconda3/Lib/site-packages/pymysql/cursors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="142" column="0" lean-forward="false" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console.sql" />
+    <entry file="file://C:/Miniconda3/Lib/site-packages/pymysql/cursors.py" />
     <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
+        <state relative-caret-position="1278">
           <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
           <folding>
-            <element signature="e#63#82#0" expanded="true" />
+            <element signature="e#63#82#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="702">
           <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -1066,63 +1047,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Miniconda3/Lib/codecs.py" />
+    <entry file="file://C:/Miniconda3/Lib/ssl.py" />
+    <entry file="file:///usr/local/lib/python3.6/ssl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="627" column="0" lean-forward="false" selection-start-line="627" selection-start-column="0" selection-end-line="627" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tw2sf_dev_install.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twmysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/02 Styles.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pyqt_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="25" lean-forward="false" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        <state relative-caret-position="126">
+          <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/teamworker.py">
+    <entry file="file://$PROJECT_DIR$/shopify/session.py" />
+    <entry file="file://$PROJECT_DIR$/shopify/session.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+        <state relative-caret-position="85">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/pyactiveresource/activeresource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="672" column="16" lean-forward="true" selection-start-line="672" selection-start-column="16" selection-end-line="672" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/resources/shop.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1494442170839" expanded="true" signature="1470:1512" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="1667:1730" ph="SELECT Style... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="2034:2084" ph="INSERT INTO SyncRuns... " />
-            <marker date="1494442170839" expanded="true" signature="3031:3073" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1494442170839" expanded="true" signature="3197:3516" ph="UPDATE SyncR... " />
-            <marker date="1494442170839" expanded="true" signature="3203:3516" ph="INSERT INTO SyncRuns... " />
-            <marker date="1494442170839" expanded="true" signature="4042:4179" ph="INSERT INTO Styles... " />
-            <marker date="1494442170839" expanded="true" signature="4535:4975" ph="UPDATE SyncR... " />
-            <marker date="1494442170839" expanded="true" signature="6280:6328" ph="select max(R... Styles" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Miniconda3/Lib/codecs.py">
+    <entry file="file://$PROJECT_DIR$/shopify/pyactiveresource/connection.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Miniconda3/Lib/ssl.py">
+    <entry file="file://$PROJECT_DIR$/shopify/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="685" column="26" lean-forward="false" selection-start-line="685" selection-start-column="26" selection-end-line="685" selection-end-column="26" />
+        <state relative-caret-position="85">
+          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/-1199943127/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="809" column="8" lean-forward="false" selection-start-line="809" selection-start-column="8" selection-end-line="809" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/resources/asset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/teamworker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <marker date="1494582337073" expanded="true" signature="1472:1514" ph="SELECT Max(I... SyncRuns" />
+            <marker date="1494582337073" expanded="true" signature="1669:1732" ph="SELECT Style... SyncRuns" />
+            <marker date="1494582337073" expanded="true" signature="2036:2086" ph="INSERT INTO SyncRuns... " />
+            <marker date="1494582337073" expanded="true" signature="3035:3077" ph="SELECT Max(I... SyncRuns" />
+            <marker date="1494582337073" expanded="true" signature="3201:3520" ph="UPDATE SyncR... " />
+            <marker date="1494582337073" expanded="true" signature="4048:4185" ph="INSERT INTO Styles... " />
+            <marker date="1494582337073" expanded="true" signature="4543:4983" ph="UPDATE SyncR... " />
+            <marker date="1494582337073" expanded="true" signature="6296:6344" ph="select max(R... Styles" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-49">
-          <caret line="125" column="43" lean-forward="false" selection-start-line="125" selection-start-column="37" selection-end-line="125" selection-end-column="43" />
+        <state relative-caret-position="85">
+          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1494518705283" expanded="true" signature="1112:1360" ph="SELECT s.ID,... Styles" />
-            <marker date="1494518705283" expanded="true" signature="1112:1470" ph="SELECT s.ID,... Styles" />
-            <marker date="1494518705283" expanded="true" signature="1210:1308" ph="SELECT Produ... Styles" />
-            <marker date="1494518705283" expanded="true" signature="5278:5622" ph="UPDATE Style... " />
-            <marker date="1494518705283" expanded="true" signature="5946:6243" ph="UPDATE SyncR... " />
-            <marker date="1494518705283" expanded="true" signature="6781:7021" ph="UPDATE Style... " />
-            <marker date="1494518705283" expanded="true" signature="7049:7164" ph="UPDATE SyncR... " />
+            <marker date="1494593982652" expanded="true" signature="1471:1899" ph="SELECT s.ID,... Styles" />
+            <marker date="1494593982652" expanded="true" signature="1575:1673" ph="SELECT Produ... Styles" />
+            <marker date="1494593982652" expanded="true" signature="6266:6634" ph="UPDATE Style... " />
+            <marker date="1494593982652" expanded="true" signature="6986:7283" ph="UPDATE SyncR... " />
+            <marker date="1494593982652" expanded="true" signature="7867:8107" ph="UPDATE Style... " />
+            <marker date="1494593982652" expanded="true" signature="8135:8250" ph="UPDATE SyncR... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="504" column="9" lean-forward="false" selection-start-line="504" selection-start-column="9" selection-end-line="504" selection-end-column="9" />
+          <folding>
+            <element signature="e#145#154#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -26,7 +26,7 @@ chunk_num = 0  # Current chunk number
 recreate = False  # False - Delete existent product and create the new one, True - update old product
 
 apiDocumentId = ''
-shop_url = f'https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.myshopify.com/admin'
+shop_url = f'https://{API_KEY}:{PASSWORD}@{SHOP_NAME}.shopify.com/admin'
 style2product = dict()  # mapping between product ID in Teamwork and Shopify (persistent)
 pickle_fn = 'tw2sf.pickle'  # file with persistent variables
 tot_count = 0  # total number of products transferred from firs run (persistent)
@@ -170,7 +170,7 @@ def init():
         for f in glob.glob(os.path.join('xml','*.xml')):
             os.remove(f)
         # Delete ALL Products if Correspondence Matrix to found
-        if input(f'Delete ALL Products on {SHOP_NAME}.myshopify.com to avoid Duplicated Products?!\n' +
+        if input(f'Delete ALL Products on {SHOP_NAME}.shopify.com to avoid Duplicated Products?!\n' +
                  '(type YES for confirmation)') == 'YES':
             products = True
             i = 0

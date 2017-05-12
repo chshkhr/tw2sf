@@ -17,7 +17,7 @@ class Session(object):
     api_key = None
     secret = None
     protocol = 'https'
-    myshopify_domain = 'myshopify.com'
+    myshopify_domain = 'shopify.com'
     port = None
 
     @classmethod
