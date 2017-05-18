@@ -15,7 +15,7 @@ while True:
         log('Init Teamworker')
         teamworker.init()
         log('Run Teamworker')
-        teamworker.run()
+        teamworker.import_styles()
     except Exception as e:
         log(e)
     finally:
@@ -28,7 +28,7 @@ while True:
         log('Init Shopifier')
         shopifier.init()
         log('Run Shopifier')
-        shopifier.run()
+        shopifier.export_styles()
     except Exception as e:
         log(e)
     finally:

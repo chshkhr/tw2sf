@@ -27,33 +27,71 @@ max_wait = 60  # Max waiting time for Successfull status (seconds)
 apiDocumentId = None
 syncRunsID = None
 db = None
+last_response = None
 
 
 def save_xml(r):
     # Saving XML Response content to file
-    fn = os.path.join(utils._DIR, 'xml', utils.time_str()+'.xml')
-    print('\tSaving Response to', fn, '...')
-    with open(fn, 'bw') as f:
-        f.write(r.content)
+    if r:
+        try:
+            fn = os.path.join(utils._DIR, 'xml', utils.time_str()+'.xml')
+            print('\tSaving Response to', fn, '...')
+            with open(fn, 'bw') as f:
+                f.write(r.content)
+        except:
+            pass
 
 
-def get_root(r):
+def get_root_from_response(response):
     # Get Root from XML Response, removing All XML NameSpaces
-    s = re.sub(r'\sxmlns="[^\"]+"', '', r.content.decode('utf-8'), flags=re.MULTILINE)
+    s = re.sub(r'\sxmlns="[^\"]+"', '', response.content.decode('utf-8'), flags=re.MULTILINE)
     return ET.fromstring(s)
 
 
-def request_styles(req):
+def get_xml_root(req, apitype):
+    # Get XML by api-type
+    global apiDocumentId, last_response
+    xml_root = None
+    last_response = None
+    try:
+        data = {'Data': req,
+                'Source': 'VC_Test', 'UseApiVersion2': 'true',
+                'ApiKey': TW_API_KEY, 'Async': 'true',
+                'ApiRequestType': apitype}
+        last_response = requests.post(TW_URL + 'api.ashx', data=data)
+        xml_root = get_root_from_response(last_response)
+        a = xml_root.attrib['ApiDocumentId']
+        status = xml_root.attrib['Status']
+        count = 0
+        wait = 3
+        while status == 'InProcess':
+            time.sleep(wait)
+            last_response = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
+            xml_root = get_root_from_response(last_response)
+            status = xml_root.attrib['Status']
+            count += 1
+            if count > max_wait // wait:
+                break
+        if status == 'Successful':
+            apiDocumentId = a  # None otherwise
+    except (KeyboardInterrupt, SystemExit) as e:
+        db = None
+        return None
+    else:
+        return xml_root
+
+
+def import_styles_chunk(req):
     # Get XML from Teamwork and Save to MySqL
     global chunk_num, skip, apiDocumentId, syncRunsID, start_date, start_date_
-    global db
+    global db, last_response
     chunk_num += 1
     done = 0
 
     print(f'\tRequesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
 
     # Get syncRunsID of not finished session or create the new one
-    if not apiDocumentId:  # means First Run
+    if chunk_num == 1:  # means First Run
         with db.cursor() as cursor:
             cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
             data = cursor.fetchone()
@@ -69,76 +107,59 @@ def request_styles(req):
                 syncRunsID = data['SyncRunsID']
 
     # Get Style XML from Teamwork
-    data = {'Data': req,
-            'Source': 'VC_Test', 'UseApiVersion2': 'true',
-            'ApiKey': TW_API_KEY, 'Async': 'true',
-            'ApiRequestType': 'inventory-export'}
-    r = requests.post(TW_URL + 'api.ashx', data=data)
-    root = get_root(r)
-    a = root.attrib['ApiDocumentId']
-    status = root.attrib['Status']
-    count = 0
-    wait = 3
-    while status == 'InProcess':
-        time.sleep(wait)
-        r = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
-        root = get_root(r)
-        status = root.attrib['Status']
-        count += 1
-        if count > max_wait / wait:
-            break
-    if status != 'Successful':
-        return
+    xml_root = get_xml_root(req, 'inventory-export')
 
-    try:
-        with db.cursor() as cursor:
-            # Write Starting Time on First run
-            if not apiDocumentId:
-                apiDocumentId = a
-                cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
-                data = cursor.fetchone()
-                syncRunsID = data['SyncRunsID']
-                cursor.execute('UPDATE SyncRuns SET '
-                               'SessionNum = SessionNum + 1, '
-                               'ApiDocumentId = %s, ' 
-                               'SessionStartTime = CURRENT_TIMESTAMP(3), '
-                               'SessionFinishTime = Null '
-                               'WHERE ID = %s',
-                               (apiDocumentId,
-                                syncRunsID,))
+    if db and xml_root and apiDocumentId:
+        try:
+            with db.cursor() as cursor:
+                # Write Starting Time on First run
+                if chunk_num == 1:
+                    cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
+                    data = cursor.fetchone()
+                    syncRunsID = data['SyncRunsID']
+                    cursor.execute('UPDATE SyncRuns SET '
+                                   'SessionNum = SessionNum + 1, '
+                                   'ApiDocumentId = %s, ' 
+                                   'SessionStartTime = CURRENT_TIMESTAMP(3), '
+                                   'SessionFinishTime = Null '
+                                   'WHERE ID = %s',
+                                   (apiDocumentId,
+                                    syncRunsID,))
 
-            # Copy Styles to Items
-            for style in root.iter('Style'):
-                try:
-                    title = style.find('CustomText5').text or style.find('Description4').text
-                    start_date = style.find('RecModified').text  # next time we'll start from this date
-                    styleno = style.find('StyleNo').text
-                    print('\t\t', skip+done+1, start_date, styleno, title)
-                    cursor.execute("INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, StyleXml)"+
-                                   " VALUES (%s, %s, %s, %s, %s, %s)",
-                                   (syncRunsID, styleno, style.find('StyleId').text, start_date, title, ET.tostring(style), ))
-                except Exception as e:
-                    print('\t\t\t', e)
-                finally:
-                    done += 1
-            print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
+                # Copy Styles to Items
+                for style in xml_root.iter('Style'):
+                    try:
+                        title = style.find('CustomText5').text or style.find('Description4').text
+                        start_date = style.find('RecModified').text  # next time we'll start from this date
+                        styleno = style.find('StyleNo').text
+                        print('\t\t', skip+done+1, start_date, styleno, title)
+                        cursor.execute("INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, StyleXml)"+
+                                       " VALUES (%s, %s, %s, %s, %s, %s)",
+                                       (syncRunsID, styleno, style.find('StyleId').text, start_date, title, ET.tostring(style), ))
+                    except Exception as e:
+                        print('\t\t\t', e)
+                    finally:
+                        done += 1
+                print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
 
-            # Write current time and counters on each run
-            cursor.execute('UPDATE SyncRuns SET '                      
-                           'SessionFinishTime = case when %s = 0 then CURRENT_TIMESTAMP(3) else SessionFinishTime end, '
-                           'StylesFound = StylesFound + %s, '
-                           'ChunkCount = ChunkCount + %s, '
-                           'LastChunkTime = case when %s > 0 then CURRENT_TIMESTAMP(3) else LastChunkTime end '
-                           'where ID = %s;',
-                           (int(done > 0),
-                            done,
-                            int(done > 0),
-                            done,
-                            syncRunsID,
-                            ))
-    finally:
-        if done:
-            save_xml(r)
+                # Write current time and counters on each run
+                cursor.execute('UPDATE SyncRuns SET '                      
+                               'SessionFinishTime = case when %s = 0 then CURRENT_TIMESTAMP(3) else SessionFinishTime end, '
+                               'StylesFound = StylesFound + %s, '
+                               'ChunkCount = ChunkCount + %s, '
+                               'LastChunkTime = case when %s > 0 then CURRENT_TIMESTAMP(3) else LastChunkTime end '
+                               'where ID = %s;',
+                               (int(done > 0),
+                                done,
+                                int(done > 0),
+                                done,
+                                syncRunsID,
+                                ))
+        except (KeyboardInterrupt, SystemExit) as e:
+            db = None
+        finally:
+            if done:
+                save_xml(last_response)
 
     return done
 
@@ -180,38 +201,39 @@ def init(drop=False):
         start_date_ = start_date.isoformat(timespec='milliseconds')
 
 
-def run():
+def import_styles():
     global start_date_, apiDocumentId, chunk_size, chunk_num, skip
     apiDocumentId = None
     chunk_num = 0
     # Main Loop
-    done = request_styles('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
-                          'xmlns="http://microsoft.com/wsdl/types/">'
-                          '<Request>'
-                          '<Filters>'
-                          '<Filter Field="RecModified" Operator="Greater than or equal" '
-                          f'Value="{start_date_}" />'
-                          '</Filters>'
-                          '<SortDescriptions>'
-                          '<SortDescription Name="RecModified" Direction="Ascending" />'
-                          '</SortDescriptions>'
-                          f'<Top>{chunk_size}</Top>'
-                          '</Request>'
-                          '</ApiDocument>')
-    if done >= 0:
-        skip = done
-        while done > 0:
-            done = request_styles(f'<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
-                                  'xmlns="http://microsoft.com/wsdl/types/">'
-                                  '<Request>'
-                                  f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
-                                  f'<Top>{chunk_size}</Top>'
-                                  f'<Skip>{skip}</Skip>'
-                                  '</Request>'
-                                  '</ApiDocument>')
-            skip += done
-    else:
+    done = import_styles_chunk('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+                               'xmlns="http://microsoft.com/wsdl/types/">'
+                               '<Request>'
+                               '<Filters>'
+                               '<Filter Field="RecModified" Operator="Greater than or equal" '
+                               f'Value="{start_date_}" />'
+                               '</Filters>'
+                               '<SortDescriptions>'
+                               '<SortDescription Name="RecModified" Direction="Ascending" />'
+                               '</SortDescriptions>'
+                               f'<Top>{chunk_size}</Top>'
+                               '</Request>'
+                               '</ApiDocument>')
+    if apiDocumentId is None:
         print("\tCan't get 'Successful' Status from Server!")
+    else:
+        skip = done
+        while db and done > 0:
+            done = import_styles_chunk(f'<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+                                       'xmlns="http://microsoft.com/wsdl/types/">'
+                                       '<Request>'
+                                       f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
+                                       f'<Top>{chunk_size}</Top>'
+                                       f'<Skip>{skip}</Skip>'
+                                       '</Request>'
+                                       '</ApiDocument>')
+            skip += done
+
 
 if __name__ == '__main__':
     try:
@@ -229,7 +251,8 @@ if __name__ == '__main__':
 
         init(args.drop)
 
-        run()
+        import_styles()
 
     finally:
-        db.close()
+        if db:
+            db.close()

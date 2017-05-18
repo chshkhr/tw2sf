@@ -40,7 +40,7 @@ def init():
     global db
     db = twmysql.get_db()
 
-def run():
+def export_styles():
     # Send data from MySQL to Shopify
     done = 0
     filtered = 0
@@ -302,4 +302,4 @@ if __name__ == '__main__':
     if args.cleanup:
         cleanup()
 
-    run()
+    export_styles()
