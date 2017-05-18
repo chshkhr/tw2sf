@@ -16,13 +16,13 @@ TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-
 TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
 
 # Global
-start_date = dateutil.parser.parse('2017-01-24 00:00:00')  # (persistent)
+start_date = dateutil.parser.parse('2017-01-24 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 start_date_ = None  # start_date_ = start_date + shift_ms
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
 skip = 0
-max_wait = 60  # Max waiting time for Successfull status seconds
+max_wait = 60  # Max waiting time for Successfull status (seconds)
 
 apiDocumentId = None
 syncRunsID = None
@@ -73,14 +73,16 @@ def request_styles(req):
             'Source': 'VC_Test', 'UseApiVersion2': 'true',
             'ApiKey': TW_API_KEY, 'Async': 'true',
             'ApiRequestType': 'inventory-export'}
-    root = get_root(requests.post(TW_URL + 'api.ashx', data=data))
+    r = requests.post(TW_URL + 'api.ashx', data=data)
+    root = get_root(r)
     a = root.attrib['ApiDocumentId']
     status = root.attrib['Status']
     count = 0
     wait = 3
     while status == 'InProcess':
         time.sleep(wait)
-        root = get_root(requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a}))
+        r = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
+        root = get_root(r)
         status = root.attrib['Status']
         count += 1
         if count > max_wait / wait:
