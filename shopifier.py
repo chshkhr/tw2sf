@@ -1,5 +1,3 @@
-import os
-import glob
 import argparse
 import xml.etree.ElementTree as ET
 
@@ -19,15 +17,14 @@ SHARED_SECRET = '5f6f9d277b736295637ca8e9fa642b41'
 SHOP_NAME = 'vicrom'
 # https://help.shopify.com/api/getting-started/response-status-codes
 MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
-# Only these channel will be transfered to Shopify
+# Only these channels will be transfered to Shopify
 CHANNELS = ['store','Amazon','Magento']
 
 # Global
-recreate = False  # False - Delete existent product and create the new one, True - update old product
+recreate = False  # True - Delete existent product and create the new one, False - update old products
 
 shop_url_short = f'{SHOP_NAME}.myshopify.com'
 shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
-session = None
 
 err_count = 0  # total number of errors from first run (persistent)
 db = None
@@ -36,9 +33,6 @@ def init():
     # Shopify init
     shopify.ShopifyResource.set_site(shop_url)
     shopify.Session.setup(api_key=API_KEY, secret=SHARED_SECRET)
-    # session = shopify.Session(shop_url_short)
-    # shopify.ShopifyResource.activate_session(session)
-    # shop = shopify.Shop.current()
 
     utils.mkdirs()
 
@@ -309,5 +303,3 @@ if __name__ == '__main__':
         cleanup()
 
     run()
-
-    shopify.ShopifyResource.clear_session()

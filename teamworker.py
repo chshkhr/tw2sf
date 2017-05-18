@@ -22,6 +22,7 @@ start_date_ = None  # start_date_ = start_date + shift_ms
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
 skip = 0
+max_wait = 60  # Max waiting time for Successfull status seconds
 
 apiDocumentId = None
 syncRunsID = None
@@ -49,8 +50,11 @@ def request_styles(req):
     chunk_num += 1
     done = 0
 
-    with db.cursor() as cursor:
-        if not apiDocumentId:
+    print(f'\tRequesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
+
+    # Get syncRunsID of not finished session or create the new one
+    if not apiDocumentId:  # means First Run
+        with db.cursor() as cursor:
             cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
             data = cursor.fetchone()
             syncRunsID = data['SyncRunsID']
@@ -58,31 +62,35 @@ def request_styles(req):
                 cursor.execute('SELECT StylesFound, SessionFinishTime FROM SyncRuns WHERE ID=%s', (syncRunsID,))
                 data = cursor.fetchone()
             if syncRunsID is None or data['StylesFound'] > 0 or data['SessionFinishTime'] is None:
-                # 'SrcFinishTime is Null' means simultaneous execution or interrupted process (we keep this info)
+                # 'SessionFinishTime is Null' means simultaneous executions or interrupted process (we keep this info)
                 cursor.execute('INSERT INTO SyncRuns (ApiDocumentId) VALUES (Null)')
                 cursor.execute('SELECT LAST_INSERT_ID() as SyncRunsID')
                 data = cursor.fetchone()
                 syncRunsID = data['SyncRunsID']
 
-    print(f'\tRequesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
+    # Get Style XML from Teamwork
     data = {'Data': req,
             'Source': 'VC_Test', 'UseApiVersion2': 'true',
             'ApiKey': TW_API_KEY, 'Async': 'true',
             'ApiRequestType': 'inventory-export'}
-    r = requests.post(TW_URL + 'api.ashx', data=data)
-
-    # Get XML from Teamwork
-    root = get_root(r)
+    root = get_root(requests.post(TW_URL + 'api.ashx', data=data))
     a = root.attrib['ApiDocumentId']
     status = root.attrib['Status']
+    count = 0
+    wait = 3
     while status == 'InProcess':
-        time.sleep(5)
-        r = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
-        root = get_root(r)
+        time.sleep(wait)
+        root = get_root(requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a}))
         status = root.attrib['Status']
+        count += 1
+        if count > max_wait / wait:
+            break
+    if status != 'Successful':
+        return
 
     try:
         with db.cursor() as cursor:
+            # Write Starting Time on First run
             if not apiDocumentId:
                 apiDocumentId = a
                 cursor.execute('SELECT Max(ID) as SyncRunsID FROM SyncRuns')
@@ -100,7 +108,7 @@ def request_styles(req):
             # Copy Styles to Items
             for style in root.iter('Style'):
                 try:
-                    title = style.find('Description4').text
+                    title = style.find('CustomText5').text or style.find('Description4').text
                     start_date = style.find('RecModified').text  # next time we'll start from this date
                     styleno = style.find('StyleNo').text
                     print('\t\t', skip+done+1, start_date, styleno, title)
@@ -112,6 +120,8 @@ def request_styles(req):
                 finally:
                     done += 1
             print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
+
+            # Write current time and counters on each run
             cursor.execute('UPDATE SyncRuns SET '                      
                            'SessionFinishTime = case when %s = 0 then CURRENT_TIMESTAMP(3) else SessionFinishTime end, '
                            'StylesFound = StylesFound + %s, '
@@ -186,18 +196,20 @@ def run():
                           f'<Top>{chunk_size}</Top>'
                           '</Request>'
                           '</ApiDocument>')
-    skip = done
-    while done > 0:
-        done = request_styles(f'<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
-                              'xmlns="http://microsoft.com/wsdl/types/">'
-                              '<Request>'
-                              f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
-                              f'<Top>{chunk_size}</Top>'
-                              f'<Skip>{skip}</Skip>'
-                              '</Request>'
-                              '</ApiDocument>')
-        skip += done
-
+    if done >= 0:
+        skip = done
+        while done > 0:
+            done = request_styles(f'<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+                                  'xmlns="http://microsoft.com/wsdl/types/">'
+                                  '<Request>'
+                                  f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
+                                  f'<Top>{chunk_size}</Top>'
+                                  f'<Skip>{skip}</Skip>'
+                                  '</Request>'
+                                  '</ApiDocument>')
+            skip += done
+    else:
+        print("\tCan't get 'Successful' Status from Server!")
 
 if __name__ == '__main__':
     try:
