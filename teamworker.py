@@ -12,8 +12,8 @@ import twmysql
 import utils
 
 # Teamwork
-TW_API_KEY = '9CA9E29D-D258-48DC-886E-A507F55A03D6'
-TW_URL = 'https://hattestchq.teamworkinsight.com/'
+TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-A507F55A03D6'
+TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
 
 # Global
 start_date = dateutil.parser.parse('2017-01-24 00:00:00')  # (persistent)
@@ -104,9 +104,9 @@ def request_styles(req):
                     start_date = style.find('RecModified').text  # next time we'll start from this date
                     styleno = style.find('StyleNo').text
                     print('\t\t', skip+done+1, start_date, styleno, title)
-                    cursor.execute("INSERT INTO Styles (SyncRunsID, StyleNo, RecModified, Title, StyleXml)"+
-                                   " VALUES (%s, %s, %s, %s, %s)",
-                                   (syncRunsID, styleno, start_date, title, ET.tostring(style), ))
+                    cursor.execute("INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, StyleXml)"+
+                                   " VALUES (%s, %s, %s, %s, %s, %s)",
+                                   (syncRunsID, styleno, style.find('StyleId').text, start_date, title, ET.tostring(style), ))
                 except Exception as e:
                     print('\t\t\t', e)
                 finally:
@@ -135,14 +135,14 @@ def init(drop=False):
     global start_date, start_date_, db
     global apiDocumentId
 
-    utils.mkdirs()
+    utils.mkdirs(drop)
 
     # MySql Init
     db = twmysql.get_db()
 
     if drop:
         with db.cursor() as cursor:
-            for t in ['Styles','SyncRuns']:
+            for t in ['Items', 'Styles', 'StyleStream', 'SyncRuns']:
                 sql = f'DROP TABLE IF EXISTS {t};'
                 print('\t', sql)
                 cursor.execute(sql)
@@ -159,7 +159,7 @@ def init(drop=False):
                                 cursor.execute(sql)
 
         # We are starting from the modification time of the last received record
-        cursor.execute('select max(RecModified) as startdate from Styles;')
+        cursor.execute('select max(RecModified) as startdate from StyleStream;')
         data = cursor.fetchone()
         if data['startdate']:
             start_date = data['startdate']

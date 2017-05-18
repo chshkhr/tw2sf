@@ -54,8 +54,8 @@ def run():
 
     # We'll send only the last version of each style (ErrCode=-2 means this Style is Obsolete)
     with db.cursor() as cursor:
-        cursor.execute('UPDATE teamwork.Styles s1 ' 
-                       'JOIN teamwork.Styles s2 ON s1.StyleNo=s2.StyleNo '
+        cursor.execute('UPDATE teamwork.StyleStream s1 ' 
+                       'JOIN teamwork.StyleStream s2 ON s1.StyleNo=s2.StyleNo '
                        'SET s1.ProductSent = CURRENT_TIMESTAMP(3), '
                        's1.ErrCode = -2 '
                        'WHERE s1.ProductSent IS NULL '
@@ -66,11 +66,11 @@ def run():
     # Copy Styles to Items!
     with db.cursor() as cursor:
         cursor.execute('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
-                       'coalesce(s.ProductID,(SELECT ProductID FROM Styles WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
-                       'FROM Styles s '
+                       'coalesce(s.ProductID,(SELECT ProductID FROM StyleStream WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
+                       'FROM StyleStream s '
                        'WHERE s.ProductSent IS NULL '
                        #DEBUG 'WHERE s.ID BETWEEN 130 AND 140 '
-                       'ORDER BY s.RecModified')
+                       'ORDER BY s.RecModified, s.ID')
         print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Title', 'ErrMes')))
         repeat = 0
         while db:
@@ -112,10 +112,11 @@ def run():
                 filtered += 1
 
             try:
-                title = style.find('CustomText5').text \
-                        or style.find('Description4').text  # DEBUG, remove it
+                title = style.find('CustomText5').text or style.find('Description4').text
+
                 modif_time = style.find('RecModified').text
                 styleno = style.find('StyleNo').text
+                styleid = style.find('StyleId').text
                 oldProductID = row['ProductID']
                 if oldProductID:
                     try:
@@ -168,6 +169,7 @@ def run():
                                        item.find('Attribute2').text,
                                        item.find('Attribute3').text,
                                        ))) or styleno + ' Empty CustomText5+Attribute1+Attribute2+Attribute3'
+                    variant['ItemId'] = item.find('ItemId').text
 
                     variant['price'] = float(item.find('BasePrice').text)
                     variants.append(variant)
@@ -220,7 +222,7 @@ def run():
                                              title,
                                              str(err_mes or ''))))
                     with db.cursor() as upd:
-                        upd.execute('UPDATE Styles SET '
+                        upd.execute('UPDATE StyleStream SET '
                                     'ProductSent = case when %s=0 then CURRENT_TIMESTAMP(3) else Null end, '
                                     'ProductID = %s, '
                                     'OldProductID = %s, '
@@ -238,6 +240,7 @@ def run():
                                      row['ID']
                                      )
                                     )
+                    with db.cursor() as upd:
                         upd.execute('UPDATE SyncRuns SET '
                                     'DstLastSendTime = CURRENT_TIMESTAMP(3), '
                                     'DstProcessedEntities = DstProcessedEntities + 1, '
@@ -247,6 +250,21 @@ def run():
                                      row['SyncRunsID']
                                      )
                                     )
+
+            if db and productID and not err_delta:
+                # Save mappings Items to Variants:
+                with db.cursor() as ins:
+                    for index, variant in enumerate(product.variants):
+                        ins.execute('INSERT INTO Items (ItemId, StyleId, VariantID) VALUES (%s, %s, %s)'
+                                    ' ON DUPLICATE KEY UPDATE StyleId = %s, VariantID = %s',
+                                    (variants[index]['ItemId'],  # variant['ItemId'] lost after product.save()
+                                     styleid,
+                                     variant.id,
+                                     styleid,
+                                     variant.id,
+                                     )
+                                )
+
     print(f'\tProcessed: {done}. Filtered/Deactivated: {filtered}. Errors: {err_count}. Sent to "{shop_url_short}": {done-err_count-filtered}.')
     return done
 
@@ -254,13 +272,9 @@ def run():
 def cleanup():
     print('\tCleanup started! Do not Interrupt please!...')
 
-    # Cleanup XML Received
-    for f in glob.glob(os.path.join('xml', '*.xml')):
-        os.remove(f)
-
     # Mark All Styles as UnSent
     with db.cursor() as cursor:
-        cursor.execute('UPDATE Styles SET '
+        cursor.execute('UPDATE StyleStream SET '
                        'ProductID = NULL,'
                        'ProductSent = NULL, '
                        'OldProductID = NULL,'
