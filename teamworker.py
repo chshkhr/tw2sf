@@ -161,13 +161,14 @@ def process_styles_xml(xml_root):
 
 
 def init_tw(drop=False):
-    # prepare folder for log and xml
+    # prepare folders for log and xml
     utils.mkdirs(drop)
 
     # MySql Init
     global db
     db = twmysql.get_db()
 
+    # if we want to start from scratch then we drop all of our tables
     if drop:
         with db.cursor() as cursor:
             for t in ['Items', 'Styles', 'StyleStream', 'SyncRuns']:
@@ -185,7 +186,6 @@ def init_tw(drop=False):
                             sql = sql.strip()
                             if sql:
                                 cursor.execute(sql)
-
 
 
 api_request_prefix = ('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
