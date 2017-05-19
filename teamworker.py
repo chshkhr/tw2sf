@@ -337,7 +337,7 @@ if __name__ == '__main__':
 
         import_styles()
 
-        import_rta_by_item('EA8C2165-96A1-4A62-95EF-03A49CC335F2')
+        # import_rta_by_item('EA8C2165-96A1-4A62-95EF-03A49CC335F2')
 
     finally:
         if db:
