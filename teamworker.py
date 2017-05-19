@@ -175,6 +175,18 @@ def init_tw(drop=False):
                 print('\t', sql)
                 cursor.execute(sql)
 
+    # Execute SQL scripts from .\SQL folder (if SyncRuns table not found in DB)
+    with db.cursor() as cursor:
+        if drop or not cursor.execute("SHOW TABLES LIKE 'SyncRuns'"):
+            for fn in sorted(glob.glob(os.path.join('sql','*.sql'))):
+                print(f'\tExecuting {fn}...')
+                with open(fn,'br') as f:
+                        for sql in f.read().decode('utf-8').split('\r\n\r\n'):
+                            sql = sql.strip()
+                            if sql:
+                                cursor.execute(sql)
+
+
 
 api_request_prefix = ('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
                       'xmlns="http://microsoft.com/wsdl/types/"><Request>')
@@ -202,12 +214,12 @@ def multy_chunk_import(api_req, api_type, process_xml_function, onechunk=False):
             skip = done
             while db and done > 0:
                 chunk_num += 1
-                print(f'\tChunk #{chunk_num}...')
+                print(f'\t\tChunk #{chunk_num}...')
                 xml_root = get_xml_root(api_request_prefix +
-                                           f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
-                                           f'<Top>{chunk_size}</Top>'
-                                           f'<Skip>{skip}</Skip>' +
-                                          api_request_sufix,
+                                        f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
+                                        f'<Top>{chunk_size}</Top>'
+                                        f'<Skip>{skip}</Skip>' +
+                                        api_request_sufix,
                                         api_type)
                 done = process_xml_function(xml_root)
                 skip += done
@@ -217,16 +229,6 @@ def import_styles():
     global db, start_date
 
     with db.cursor() as cursor:
-        # Execute SQL scripts from .\SQL folder (if SyncRuns table not found in DB)
-        if not cursor.execute("SHOW TABLES LIKE 'SyncRuns'"):
-            for fn in sorted(glob.glob(os.path.join('sql','*.sql'))):
-                print(f'\tExecuting {fn}...')
-                with open(fn,'br') as f:
-                        for sql in f.read().decode('utf-8').split('\r\n\r\n'):
-                            sql = sql.strip()
-                            if sql:
-                                cursor.execute(sql)
-
         # We are starting from the modification time of the last received record
         cursor.execute('select max(RecModified) as startdate from StyleStream;')
         data = cursor.fetchone()
