@@ -13,7 +13,7 @@ utils.mkdirs()
 while True:
     try:
         log('Init Teamworker')
-        teamworker.init()
+        teamworker.init_tw()
         log('Run Teamworker')
         teamworker.import_styles()
     except Exception as e:
@@ -26,7 +26,7 @@ while True:
 
     try:
         log('Init Shopifier')
-        shopifier.init()
+        shopifier.init_sf()
         log('Run Shopifier')
         shopifier.export_styles()
     except Exception as e:

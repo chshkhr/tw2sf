@@ -43,7 +43,7 @@ class PySvc(win32serviceutil.ServiceFramework):
             while rc != win32event.WAIT_OBJECT_0:
                 try:
                     log('Init Teamworker')
-                    teamworker.init()
+                    teamworker.init_tw()
                     log('Run Teamworker')
                     teamworker.import_styles()
                 except Exception as e:
@@ -56,7 +56,7 @@ class PySvc(win32serviceutil.ServiceFramework):
 
                 try:
                     log('Init Shopifier')
-                    shopifier.init()
+                    shopifier.init_sf()
                     log('Run Shopifier')
                     shopifier.export_styles()
                 except Exception as e:

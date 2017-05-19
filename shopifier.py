@@ -29,7 +29,7 @@ shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
 err_count = 0  # total number of errors from first run (persistent)
 db = None
 
-def init():
+def init_sf():
     # Shopify init
     shopify.ShopifyResource.set_site(shop_url)
     shopify.Session.setup(api_key=API_KEY, secret=SHARED_SECRET)
@@ -293,7 +293,7 @@ def cleanup():
 
 if __name__ == '__main__':
 
-    init()
+    init_sf()
 
     # Command line arguments processing
     parser = argparse.ArgumentParser(description='Sending Styles from MySql to Shopify ' + shop_url)

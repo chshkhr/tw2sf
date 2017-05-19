@@ -14,15 +14,16 @@ import utils
 # Teamwork
 TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-A507F55A03D6'
 TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
+TW_LOCATIONS = '7A2151DB-EFC2-49BD-913B-66EEE0DF38C1|CA2E5100-1853-419C-9661-F11D6CFC4FB1'  # for RCA
 
 # Global
 start_date = dateutil.parser.parse('2017-01-24 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
-start_date_ = None  # start_date_ = start_date + shift_ms
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
 skip = 0
 max_wait = 60  # Max waiting time for Successfull status (seconds)
+
 
 apiDocumentId = None
 syncRunsID = None
@@ -81,14 +82,11 @@ def get_xml_root(req, apitype):
         return xml_root
 
 
-def import_styles_chunk(req):
+def process_styles_xml(xml_root):
     # Get XML from Teamwork and Save to MySqL
-    global chunk_num, skip, apiDocumentId, syncRunsID, start_date, start_date_
+    global chunk_num, skip, apiDocumentId, syncRunsID
     global db, last_response
-    chunk_num += 1
     done = 0
-
-    print(f'\tRequesting Styles modified from {start_date_}. Chunk #{chunk_num}...')
 
     # Get syncRunsID of not finished session or create the new one
     if chunk_num == 1:  # means First Run
@@ -106,8 +104,6 @@ def import_styles_chunk(req):
                 data = cursor.fetchone()
                 syncRunsID = data['SyncRunsID']
 
-    # Get Style XML from Teamwork
-    xml_root = get_xml_root(req, 'inventory-export')
 
     if db and xml_root and apiDocumentId:
         try:
@@ -164,13 +160,12 @@ def import_styles_chunk(req):
     return done
 
 
-def init(drop=False):
-    global start_date, start_date_, db
-    global apiDocumentId
-
+def init_tw(drop=False):
+    # prepare folder for log and xml
     utils.mkdirs(drop)
 
     # MySql Init
+    global db
     db = twmysql.get_db()
 
     if drop:
@@ -179,6 +174,47 @@ def init(drop=False):
                 sql = f'DROP TABLE IF EXISTS {t};'
                 print('\t', sql)
                 cursor.execute(sql)
+
+
+api_request_prefix = ('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+                      'xmlns="http://microsoft.com/wsdl/types/"><Request>')
+api_request_sufix = '</Request></ApiDocument>'
+
+
+def multy_chunk_import(api_req, api_type, process_xml_function, onechunk=False):
+    global apiDocumentId, chunk_size, chunk_num, skip
+    apiDocumentId = None
+    chunk_num = 1
+
+    # Main Loop
+    if not onechunk:
+        print(f'\t\tChunk #{chunk_num}...')
+    xml_root = get_xml_root(api_request_prefix +
+                            api_req +
+                            f'<Top>{chunk_size}</Top>' +
+                            api_request_sufix,
+                            api_type)
+    if apiDocumentId is None:
+        print("\tCan't get 'Successful' Status from Server!")
+    else:
+        done = process_xml_function(xml_root)
+        if not onechunk:
+            skip = done
+            while db and done > 0:
+                chunk_num += 1
+                print(f'\tChunk #{chunk_num}...')
+                xml_root = get_xml_root(api_request_prefix +
+                                           f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
+                                           f'<Top>{chunk_size}</Top>'
+                                           f'<Skip>{skip}</Skip>' +
+                                          api_request_sufix,
+                                        api_type)
+                done = process_xml_function(xml_root)
+                skip += done
+
+
+def import_styles():
+    global db, start_date
 
     with db.cursor() as cursor:
         # Execute SQL scripts from .\SQL folder (if SyncRuns table not found in DB)
@@ -200,39 +236,51 @@ def init(drop=False):
                 start_date += datetime.timedelta(milliseconds=shift_ms)
         start_date_ = start_date.isoformat(timespec='milliseconds')
 
+    print(f'\tRequesting Styles modified from {start_date_}.')
+    multy_chunk_import('<Filters>'
+                       f'<Filter Field="RecModified" Operator="Greater than or equal" Value="{start_date_}" />'
+                       '</Filters>'
+                       '<SortDescriptions>'
+                       '<SortDescription Name="RecModified" Direction="Ascending" />'
+                       '</SortDescriptions>',
+                       'inventory-export',
+                       process_styles_xml)
 
-def import_styles():
-    global start_date_, apiDocumentId, chunk_size, chunk_num, skip
-    apiDocumentId = None
-    chunk_num = 0
-    # Main Loop
-    done = import_styles_chunk('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
-                               'xmlns="http://microsoft.com/wsdl/types/">'
-                               '<Request>'
-                               '<Filters>'
-                               '<Filter Field="RecModified" Operator="Greater than or equal" '
-                               f'Value="{start_date_}" />'
-                               '</Filters>'
-                               '<SortDescriptions>'
-                               '<SortDescription Name="RecModified" Direction="Ascending" />'
-                               '</SortDescriptions>'
-                               f'<Top>{chunk_size}</Top>'
-                               '</Request>'
-                               '</ApiDocument>')
-    if apiDocumentId is None:
-        print("\tCan't get 'Successful' Status from Server!")
-    else:
-        skip = done
-        while db and done > 0:
-            done = import_styles_chunk(f'<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
-                                       'xmlns="http://microsoft.com/wsdl/types/">'
-                                       '<Request>'
-                                       f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
-                                       f'<Top>{chunk_size}</Top>'
-                                       f'<Skip>{skip}</Skip>'
-                                       '</Request>'
-                                       '</ApiDocument>')
-            skip += done
+
+def process_rca_xml(xml_root):
+    pass
+
+
+def import_rca_by_item(itemId):
+    print(f'\tRequesting RCA for Item {itemId}.')
+    multy_chunk_import('<Settings>'
+                       '<ItemIdentifierSetting>Id</ItemIdentifierSetting>'
+                       '<LocationIdentifierSetting>Id</LocationIdentifierSetting>'
+                       '</Settings>'
+                       '<Filters>'
+                       f'<Filter Field="ItemId" Operator="Equal" Value="{itemId}" />'
+                       f'<Filter Field="LocationId" Operator="Contains" Value="{TW_LOCATIONS}" />'
+                       '</Filters>',
+                       'location-quantity-export',
+                       process_rca_xml,
+                       True)
+
+
+def import_rca_by_date(date):
+    print(f'\tRequesting RCA for all Items starting from {date}.')
+    multy_chunk_import('<Settings>'
+                       '<ItemIdentifierSetting>Id</ItemIdentifierSetting>'
+                       '<LocationIdentifierSetting>Id</LocationIdentifierSetting>'
+                       '</Settings>'
+                       '<Filters>'
+                       f'<Filter Field="RecModified" Operator="Greater than or equal" Value="{date}" />'
+                       f'<Filter Field="LocationId" Operator="Contains" Value="{TW_LOCATIONS}" />'
+                       '</Filters>'
+                       '<SortDescriptions>'
+                       '<SortDescription Name="RecModified" Direction="Ascending" />'
+                       '</SortDescriptions>',
+                       'location-quantity-export',
+                       process_rca_xml)
 
 
 if __name__ == '__main__':
@@ -249,7 +297,7 @@ if __name__ == '__main__':
         if args.start is not None:
             start_date = args.start
 
-        init(args.drop)
+        init_tw(args.drop)
 
         import_styles()
 
