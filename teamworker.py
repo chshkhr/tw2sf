@@ -32,7 +32,6 @@ last_response = None
 
 
 def save_last_response(suffix=''):
-    global chunk_num
     # Saving XML Response content to file
     if last_response:
         try:

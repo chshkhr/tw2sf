@@ -64,9 +64,9 @@ def export_styles():
                        'coalesce(s.ProductID,'
                        '(SELECT ProductID FROM Styles WHERE StyleID=s.StyleID),'
                        '(SELECT ProductID FROM StyleStream WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
-                       #DEBUG 'FROM StyleStream s '
+                       'FROM StyleStream s '
                        'WHERE s.ProductSent IS NULL '
-                       'WHERE s.ID BETWEEN 170 AND 190 '
+                       #DEBUG 'WHERE s.ID BETWEEN 170 AND 190 '
                        'ORDER BY s.RecModified, s.ID')
         print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Qty', 'Title', 'ErrMes')))
         repeat = 0
