@@ -19,6 +19,7 @@ SHOP_NAME = 'vicrom'
 MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
 # Only these channels will be transfered to Shopify
 CHANNELS = ['store','Amazon','Magento']
+PUBLISH_ZERO_QTY = False
 
 # Global
 recreate = False  # True - Delete existent product and create the new one, False - update old products
@@ -46,7 +47,7 @@ def export_styles():
     filtered = 0
     global tot_count, err_count, db
 
-    # We'll send only the last version of each style (ErrCode=-2 means this Style is Obsolete)
+    # We'll send only the last version of each style (ErrCode=-2 means this Style Version is Obsolete)
     with db.cursor() as cursor:
         cursor.execute('UPDATE teamwork.StyleStream s1 ' 
                        'JOIN teamwork.StyleStream s2 ON s1.StyleNo=s2.StyleNo '
@@ -60,12 +61,14 @@ def export_styles():
     # Copy Styles to Items!
     with db.cursor() as cursor:
         cursor.execute('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
-                       'coalesce(s.ProductID,(SELECT ProductID FROM StyleStream WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
-                       'FROM StyleStream s '
+                       'coalesce(s.ProductID,'
+                       '(SELECT ProductID FROM Styles WHERE StyleID=s.StyleID),'
+                       '(SELECT ProductID FROM StyleStream WHERE ID<S.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
+                       #DEBUG 'FROM StyleStream s '
                        'WHERE s.ProductSent IS NULL '
-                       #DEBUG 'WHERE s.ID BETWEEN 130 AND 140 '
+                       'WHERE s.ID BETWEEN 170 AND 190 '
                        'ORDER BY s.RecModified, s.ID')
-        print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Title', 'ErrMes')))
+        print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Qty', 'Title', 'ErrMes')))
         repeat = 0
         while db:
             if repeat > 0:
@@ -150,6 +153,7 @@ def export_styles():
                 # Copy Items to Variants
                 items = style.iter('Item')
                 variants = []
+                style_qty = 0;
                 for item in items:
                     varcount += 1
                     variant = dict()
@@ -163,16 +167,30 @@ def export_styles():
                                        item.find('Attribute2').text,
                                        item.find('Attribute3').text,
                                        ))) or styleno + ' Empty CustomText5+Attribute1+Attribute2+Attribute3'
-                    variant['ItemId'] = item.find('ItemId').text
+                    itemid = item.find('ItemId').text
+                    variant['ItemId'] = itemid
 
                     variant['price'] = float(item.find('BasePrice').text)
+
+                    variant['inventory_management'] = 'shopify'
+                    variant['inventory_policy'] = 'continue'
+                    variant['inventory_quantity'] = 0
+                    with db.cursor() as qry:
+                        qry.execute('SELECT Qty FROM Items WHERE ItemId = %s',(itemid,))
+                        val = qry.fetchone()
+                        if val:
+                            var_qty = val['Qty']
+                            if var_qty and var_qty>0:
+                                var_qty = int(var_qty)
+                                variant['inventory_quantity'] = var_qty
+                                style_qty += var_qty
                     variants.append(variant)
-                product.variants = variants
 
-                if not channel_active:
-                    product.published_at = None
-
-                product.save()
+                if PUBLISH_ZERO_QTY or style_qty>0 or oldProductID:  # new with qty>0 or old
+                    product.variants = variants
+                    if not channel_active or style_qty==0:
+                        product.published_at = None
+                    product.save()
 
             except (KeyboardInterrupt, SystemExit) as e:
                 db = None
@@ -208,11 +226,14 @@ def export_styles():
                         done += 1
                     if not channel_active:
                         err_code = -3  # ErrCode=-3 means this Style belongs to inactive Channel
+                    if not PUBLISH_ZERO_QTY and style_qty == 0:
+                        err_code = -4  # ErrCode=-4 means total style qty equals zero
+                        filtered += 1
                     if product:
                         productID = product.id
                     print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), str(err_code),
                                              styleno, str(oldProductID or 'New-'+str(productID)),
-                                             modif_time,
+                                             modif_time, str(style_qty),
                                              title,
                                              str(err_mes or ''))))
                     with db.cursor() as upd:
@@ -249,8 +270,9 @@ def export_styles():
                 # Save mappings Items to Variants:
                 with db.cursor() as ins:
                     for index, variant in enumerate(product.variants):
-                        ins.execute('INSERT INTO Items (ItemId, StyleId, VariantID) VALUES (%s, %s, %s)'
-                                    ' ON DUPLICATE KEY UPDATE StyleId = %s, VariantID = %s',
+                        ins.execute('INSERT INTO Items (ItemId, StyleId, VariantID, QtySent) '
+                                    'VALUES (%s, %s, %s, CURRENT_TIMESTAMP(3)) '
+                                    'ON DUPLICATE KEY UPDATE StyleId = %s, VariantID = %s',
                                     (variants[index]['ItemId'],  # variant['ItemId'] lost after product.save()
                                      styleid,
                                      variant.id,

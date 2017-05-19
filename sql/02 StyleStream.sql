@@ -12,7 +12,11 @@ CREATE TABLE IF NOT EXISTS StyleStream (
   OldProductID BIGINT, # Null - New, OldProductID=ProductID - Updated, OldProductID<>ProductID - ReCreated
   VariantsCount INT,
   ErrMes TEXT,  # Null if the product sent successfully
-  ErrCode INT DEFAULT 0,  # -1 - Exception, >200 https://help.shopify.com/api/getting-started/response-status-codes
+  ErrCode INT DEFAULT 0,  # -4 total style qty equals zero while PUBLISH_ZERO_QTY=False
+                          # -3 Style belongs to inactive Channel
+                          # -2 Style Version is Obsolete
+                          # -1 Exception
+                          # >200 - API err https://help.shopify.com/api/getting-started/response-status-codes
   RetryCount INT DEFAULT 0,
   PRIMARY KEY (ID),
   FOREIGN KEY fkStyleStream_SyncRuns(SyncRunsID) REFERENCES SyncRuns(ID) ON DELETE CASCADE
@@ -32,14 +36,28 @@ CREATE INDEX ixStyleStream_StyleNo ON StyleStream(StyleNo);
 # select * ... where ErrCode=429
 CREATE INDEX ixStyleStream_ErrCode ON StyleStream(ErrCode);
 
-CREATE TRIGGER trbuStyleStream_ProductID
+CREATE TRIGGER traiStyleStream_ProductID
+AFTER INSERT ON StyleStream
+FOR EACH ROW
+BEGIN
+  IF NEW.StyleId IS NOT NULL THEN
+    INSERT INTO Styles (StyleId,ProductID) VALUES (NEW.StyleId,NEW.ProductID)
+    ON DUPLICATE KEY UPDATE ProductID = NEW.ProductID;
+    #UPDATE Items SET Qty = NULL WHERE StyleID = NEW.StyleId;
+  END IF;
+END;
+
+CREATE TRIGGER trauStyleStream_ProductID
 AFTER UPDATE ON StyleStream
 FOR EACH ROW
 BEGIN
-  IF NEW.StyleId IS NOT NULL AND NEW.ProductID IS NOT NULL THEN
+  IF NEW.StyleId IS NOT NULL THEN
     INSERT INTO Styles (StyleId,ProductID) VALUES (NEW.StyleId,NEW.ProductID)
     ON DUPLICATE KEY UPDATE ProductID = NEW.ProductID;
+    #UPDATE Items SET Qty = NULL WHERE StyleID = NEW.StyleId;
   END IF;
 END;
+
+
 
 

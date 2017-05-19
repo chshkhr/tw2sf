@@ -1,9 +1,20 @@
 CREATE TABLE IF NOT EXISTS Items (
   ItemId VARCHAR(50) NOT NULL,
-  StyleId VARCHAR(50) NOT NULL,
-  VariantID BIGINT NOT NULL,
+  StyleId VARCHAR(50),
+  VariantID BIGINT,
+  Qty NUMERIC(15,4) NULL,  #  Qty - CommittedQty - DamagedQty
+  QtySent TIMESTAMP(3) NULL,
   PRIMARY KEY (ItemId),
   FOREIGN KEY fkItems_Styles(StyleId) REFERENCES Styles(StyleId) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+
+CREATE TRIGGER trbuItems_Qty
+BEFORE UPDATE ON Items
+FOR EACH ROW
+BEGIN
+  IF NEW.Qty IS NULL THEN
+    SET NEW.QtySent = NULL;
+  END IF;
+END;
 
