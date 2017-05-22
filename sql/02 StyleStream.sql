@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS StyleStream (
   InsDateTime TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
   StyleNo VARCHAR(50) NOT NULL,
   StyleId VARCHAR(50),
-  RecModified TIMESTAMP(3) NOT NULL,
+  RecModified TIMESTAMP(3) NULL,
   Title VARCHAR(255),
   StyleXml LONGTEXT NOT NULL,
   ProductID BIGINT, # If ProductID is not null - Product sent successfully
@@ -12,7 +12,8 @@ CREATE TABLE IF NOT EXISTS StyleStream (
   OldProductID BIGINT, # Null - New, OldProductID=ProductID - Updated, OldProductID<>ProductID - ReCreated
   VariantsCount INT,
   ErrMes TEXT,  # Null if the product sent successfully
-  ErrCode INT DEFAULT 0,  # -4 total style qty equals zero while PUBLISH_ZERO_QTY=False
+  ErrCode INT DEFAULT 0,  # -5 Max number of variants exceeded! Partially sent!
+                          # -4 total style qty equals zero while PUBLISH_ZERO_QTY=False
                           # -3 Style belongs to inactive Channel
                           # -2 Style Version is Obsolete
                           # -1 Exception
@@ -32,6 +33,8 @@ CREATE INDEX ixStyleStream_Product ON StyleStream(ProductID, ProductSent);
 
 # select count(*) ... group by StyleNo
 CREATE INDEX ixStyleStream_StyleNo ON StyleStream(StyleNo);
+
+CREATE INDEX ixStyleStream_StyleId ON StyleStream(StyleId);
 
 # select * ... where ErrCode=429
 CREATE INDEX ixStyleStream_ErrCode ON StyleStream(ErrCode);

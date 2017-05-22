@@ -18,7 +18,7 @@ TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
                 'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
 
 # Global
-start_date = dateutil.parser.parse('2017-05-01 00:00:00')  # used on first run, get from DB later
+start_date = dateutil.parser.parse('2017-04-01 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
@@ -38,7 +38,7 @@ def save_last_response(suffix=''):
     if need_save_responses and last_response:
         try:
             fn = os.path.join(utils._DIR, 'xml', utils.time_str()+suffix+str(chunk_num)+'.xml')
-            print('\t\tSaving Response to', fn, '...')
+            print('\t\t\tSaving Response to', fn, '...')
             with open(fn, 'bw') as f:
                 f.write(last_response.content)
         except:
@@ -138,15 +138,15 @@ def process_styles_xml(xml_root):
 
                         start_date = style.find('RecModified').text  # next time we'll start from this date (next request)
                         styleid = style.find('StyleId').text
-                        print('\t\t', skip+done+1, start_date, styleno, styleid, title)
+                        print('\t\t\t', skip+done+1, start_date, styleno, styleid, title)
                         cursor.execute('INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, StyleXml) '
                                        'VALUES (%s, %s, %s, %s, %s, %s)',
                                        (syncRunsID, styleno, styleid, start_date, title, ET.tostring(style), ))
                     except Exception as e:
-                        print('\t\t\t', e)
+                        print('\t\t\t\t', e)
                     finally:
                         done += 1
-                print(f'\t{done} Styles found in the last Response and saved to DB {twmysql._DB}')
+                print(f'\t\t\tStyles received: {done}. Saved to DB "{twmysql._DB}"')
 
                 # Write current time and counters on each run
                 cursor.execute('UPDATE SyncRuns SET '                      
@@ -192,8 +192,13 @@ def init_tw(drop=False):
             for fn in sorted(glob.glob(os.path.join('sql','*.sql'))):
                 print(f'\tExecuting {fn}...')
                 with open(fn,'br') as f:
-                        for sql in f.read().decode('utf-8').split('\r\n\r\n'):
+                        s = f.read().decode('utf-8')
+                        delim = '\r\n\r\n'
+                        if s.find(delim) == -1:
+                            delim = '\n\n'
+                        for sql in s.split(delim):
                             sql = sql.strip()
+                            #print(sql)
                             if sql:
                                 cursor.execute(sql)
 
@@ -292,21 +297,20 @@ def process_rta_xml(xml_root):
 
     for itemid in rtas:
         with db.cursor() as cursor:
-            cursor.execute('INSERT INTO Items (ItemId, Qty, LocCount, QtySent, ApiRequestTime) '
+            cursor.execute('INSERT INTO Items (ItemId, Qty, LocCount, QtySent, QtyApiRequestTime) '
                            'VALUES (%s, %s, %s, NULL, %s) '
                            'ON DUPLICATE KEY UPDATE '
                            'QtySent = NULL, '
-                           'Qty = case when ApiRequestTime = %s then Qty else 0 end + %s, '
-                           'LocCount = case when ApiRequestTime = %s then LocCount else 0 end + %s, '
-                           'ApiRequestTime = %s',
+                           'Qty = case when QtyApiRequestTime = %s then Qty else 0 end + %s, '
+                           'LocCount = case when QtyApiRequestTime = %s then LocCount else 0 end + %s, '
+                           'QtyApiRequestTime = %s',
                            (itemid, rtas[itemid][0], rtas[itemid][1], apiRequestTime,
                             apiRequestTime, rtas[itemid][0],
                             apiRequestTime, rtas[itemid][1],
                             apiRequestTime,
                             ))
 
-    #done = len(rtas)
-    print(f'\t\t{done} RTA values calculated from the last Response and saved to DB {twmysql._DB}')
+    print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{twmysql._DB}"')
     if done > 0:
         save_last_response('-rta')
     return done
@@ -329,7 +333,7 @@ def import_rta_by_item(itemId):
                        )
 
 
-def import_rta_by_date(date, run_by_item=False):
+def import_rta_by_date(date, run_by_item_at_the_end=False):
     print(f'\tRequesting RTA for all Items starting from {date}.')
     multy_chunk_import('<Settings>'
                        '<ItemIdentifierSetting>TeamworkId</ItemIdentifierSetting>'
@@ -343,7 +347,7 @@ def import_rta_by_date(date, run_by_item=False):
                        'location-quantity-export',
                        process_rta_xml)
 
-    if run_by_item:
+    if run_by_item_at_the_end:
         global db
         with db.cursor() as cursor:
             cursor.execute('select ItemId from Items where LocCount < %s and Qty is not Null',(loc_count,))
@@ -370,9 +374,9 @@ if __name__ == '__main__':
 
         init_tw(args.drop)
 
-        import_rta_by_item('9E925D6D-6398-4B29-828C-1A5BE8600F00')
+        #import_rta_by_item('9E925D6D-6398-4B29-828C-1A5BE8600F00')
 
-        import_rta_by_date(start_date)
+        import_rta_by_date(dateutil.parser.parse('2000-01-01 00:00:00'))
 
         import_styles()
 

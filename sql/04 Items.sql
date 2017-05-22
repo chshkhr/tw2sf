@@ -5,11 +5,14 @@ CREATE TABLE IF NOT EXISTS Items (
   Qty NUMERIC(15,4) NULL,  #  Qty - CommittedQty - DamagedQty
   LocCount INT,
   QtySent TIMESTAMP(3) NULL,
-  ApiRequestTime TIMESTAMP(3) NOT NULL,
+  QtyApiRequestTime TIMESTAMP(3) NULL,
   PRIMARY KEY (ItemId),
   FOREIGN KEY fkItems_Styles(StyleId) REFERENCES Styles(StyleId) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+CREATE INDEX ixItems_QtyApiRequestTime ON Items(QtyApiRequestTime);
+
+CREATE INDEX ixItems_QtySent ON Items(QtySent);
 
 CREATE TRIGGER trbuItems_Qty
 BEFORE UPDATE ON Items
