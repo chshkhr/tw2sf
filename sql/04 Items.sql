@@ -3,7 +3,9 @@ CREATE TABLE IF NOT EXISTS Items (
   StyleId VARCHAR(50),
   VariantID BIGINT,
   Qty NUMERIC(15,4) NULL,  #  Qty - CommittedQty - DamagedQty
+  LocCount INT,
   QtySent TIMESTAMP(3) NULL,
+  ApiRequestTime TIMESTAMP(3) NOT NULL,
   PRIMARY KEY (ItemId),
   FOREIGN KEY fkItems_Styles(StyleId) REFERENCES Styles(StyleId) ON DELETE CASCADE
 ) DEFAULT CHARSET=utf8 COLLATE=utf8_bin;

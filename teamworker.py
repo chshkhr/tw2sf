@@ -14,26 +14,28 @@ import utils
 # Teamwork
 TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-A507F55A03D6'
 TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
-TW_LOCATIONS = '7A2151DB-EFC2-49BD-913B-66EEE0DF38C1|CA2E5100-1853-419C-9661-F11D6CFC4FB1'  # for RTA
+TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
+                'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
 
 # Global
-start_date = dateutil.parser.parse('2016-01-01 00:00:00')  # used on first run, get from DB later
+start_date = dateutil.parser.parse('2017-05-01 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
 skip = 0
 max_wait = 60  # Max waiting time for Successfull status (seconds)
 
-
 apiDocumentId = None
+apiRequestTime = None
 syncRunsID = None
 db = None
 last_response = None
+need_save_responses = True
 
 
 def save_last_response(suffix=''):
     # Saving XML Response content to file
-    if last_response:
+    if need_save_responses and last_response:
         try:
             fn = os.path.join(utils._DIR, 'xml', utils.time_str()+suffix+str(chunk_num)+'.xml')
             print('\t\tSaving Response to', fn, '...')
@@ -51,7 +53,7 @@ def get_root_from_response(response):
 
 def get_xml_root(req, apitype):
     # Get XML by api-type
-    global apiDocumentId, last_response
+    global apiDocumentId, apiRequestTime, last_response
     xml_root = None
     last_response = None
     try:
@@ -73,8 +75,10 @@ def get_xml_root(req, apitype):
             count += 1
             if count > max_wait // wait:
                 break
-        if status == 'Successful':
+        if apiDocumentId is None and status == 'Successful':
             apiDocumentId = a  # None otherwise
+        if 'apiRequestTime' in xml_root.attrib:
+            apiRequestTime = xml_root.attrib['apiRequestTime']
     except (KeyboardInterrupt, SystemExit) as e:
         db = None
         return None
@@ -127,9 +131,12 @@ def process_styles_xml(xml_root):
                 # Copy Styles to Items
                 for style in xml_root.iter('Style'):
                     try:
-                        title = style.find('CustomText5').text or style.find('Description4').text
-                        start_date = style.find('RecModified').text  # next time we'll start from this date (next request)
                         styleno = style.find('StyleNo').text
+                        title = (style.find('CustomText5').text or
+                                 style.find('Description4').text or
+                                 styleno)
+
+                        start_date = style.find('RecModified').text  # next time we'll start from this date (next request)
                         styleid = style.find('StyleId').text
                         print('\t\t', skip+done+1, start_date, styleno, styleid, title)
                         cursor.execute('INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, StyleXml) '
@@ -197,15 +204,15 @@ api_request_suffix = '</Request></ApiDocument>'
 
 
 def multy_chunk_import(api_req, api_type, process_xml_function, onechunk=False):
-    global apiDocumentId, chunk_size, chunk_num, skip
+    global apiDocumentId, apiRequestTime, chunk_size, chunk_num, skip
     apiDocumentId = None
+    apiRequestTime = None
     chunk_num = 1
     skip = 0
     done = 0
+    total_rec = '?'
 
     # Main Loop
-    if not onechunk:
-        print(f'\t\tChunk #{chunk_num}...')
     req = (api_request_prefix +
            api_req +
            f'<Top>{chunk_size}</Top>' +
@@ -215,12 +222,17 @@ def multy_chunk_import(api_req, api_type, process_xml_function, onechunk=False):
     if apiDocumentId is None:
         print("\tCan't get 'Successful' Status from Server!")
     else:
-        done = process_xml_function(xml_root)
+        if 'TotalRecords' in xml_root.attrib:
+            total_rec = int(xml_root.attrib['TotalRecords'])
+            if not onechunk:
+                print(f'\t\tChunk #{chunk_num} {skip}/{total_rec}...')
+        if process_xml_function:
+            done = process_xml_function(xml_root)
         if not onechunk:
             skip = done
-            while db and done and done > 0:
+            while db and done and done > 0 and (total_rec == '?' or skip < total_rec):
                 chunk_num += 1
-                print(f'\t\tChunk #{chunk_num}...')
+                print(f'\t\tChunk #{chunk_num} {skip}/{total_rec}...')
                 req = (api_request_prefix +
                        f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
                        f'<Top>{chunk_size}</Top>'
@@ -256,64 +268,90 @@ def import_styles():
                        process_styles_xml)
 
 
+locs = '|'.join(TW_LOCATIONS)
+loc_count = len(TW_LOCATIONS)
+
 def process_rta_xml(xml_root):
     # Copy Styles to Items
     rtas = dict()
+    done = 0
     for rta in xml_root.iter('LocationQuantity'):
         try:
+            done += 1
             itemid = rta.find('ItemIdentifier').text
             qty = (float(rta.find('Qty').text) -
                    float(rta.find('CommittedQty').text) -
                    float(rta.find('DamagedQty').text))
             if itemid in rtas:
-                rtas[itemid] += qty
+                rtas[itemid][0] += qty
+                rtas[itemid][1] += 1
             else:
-                rtas[itemid] = qty
+                rtas[itemid] = [qty, 1]  # second - location counter
         except Exception as e:
             print('\t\t\t', e)
 
     for itemid in rtas:
         with db.cursor() as cursor:
-            cursor.execute('INSERT INTO Items (ItemId, Qty, QtySent) VALUES (%s, %s, NULL) '
-                           'ON DUPLICATE KEY UPDATE Qty = %s, QtySent = NULL',
-                           (itemid, rtas[itemid], rtas[itemid]))
+            cursor.execute('INSERT INTO Items (ItemId, Qty, LocCount, QtySent, ApiRequestTime) '
+                           'VALUES (%s, %s, %s, NULL, %s) '
+                           'ON DUPLICATE KEY UPDATE '
+                           'QtySent = NULL, '
+                           'Qty = case when ApiRequestTime = %s then Qty else 0 end + %s, '
+                           'LocCount = case when ApiRequestTime = %s then LocCount else 0 end + %s, '
+                           'ApiRequestTime = %s',
+                           (itemid, rtas[itemid][0], rtas[itemid][1], apiRequestTime,
+                            apiRequestTime, rtas[itemid][0],
+                            apiRequestTime, rtas[itemid][1],
+                            apiRequestTime,
+                            ))
 
-
-
-    done = len(rtas)
+    #done = len(rtas)
     print(f'\t\t{done} RTA values calculated from the last Response and saved to DB {twmysql._DB}')
-    if done:
+    if done > 0:
         save_last_response('-rta')
     return done
 
 
 def import_rta_by_item(itemId):
     print(f'\tRequesting RTA for Item {itemId}.')
+
     multy_chunk_import('<Settings>'
                        '<ItemIdentifierSetting>TeamworkId</ItemIdentifierSetting>'
                        '<LocationIdentifierSetting>TeamworkId</LocationIdentifierSetting>'
                        '</Settings>'
                        '<Filters>'
                        f'<Filter Field="ItemId" Operator="Equal" Value="{itemId}" />'
-                       f'<Filter Field="LocationId" Operator="Contains" Value="{TW_LOCATIONS}" />'
+                       f'<Filter Field="LocationId" Operator="Contains" Value="{locs}" />'
                        '</Filters>',
                        'location-quantity-export',
-                       process_rta_xml,
-                       True)
+                       process_rta_xml
+                       #,True
+                       )
 
 
-def import_rta_by_date(date):
+def import_rta_by_date(date, run_by_item=False):
     print(f'\tRequesting RTA for all Items starting from {date}.')
     multy_chunk_import('<Settings>'
                        '<ItemIdentifierSetting>TeamworkId</ItemIdentifierSetting>'
                        '<LocationIdentifierSetting>TeamworkId</LocationIdentifierSetting>'
                        '</Settings>'
                        '<Filters>'
+                       #f'<Filter Field="ItemId" Operator="Equal" Value="9E925D6D-6398-4B29-828C-1A5BE8600F00" />'
                        f'<Filter Field="RecModified" Operator="Greater than or equal" Value="{date}" />'
-                       f'<Filter Field="LocationId" Operator="Contains" Value="{TW_LOCATIONS}" />'
+                       f'<Filter Field="LocationId" Operator="Contains" Value="{locs}" />'
                        '</Filters>',
                        'location-quantity-export',
                        process_rta_xml)
+
+    if run_by_item:
+        global db
+        with db.cursor() as cursor:
+            cursor.execute('select ItemId from Items where LocCount < %s and Qty is not Null',(loc_count,))
+            while db:
+                row = cursor.fetchone()
+                if not row:
+                    break
+                import_rta_by_item(row['ItemId'])
 
 
 if __name__ == '__main__':
@@ -332,11 +370,12 @@ if __name__ == '__main__':
 
         init_tw(args.drop)
 
+        import_rta_by_item('9E925D6D-6398-4B29-828C-1A5BE8600F00')
+
         import_rta_by_date(start_date)
 
         import_styles()
 
-        # import_rta_by_item('EA8C2165-96A1-4A62-95EF-03A49CC335F2')
 
     finally:
         if db:

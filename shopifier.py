@@ -109,10 +109,12 @@ def export_styles():
                 filtered += 1
 
             try:
-                title = style.find('CustomText5').text or style.find('Description4').text
+                styleno = style.find('StyleNo').text
+                title = (style.find('CustomText5').text or
+                         style.find('Description4').text or
+                         styleno)
 
                 modif_time = style.find('RecModified').text
-                styleno = style.find('StyleNo').text
                 styleid = style.find('StyleId').text
                 oldProductID = row['ProductID']
                 if oldProductID:
@@ -165,7 +167,7 @@ def export_styles():
                                        style.find('CustomText5').text,
                                        item.find('Attribute1').text,
                                        item.find('Attribute2').text,
-                                       item.find('Attribute3').text,
+                                       #item.find('Attribute3').text,
                                        ))) or styleno + ' Empty CustomText5+Attribute1+Attribute2+Attribute3'
                     itemid = item.find('ItemId').text
                     variant['ItemId'] = itemid
@@ -272,7 +274,10 @@ def export_styles():
                     for index, variant in enumerate(product.variants):
                         ins.execute('INSERT INTO Items (ItemId, StyleId, VariantID, QtySent) '
                                     'VALUES (%s, %s, %s, CURRENT_TIMESTAMP(3)) '
-                                    'ON DUPLICATE KEY UPDATE StyleId = %s, VariantID = %s',
+                                    'ON DUPLICATE KEY UPDATE '
+                                    'StyleId = %s, '
+                                    'VariantID = %s, '
+                                    'QtySent = CURRENT_TIMESTAMP(3)',
                                     (variants[index]['ItemId'],  # variant['ItemId'] lost after product.save()
                                      styleid,
                                      variant.id,
@@ -299,6 +304,8 @@ def cleanup():
         cursor.execute('UPDATE SyncRuns SET '
                        'DstProcessedEntities = 0, '
                        'DstErrorCount = 0;')
+        cursor.execute('UPDATE Items SET '
+                       'QtySent = Null')
 
     # Delete ALL Products on Shopify
     products = True
