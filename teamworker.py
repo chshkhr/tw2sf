@@ -18,7 +18,7 @@ TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
                 'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
 
 # Global
-start_date = dateutil.parser.parse('2017-04-01 00:00:00')  # used on first run, get from DB later
+start_date = dateutil.parser.parse('2000-01-01 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
@@ -139,9 +139,24 @@ def process_styles_xml(xml_root):
                         start_date = style.find('RecModified').text  # next time we'll start from this date (next request)
                         styleid = style.find('StyleId').text
                         print('\t\t\t', skip+done+1, start_date, styleno, styleid, title)
-                        cursor.execute('INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, StyleXml) '
-                                       'VALUES (%s, %s, %s, %s, %s, %s)',
-                                       (syncRunsID, styleno, styleid, start_date, title, ET.tostring(style), ))
+
+                        cursor.execute('INSERT IGNORE INTO Styles (StyleId) '
+                                       'VALUES (%s) ',
+                                       (styleid,))
+
+                        items = style.iter('Item')
+                        var_count = 0
+                        for item in items:
+                            var_count += 1
+                            cursor.execute('INSERT IGNORE INTO Items (ItemId, StyleId) '
+                                           'VALUES (%s, %s) ',
+                                           (item.find('ItemId').text,
+                                            styleid,))
+
+                        cursor.execute('INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, VariantsCount, StyleXml) '
+                                       'VALUES (%s, %s, %s, %s, %s, %s, %s)',
+                                       (syncRunsID, styleno, styleid, start_date, title, var_count, ET.tostring(style), ))
+
                     except Exception as e:
                         print('\t\t\t\t', e)
                     finally:
@@ -376,9 +391,9 @@ if __name__ == '__main__':
 
         #import_rta_by_item('9E925D6D-6398-4B29-828C-1A5BE8600F00')
 
-        import_rta_by_date(dateutil.parser.parse('2000-01-01 00:00:00'))
-
         import_styles()
+
+        import_rta_by_date(dateutil.parser.parse('2000-01-01 00:00:00'))
 
 
     finally:

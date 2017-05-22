@@ -47,7 +47,7 @@ def export_style(row, publish_zero_qty=False):
     oldProductID = row['ProductID']
 
     global done, filtered
-    global tot_count, err_count
+    global tot_count, err_count, db
     repeat = 0
     err_mes = None
     product = None
@@ -74,7 +74,7 @@ def export_style(row, publish_zero_qty=False):
     if not channel_active:
         return product  # filtered
 
-    while -1 < repeat < MAX_REPEAT:
+    while db and -1 < repeat < MAX_REPEAT:
         if repeat > 0:
             time.sleep(repeat * repeat)
 
@@ -150,13 +150,12 @@ def export_style(row, publish_zero_qty=False):
                 variant['inventory_management'] = 'shopify'
                 variant['inventory_policy'] = 'continue'
                 variant['inventory_quantity'] = 0
-                global db
                 with db.cursor() as qry:
                     qry.execute('SELECT Qty FROM Items WHERE ItemId = %s', (itemid,))
                     val = qry.fetchone()
                     if val:
                         var_qty = val['Qty']
-                        if var_qty and var_qty > 0:
+                        if var_qty and var_qty >= 0:
                             var_qty = int(var_qty)
                             variant['inventory_quantity'] = var_qty
                             style_qty += var_qty
@@ -190,9 +189,8 @@ def export_style(row, publish_zero_qty=False):
                     err_count += 1
                 err_delta = 1
             elif varcount > MAX_VARIANTS:
-                err_mes = 'Max number of variants exceeded! Partially sent!'
+                err_mes = f'Max number of variants exceeded! Only first {MAX_VARIANTS} variants sent!'
                 err_code = -5
-                err_delta = 1
                 repeat = -1
             else:
                 err_mes = None
@@ -248,9 +246,9 @@ def export_style(row, publish_zero_qty=False):
                                 )
                 if db and productID and not err_delta:
                     # Save mappings Items to Variants:
-                    with db.cursor() as ins:
+                    with db.cursor() as cur:
                         for index, variant in enumerate(product.variants):
-                            ins.execute('INSERT INTO Items (ItemId, StyleId, VariantID, QtySent) '
+                            cur.execute('INSERT INTO Items (ItemId, StyleId, VariantID, QtySent) '
                                         'VALUES (%s, %s, %s, CURRENT_TIMESTAMP(3)) '
                                         'ON DUPLICATE KEY UPDATE '
                                         'StyleId = %s, '
@@ -264,6 +262,12 @@ def export_style(row, publish_zero_qty=False):
                                          product.id,
                                          )
                                         )
+                        if err_code == -5:
+                            cur.execute('UPDATE Items SET QtySent = CURRENT_TIMESTAMP(3) '
+                                        'WHERE StyleId = %s '
+                                        'AND QtySent IS NULL ',
+                                        (styleid,))
+
                 return product
 
 
@@ -273,6 +277,16 @@ style_qry = ('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
              '(SELECT ProductID FROM StyleStream WHERE ID<s.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
              'FROM StyleStream s '
             )
+
+
+def print_header():
+    print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Qty', 'Title', 'ErrMes')))
+
+
+def print_footer():
+    global done, filtered
+    global tot_count, err_count, db
+    print(f'\t\tProcessed: {done}. Filtered/Deactivated: {filtered}. Errors: {err_count}. Sent to "{shop_url_short}": {done-err_count-filtered}.')
 
 
 def export_styles(publish_zero_qty=False):
@@ -299,15 +313,14 @@ def export_styles(publish_zero_qty=False):
                        'WHERE s.ProductSent IS NULL '
                        # DEBUG 'WHERE s.ID BETWEEN 170 AND 190 '
                        'ORDER BY s.RecModified, s.ID')
-        print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Qty', 'Title', 'ErrMes')))
+        print_header()
         while db:
             row = cursor.fetchone()
             if not row:
                 break
             export_style(row, publish_zero_qty)
 
-    print(f'\tProcessed: {done}. Filtered/Deactivated: {filtered}. Errors: {err_count}. Sent to "{shop_url_short}": {done-err_count-filtered}.')
-    return done
+    print_footer()
 
 
 def export_qty():
@@ -316,54 +329,29 @@ def export_qty():
     done = 0
     filtered = 0
 
-    print(f'\tLooking for not sent RTA data in DB "{db.host_info} {twmysql._DB}"')
-    # Copy Styles to Items!
+    print(f'\tLooking for not sent RTA in DB "{db.host_info} {twmysql._DB}"...')
+    print_header()
     with db.cursor() as cursor:
-        # cursor.execute('UPDATE StyleStream SET')
-        cursor.execute('SELECT i.ItemId, i.StyleId, i.VariantID, i.Qty, s.ProductID '
-                       'FROM Items i LEFT OUTER JOIN Styles s ON i.StyleId = s.StyleId '
-                       'WHERE i.QtySent IS NULL '
-                       'AND i.StyleId IS NOT NULL '
-                       'AND i.Qty >= 0 '
-                       #'ORDER BY QtyApiRequestTime'
+        cursor.execute('SELECT DISTINCT StyleId '
+                       'FROM Items '
+                       'WHERE QtySent IS NULL '
+                       'AND StyleId IS NOT NULL '
+                       'AND Qty >= 0 '
                        )
         while db:
             row = cursor.fetchone()
             if not row:
                 break
-
-            variantId = row['VariantID']
-            productId = row['ProductID']
-
-            if productId is None:
-                with db.cursor() as cursor2:
-                    cursor2.execute(style_qry + 'WHERE s.StyleID=%s',(row['StyleId'],))
-                    row2 = cursor2.fetchone()
-                    if row2:
-                        product = export_style(row2, publish_zero_qty=True)
-                        if product:
-                            productId = product.id
-
-            if variantId:
-                try:
-                    product = shopify.Product.find(productId)
-                    for variant in product.variants:
-                        if variant.id == variantId:
-                            break
-                    #variant = shopify.Variant.find(variantId)
-                except Exception as e:  # PyCharm BUG: do not remove "as e"
-                    variant = shopify.Variant()
-            else:
-                variant = shopify.Variant()
-
-            variant.inventory_quantity = row['Qty']
-            variant.product_id = productId
-
-            variant.save()
+            with db.cursor() as cursor2:
+                cursor2.execute(style_qry + 'WHERE s.StyleID=%s',(row['StyleId'],))
+                row2 = cursor2.fetchone()
+                if row2:
+                    export_style(row2, publish_zero_qty=True)
+    print_footer()
 
 
 def cleanup():
-    print('\tCleanup started! Do not Interrupt please!...')
+    print('\tCleanup started...')
 
     # Mark All Styles as UnSent
     with db.cursor() as cursor:
@@ -396,7 +384,7 @@ def cleanup():
             print('\t\t', i, product.title, 'Deleting...')
             product.destroy()
 
-    print('\tCleanup finished.')
+    print('\tCleanup finished!')
 
 
 if __name__ == '__main__':
