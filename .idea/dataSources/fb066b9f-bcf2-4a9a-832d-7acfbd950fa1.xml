@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="teamwork@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="teamwork">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <table id="4" parent="2" name="Items"/>
+    <table id="5" parent="2" name="StyleStream"/>
+    <table id="6" parent="2" name="Styles"/>
+    <table id="7" parent="2" name="SyncRuns"/>
+    <column id="8" parent="4" name="ItemId">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="9" parent="4" name="StyleId">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="10" parent="4" name="VariantID">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="11" parent="4" name="Qty">
+      <Position>4</Position>
+      <DataType>decimal(15,4)|0</DataType>
+    </column>
+    <column id="12" parent="4" name="LocCount">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="13" parent="4" name="QtySent">
+      <Position>6</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="14" parent="4" name="QtyApiRequestTime">
+      <Position>7</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <index id="15" parent="4" name="fkItems_Styles">
+      <ColNames>StyleId</ColNames>
+    </index>
+    <index id="16" parent="4" name="ixItems_QtyApiRequestTime">
+      <ColNames>QtyApiRequestTime</ColNames>
+    </index>
+    <index id="17" parent="4" name="ixItems_QtySent">
+      <ColNames>QtySent</ColNames>
+    </index>
+    <key id="18" parent="4" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ItemId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="19" parent="4" name="Items_ibfk_1">
+      <ColNames>StyleId</ColNames>
+      <RefSchemaName>teamwork</RefSchemaName>
+      <RefTableName>Styles</RefTableName>
+      <RefColNames>StyleId</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <trigger id="20" parent="4" name="trbuItems_Qty">
+      <Turn>before-row</Turn>
+      <Events>U</Events>
+    </trigger>
+    <column id="21" parent="5" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="5" name="SyncRunsID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="5" name="InsDateTime">
+      <Position>3</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="24" parent="5" name="StyleNo">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="5" name="StyleId">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="26" parent="5" name="RecModified">
+      <Position>6</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="27" parent="5" name="Title">
+      <Position>7</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="28" parent="5" name="StyleXml">
+      <Position>8</Position>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="5" name="ProductID">
+      <Position>9</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="30" parent="5" name="ProductSent">
+      <Position>10</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="31" parent="5" name="OldProductID">
+      <Position>11</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="32" parent="5" name="VariantsCount">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="33" parent="5" name="ErrMes">
+      <Position>13</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="34" parent="5" name="ErrCode">
+      <Position>14</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="35" parent="5" name="RetryCount">
+      <Position>15</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="36" parent="5" name="fkStyleStream_SyncRuns">
+      <ColNames>SyncRunsID</ColNames>
+    </index>
+    <index id="37" parent="5" name="ixStyleStream_ErrCode">
+      <ColNames>ErrCode</ColNames>
+    </index>
+    <index id="38" parent="5" name="ixStyleStream_Product">
+      <ColNames>ProductID
+ProductSent</ColNames>
+    </index>
+    <index id="39" parent="5" name="ixStyleStream_RecModified">
+      <ColNames>RecModified</ColNames>
+    </index>
+    <index id="40" parent="5" name="ixStyleStream_StyleId">
+      <ColNames>StyleId</ColNames>
+    </index>
+    <index id="41" parent="5" name="ixStyleStream_StyleNo">
+      <ColNames>StyleNo</ColNames>
+    </index>
+    <key id="42" parent="5" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="43" parent="5" name="StyleStream_ibfk_1">
+      <ColNames>SyncRunsID</ColNames>
+      <RefSchemaName>teamwork</RefSchemaName>
+      <RefTableName>SyncRuns</RefTableName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <trigger id="44" parent="5" name="traiStyleStream_ProductID">
+      <Turn>after-row</Turn>
+      <Events>I</Events>
+    </trigger>
+    <trigger id="45" parent="5" name="trauStyleStream_ProductID">
+      <Turn>after-row</Turn>
+      <Events>U</Events>
+    </trigger>
+    <column id="46" parent="6" name="StyleId">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="6" name="ProductID">
+      <Position>2</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="48" parent="6" name="ixStyles_StyleId">
+      <ColNames>StyleId</ColNames>
+    </index>
+    <key id="49" parent="6" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>StyleId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="7" name="ID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="7" name="StartTime">
+      <Position>2</Position>
+      <DataType>timestamp(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP(3)</DefaultExpression>
+    </column>
+    <column id="52" parent="7" name="SessionNum">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="53" parent="7" name="SessionStartTime">
+      <Position>4</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="54" parent="7" name="ApiDocumentId">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="55" parent="7" name="ChunkCount">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="56" parent="7" name="LastChunkTime">
+      <Position>7</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="57" parent="7" name="StylesFound">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="58" parent="7" name="SessionFinishTime">
+      <Position>9</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="59" parent="7" name="DstLastSendTime">
+      <Position>10</Position>
+      <DataType>timestamp(3)|0</DataType>
+    </column>
+    <column id="60" parent="7" name="DstProcessedEntities">
+      <Position>11</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="61" parent="7" name="DstErrorCount">
+      <Position>12</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="62" parent="7" name="ixSyncRuns_DstLastSendTime">
+      <ColNames>DstLastSendTime</ColNames>
+    </index>
+    <index id="63" parent="7" name="ixSyncRuns_SessionStartTime">
+      <ColNames>SessionStartTime</ColNames>
+    </index>
+    <key id="64" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

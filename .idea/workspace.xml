@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/teamworker.py" line="366" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="Styles With Qty">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
+    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="PyCharm">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,14 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1495548261780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1495559137802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$guardian.coverage" NAME="guardian Coverage Results" MODIFIED="1492816412704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1495547495519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$teamworker___drop.coverage" NAME="teamworker --drop Coverage Results" MODIFIED="1495547534363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$teamworker___drop.coverage" NAME="teamworker --drop Coverage Results" MODIFIED="1495555193576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$shopifier_cleanup.coverage" NAME="shopifier+cleanup Coverage Results" MODIFIED="1494511188468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$TW2SF.coverage" NAME="TW2SF Coverage Results" MODIFIED="1492786731215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1494509660983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier___cleanup.coverage" NAME="shopifier --cleanup Coverage Results" MODIFIED="1495547952224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier___cleanup.coverage" NAME="shopifier --cleanup Coverage Results" MODIFIED="1495555842134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1494508658545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$multiprocessing_test.coverage" NAME="multiprocessing_test Coverage Results" MODIFIED="1492531071028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamworker.coverage" NAME="teamworker Coverage Results" MODIFIED="1495550502098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -46,7 +43,7 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="teamwork@95.47.116.157" />
+        <option name="myItemId" value="teamwork@localhost" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -56,7 +53,7 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
-        <option name="myItemId" value="teamwork@95.47.116.157" />
+        <option name="myItemId" value="teamwork@localhost" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
       <PATH_ELEMENT>
@@ -74,7 +71,7 @@
       <file leaf-file-name="teamworker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teamworker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
+            <state relative-caret-position="-360">
               <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -89,7 +86,6 @@
                 <element signature="e#3246#4077#0" expanded="false" />
                 <element signature="e#3443#3613#0" expanded="false" />
                 <element signature="e#3729#4077#0" expanded="false" />
-                <element signature="e#4184#7707#0" expanded="false" />
                 <element signature="e#4274#4910#0" expanded="false" />
                 <element signature="e#4467#4808#0" expanded="false" />
                 <element signature="e#4846#4908#0" expanded="false" />
@@ -101,108 +97,83 @@
                 <element signature="e#6099#6177#0" expanded="false" />
                 <element signature="e#6220#6483#0" expanded="false" />
                 <element signature="e#6525#6644#0" expanded="false" />
-                <element signature="e#6994#7457#0" expanded="false" />
-                <element signature="e#7491#7672#0" expanded="false" />
-                <element signature="e#7737#7792#0" expanded="false" />
-                <element signature="e#8048#8270#0" expanded="false" />
-                <element signature="e#8088#8270#0" expanded="false" />
-                <element signature="e#8161#8264#0" expanded="false" />
-                <element signature="e#8386#9017#0" expanded="false" />
-                <element signature="e#8460#9017#0" expanded="false" />
-                <element signature="e#8535#9017#0" expanded="false" />
-                <element signature="e#8630#9017#0" expanded="false" />
-                <element signature="e#8872#9017#0" expanded="false" />
-                <element signature="e#9043#9187#0" expanded="false" />
-                <element signature="e#10468#10625#0" expanded="false" />
-                <element signature="e#11121#11542#0" expanded="false" />
-                <element signature="e#11631#11965#0" expanded="false" />
-                <element signature="e#13842#14618#0" expanded="false" />
-                <element signature="e#13995#14468#0" expanded="false" />
-                <element signature="e#14690#16312#0" expanded="false" />
-                <element signature="e#16047#16312#0" expanded="false" />
-                <marker date="1495550001962" expanded="false" signature="3262:3304" ph="SELECT Max(I... SyncRuns" />
-                <marker date="1495550001962" expanded="false" signature="3459:3524" ph="SELECT Style... SyncRuns" />
-                <marker date="1495550001962" expanded="false" signature="3864:3914" ph="INSERT INTO SyncRuns... " />
-                <marker date="1495550001962" expanded="false" signature="4290:4332" ph="SELECT Max(I... SyncRuns" />
-                <marker date="1495550001962" expanded="false" signature="4468:4807" ph="UPDATE SyncR... " />
-                <marker date="1495550001962" expanded="false" signature="5947:6053" ph="INSERT INTO Items... " />
-                <marker date="1495550001962" expanded="false" signature="6221:6482" ph="INSERT INTO StyleStream... " />
-                <marker date="1495550001962" expanded="false" signature="6995:7455" ph="UPDATE SyncR... " />
-                <marker date="1495550001962" expanded="false" signature="11218:11271" ph="select max(R... StyleStream" />
-                <marker date="1495550001962" expanded="false" signature="12856:12985" ph="INSERT INTO Items... " />
-                <marker date="1495550001962" expanded="true" signature="12856:13288" ph="INSERT INTO Items... " />
-                <marker date="1495550001962" expanded="true" signature="12856:13338" ph="INSERT INTO Items... " />
-                <marker date="1495550001962" expanded="true" signature="14858:14910" ph="SELECT MAX(Q... Items" />
-                <marker date="1495550001962" expanded="true" signature="14864:14910" ph="INSERT INTO Items... " />
-                <marker date="1495550001962" expanded="false" signature="16063:16103" ph="select ItemI... Items" />
-                <marker date="1495550001962" expanded="false" signature="16063:16127" ph="select ItemI... Items" />
-                <marker date="1495550001962" expanded="false" signature="16069:16103" ph="INSERT INTO Items... " />
+                <marker date="1495555000972" expanded="false" signature="3262:3304" ph="SELECT Max(I... SyncRuns" />
+                <marker date="1495555000972" expanded="false" signature="3459:3524" ph="SELECT Style... SyncRuns" />
+                <marker date="1495555000972" expanded="false" signature="3864:3914" ph="INSERT INTO SyncRuns... " />
+                <marker date="1495555000972" expanded="false" signature="4290:4332" ph="SELECT Max(I... SyncRuns" />
+                <marker date="1495555000972" expanded="false" signature="4468:4807" ph="UPDATE SyncR... " />
+                <marker date="1495555000972" expanded="false" signature="5947:6053" ph="INSERT INTO Items... " />
+                <marker date="1495555000972" expanded="false" signature="6221:6482" ph="INSERT INTO StyleStream... " />
+                <marker date="1495555000972" expanded="true" signature="6996:7456" ph="UPDATE SyncR... " />
+                <marker date="1495555000972" expanded="true" signature="11219:11272" ph="select max(R... StyleStream" />
+                <marker date="1495555000972" expanded="true" signature="12857:13339" ph="INSERT INTO Items... " />
+                <marker date="1495555000972" expanded="true" signature="14860:14912" ph="SELECT MAX(Q... Items" />
+                <marker date="1495555000972" expanded="true" signature="14866:14912" ph="INSERT INTO Items... " />
+                <marker date="1495555000972" expanded="false" signature="16065:16105" ph="select ItemI... Items" />
+                <marker date="1495555000972" expanded="false" signature="16065:16129" ph="select ItemI... Items" />
+                <marker date="1495555000972" expanded="false" signature="16071:16105" ph="INSERT INTO Items... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shopifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="27">
+              <caret line="411" column="0" lean-forward="true" selection-start-line="411" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
                 <element signature="e#52#139#0" expanded="false" />
-                <element signature="e#1298#1502#0" expanded="false" />
-                <element signature="e#1809#1822#0" expanded="false" />
-                <element signature="e#3236#3435#0" expanded="false" />
-                <element signature="e#3273#3435#0" expanded="false" />
-                <element signature="e#5247#5403#0" expanded="false" />
-                <element signature="e#5939#6339#0" expanded="false" />
-                <element signature="e#6098#6339#0" expanded="false" />
-                <element signature="e#6200#6339#0" expanded="false" />
-                <element signature="e#6697#6878#0" expanded="false" />
-                <element signature="e#6906#7659#0" expanded="false" />
-                <element signature="e#6941#7320#0" expanded="false" />
-                <element signature="e#7097#7233#0" expanded="false" />
-                <element signature="e#7379#7523#0" expanded="false" />
-                <element signature="e#7558#7659#0" expanded="false" />
-                <element signature="e#7927#8018#0" expanded="false" />
-                <element signature="e#8119#8448#0" expanded="false" />
-                <element signature="e#8517#8984#0" expanded="false" />
-                <element signature="e#9375#9819#0" expanded="false" />
-                <element signature="e#9387#9670#0" expanded="false" />
-                <element signature="e#9701#9758#0" expanded="false" />
-                <element signature="e#10970#11198#0" expanded="false" />
-                <element signature="e#10982#11149#0" expanded="false" />
-                <element signature="e#11243#11578#0" expanded="false" />
-                <element signature="e#11621#11730#0" expanded="false" />
-                <element signature="e#11758#11958#0" expanded="false" />
-                <element signature="e#12311#12698#0" expanded="false" />
-                <element signature="e#12326#12697#0" expanded="false" />
-                <element signature="e#12849#13318#0" expanded="false" />
-                <element signature="e#12900#13049#0" expanded="false" />
-                <element signature="e#14453#15616#0" expanded="false" />
-                <element signature="e#14591#15311#0" expanded="false" />
-                <element signature="e#14606#14854#0" expanded="false" />
-                <element signature="e#14903#15021#0" expanded="false" />
-                <element signature="e#15070#15174#0" expanded="false" />
-                <element signature="e#15223#15286#0" expanded="false" />
-                <element signature="e#15408#15582#0" expanded="false" />
-                <element signature="e#15487#15582#0" expanded="false" />
-                <marker date="1495546936874" expanded="false" signature="5952:5991" ph="SELECT Qty F... Items" />
-                <marker date="1495546936874" expanded="false" signature="8518:8983" ph="UPDATE Style... " />
-                <marker date="1495546936874" expanded="false" signature="9388:9669" ph="UPDATE SyncR... " />
-                <marker date="1495546936874" expanded="true" signature="10064:10477" ph="INSERT INTO Items... " />
-                <marker date="1495546936874" expanded="false" signature="10983:11147" ph="UPDATE Items... " />
-                <marker date="1495546936874" expanded="false" signature="11244:11576" ph="SELECT s.ID StyleStream" />
-                <marker date="1495546936874" expanded="false" signature="11354:11406" ph="SELECT Produ... Styles" />
-                <marker date="1495546936874" expanded="false" signature="11426:11529" ph="SELECT Produ... StyleStream" />
-                <marker date="1495546936874" expanded="false" signature="12327:12695" ph="UPDATE Style... " />
-                <marker date="1495546936874" expanded="true" signature="13730:13881" ph="SELECT DISTI... Items" />
-                <marker date="1495546936874" expanded="true" signature="13730:13882" ph="SELECT DISTI... " />
-                <marker date="1495546936874" expanded="true" signature="14607:14852" ph="UPDATE Style... " />
-                <marker date="1495546936874" expanded="true" signature="14904:15019" ph="UPDATE SyncR... " />
-                <marker date="1495546936874" expanded="true" signature="15071:15172" ph="UPDATE Items... " />
-                <marker date="1495546936874" expanded="true" signature="15224:15284" ph="UPDATE Style... " />
+                <element signature="e#13658#14714#0" expanded="false" />
+                <marker date="1495555000972" expanded="true" signature="6233:6272" ph="SELECT Qty F... Items" />
+                <marker date="1495555000972" expanded="true" signature="8799:9264" ph="UPDATE Style... " />
+                <marker date="1495555000972" expanded="true" signature="9669:9950" ph="UPDATE SyncR... " />
+                <marker date="1495555000972" expanded="true" signature="10345:10758" ph="INSERT INTO Items... " />
+                <marker date="1495555000972" expanded="true" signature="11264:11428" ph="UPDATE Items... " />
+                <marker date="1495555000972" expanded="true" signature="11525:11857" ph="SELECT s.ID StyleStream" />
+                <marker date="1495555000972" expanded="true" signature="11635:11687" ph="SELECT Produ... Styles" />
+                <marker date="1495555000972" expanded="true" signature="11707:11810" ph="SELECT Produ... StyleStream" />
+                <marker date="1495555000972" expanded="true" signature="12608:12976" ph="UPDATE Style... " />
+                <marker date="1495555000972" expanded="true" signature="14013:14164" ph="SELECT DISTI... Items" />
+                <marker date="1495555000972" expanded="true" signature="14013:14165" ph="SELECT DISTI... " />
+                <marker date="1495555000972" expanded="false" signature="14731:15899" ph="..." />
+                <marker date="1495555000972" expanded="false" signature="14865:15594" ph="..." />
+                <marker date="1495555000972" expanded="false" signature="14889:15137" ph="'...'" />
+                <marker date="1495555000972" expanded="true" signature="14890:15135" ph="UPDATE Style... " />
+                <marker date="1495555000972" expanded="false" signature="15186:15304" ph="'...'" />
+                <marker date="1495555000972" expanded="true" signature="15187:15302" ph="UPDATE SyncR... " />
+                <marker date="1495555000972" expanded="false" signature="15353:15457" ph="'...'" />
+                <marker date="1495555000972" expanded="true" signature="15354:15455" ph="UPDATE Items... " />
+                <marker date="1495555000972" expanded="false" signature="15506:15569" ph="'...'" />
+                <marker date="1495555000972" expanded="true" signature="15507:15567" ph="UPDATE Style... " />
+                <marker date="1495555000972" expanded="false" signature="15682:15865" ph="..." />
+                <marker date="1495555000972" expanded="false" signature="15757:15865" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teamwork.Items" pinned="false" current-in-tab="true">
+        <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.Items">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true">
+                <filter text="QtySent = '2017-05-23 21:34:09.252'" />
+                <filter text="StyleId = '4B49C547-1D9E-45D4-B41D-F947214DCD52'" />
+                <filter text="StyleId = 'C062ED96-5F8D-4A4E-87B2-CC0BFE45CDBD'" />
+                <filter text="StyleId = 'E44C69BA-7B4B-4B6F-926B-E16CF66795E8'" />
+                <filter text="StyleId = '967A1C74-5947-4C03-BE14-AD050A3175D6'" />
+                <filter text="StyleId LIKE '160BE94D-131D-45C4-A716-728FEC1722DC'" />
+                <filter text="StyleId LIKE '00AB9622-7F39-43ED-9727-F274D0BCDFDD'" />
+                <filter text="StyleId LIKE '005D52F5-92B4-4461-802E-AF5A96799A17'" />
+              </filtering>
+            </state>
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -305,11 +276,11 @@
         <option value="/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/schema/teamwork/table/Items/trigger/trbuItems_Qty.sql" />
         <option value="$PROJECT_DIR$/sql/04 Items.sql" />
         <option value="$PROJECT_DIR$/tw2sf_service.py" />
-        <option value="$PROJECT_DIR$/shopifier.py" />
         <option value="$PROJECT_DIR$/twmysql.py" />
         <option value="$PROJECT_DIR$/tw2sf_runner.py" />
         <option value="$PROJECT_DIR$/teamworker.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/shopifier.py" />
       </list>
     </option>
   </component>
@@ -343,6 +314,20 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tw2sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tw2sf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Changed Files">
           <PATH>
@@ -369,20 +354,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tw2sf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tw2sf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scratches" />
     </panes>
   </component>
@@ -393,6 +364,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source&#10;MySQL" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="MySQL" />
+    <property name="add_unversioned_files" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -407,6 +379,118 @@
       <recent name="D:\python my\tw2sf\sql" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/shopifier.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/teamworker.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/twmysql.py</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -419,7 +503,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.teamworker">
+  <component name="RunManager" selected="Python.tw2sf_runner">
     <configuration default="false" name="TW2SF" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -999,7 +1083,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495550775080</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="PyCharm">
+      <created>1495550986421</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1495550986421</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1025,7 +1116,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16981132" sideWeight="0.50626117" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.558753" sideWeight="0.8561362" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26618704" sideWeight="0.8561362" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991913" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1125,7 +1216,8 @@
     <MESSAGE value="RTA export" />
     <MESSAGE value="Keep same VariantID on RTA update" />
     <MESSAGE value="RTA for Testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="RTA for Testing" />
+    <MESSAGE value="PyCharm" />
+    <option name="LAST_COMMIT_MESSAGE" value="PyCharm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1213,6 +1305,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1255,6 +1350,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="244">
           <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1262,6 +1358,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,6 +1373,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1925,25 +2023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.Items">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="StyleId = 'C062ED96-5F8D-4A4E-87B2-CC0BFE45CDBD'" />
-            <filter text="StyleId = 'E44C69BA-7B4B-4B6F-926B-E16CF66795E8'" />
-            <filter text="StyleId = '967A1C74-5947-4C03-BE14-AD050A3175D6'" />
-            <filter text="StyleId LIKE '160BE94D-131D-45C4-A716-728FEC1722DC'" />
-            <filter text="StyleId LIKE '00AB9622-7F39-43ED-9727-F274D0BCDFDD'" />
-            <filter text="StyleId LIKE '005D52F5-92B4-4461-802E-AF5A96799A17'" />
-          </filtering>
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
@@ -1955,6 +2034,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2023,12 +2103,48 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="411" column="0" lean-forward="true" selection-start-line="411" selection-start-column="0" selection-end-line="411" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#52#139#0" expanded="false" />
+            <element signature="e#13658#14714#0" expanded="false" />
+            <marker date="1495555000972" expanded="true" signature="6233:6272" ph="SELECT Qty F... Items" />
+            <marker date="1495555000972" expanded="true" signature="8799:9264" ph="UPDATE Style... " />
+            <marker date="1495555000972" expanded="true" signature="9669:9950" ph="UPDATE SyncR... " />
+            <marker date="1495555000972" expanded="true" signature="10345:10758" ph="INSERT INTO Items... " />
+            <marker date="1495555000972" expanded="true" signature="11264:11428" ph="UPDATE Items... " />
+            <marker date="1495555000972" expanded="true" signature="11525:11857" ph="SELECT s.ID StyleStream" />
+            <marker date="1495555000972" expanded="true" signature="11635:11687" ph="SELECT Produ... Styles" />
+            <marker date="1495555000972" expanded="true" signature="11707:11810" ph="SELECT Produ... StyleStream" />
+            <marker date="1495555000972" expanded="true" signature="12608:12976" ph="UPDATE Style... " />
+            <marker date="1495555000972" expanded="true" signature="14013:14164" ph="SELECT DISTI... Items" />
+            <marker date="1495555000972" expanded="true" signature="14013:14165" ph="SELECT DISTI... " />
+            <marker date="1495555000972" expanded="false" signature="14731:15899" ph="..." />
+            <marker date="1495555000972" expanded="false" signature="14865:15594" ph="..." />
+            <marker date="1495555000972" expanded="false" signature="14889:15137" ph="'...'" />
+            <marker date="1495555000972" expanded="true" signature="14890:15135" ph="UPDATE Style... " />
+            <marker date="1495555000972" expanded="false" signature="15186:15304" ph="'...'" />
+            <marker date="1495555000972" expanded="true" signature="15187:15302" ph="UPDATE SyncR... " />
+            <marker date="1495555000972" expanded="false" signature="15353:15457" ph="'...'" />
+            <marker date="1495555000972" expanded="true" signature="15354:15455" ph="UPDATE Items... " />
+            <marker date="1495555000972" expanded="false" signature="15506:15569" ph="'...'" />
+            <marker date="1495555000972" expanded="true" signature="15507:15567" ph="UPDATE Style... " />
+            <marker date="1495555000972" expanded="false" signature="15682:15865" ph="..." />
+            <marker date="1495555000972" expanded="false" signature="15757:15865" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teamworker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="846">
+        <state relative-caret-position="-360">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -2043,7 +2159,6 @@
             <element signature="e#3246#4077#0" expanded="false" />
             <element signature="e#3443#3613#0" expanded="false" />
             <element signature="e#3729#4077#0" expanded="false" />
-            <element signature="e#4184#7707#0" expanded="false" />
             <element signature="e#4274#4910#0" expanded="false" />
             <element signature="e#4467#4808#0" expanded="false" />
             <element signature="e#4846#4908#0" expanded="false" />
@@ -2055,114 +2170,52 @@
             <element signature="e#6099#6177#0" expanded="false" />
             <element signature="e#6220#6483#0" expanded="false" />
             <element signature="e#6525#6644#0" expanded="false" />
-            <element signature="e#6994#7457#0" expanded="false" />
-            <element signature="e#7491#7672#0" expanded="false" />
-            <element signature="e#7737#7792#0" expanded="false" />
-            <element signature="e#8048#8270#0" expanded="false" />
-            <element signature="e#8088#8270#0" expanded="false" />
-            <element signature="e#8161#8264#0" expanded="false" />
-            <element signature="e#8386#9017#0" expanded="false" />
-            <element signature="e#8460#9017#0" expanded="false" />
-            <element signature="e#8535#9017#0" expanded="false" />
-            <element signature="e#8630#9017#0" expanded="false" />
-            <element signature="e#8872#9017#0" expanded="false" />
-            <element signature="e#9043#9187#0" expanded="false" />
-            <element signature="e#10468#10625#0" expanded="false" />
-            <element signature="e#11121#11542#0" expanded="false" />
-            <element signature="e#11631#11965#0" expanded="false" />
-            <element signature="e#13842#14618#0" expanded="false" />
-            <element signature="e#13995#14468#0" expanded="false" />
-            <element signature="e#14690#16312#0" expanded="false" />
-            <element signature="e#16047#16312#0" expanded="false" />
-            <marker date="1495550001962" expanded="false" signature="3262:3304" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1495550001962" expanded="false" signature="3459:3524" ph="SELECT Style... SyncRuns" />
-            <marker date="1495550001962" expanded="false" signature="3864:3914" ph="INSERT INTO SyncRuns... " />
-            <marker date="1495550001962" expanded="false" signature="4290:4332" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1495550001962" expanded="false" signature="4468:4807" ph="UPDATE SyncR... " />
-            <marker date="1495550001962" expanded="false" signature="5947:6053" ph="INSERT INTO Items... " />
-            <marker date="1495550001962" expanded="false" signature="6221:6482" ph="INSERT INTO StyleStream... " />
-            <marker date="1495550001962" expanded="false" signature="6995:7455" ph="UPDATE SyncR... " />
-            <marker date="1495550001962" expanded="false" signature="11218:11271" ph="select max(R... StyleStream" />
-            <marker date="1495550001962" expanded="false" signature="12856:12985" ph="INSERT INTO Items... " />
-            <marker date="1495550001962" expanded="true" signature="12856:13288" ph="INSERT INTO Items... " />
-            <marker date="1495550001962" expanded="true" signature="12856:13338" ph="INSERT INTO Items... " />
-            <marker date="1495550001962" expanded="true" signature="14858:14910" ph="SELECT MAX(Q... Items" />
-            <marker date="1495550001962" expanded="true" signature="14864:14910" ph="INSERT INTO Items... " />
-            <marker date="1495550001962" expanded="false" signature="16063:16103" ph="select ItemI... Items" />
-            <marker date="1495550001962" expanded="false" signature="16063:16127" ph="select ItemI... Items" />
-            <marker date="1495550001962" expanded="false" signature="16069:16103" ph="INSERT INTO Items... " />
+            <marker date="1495555000972" expanded="false" signature="3262:3304" ph="SELECT Max(I... SyncRuns" />
+            <marker date="1495555000972" expanded="false" signature="3459:3524" ph="SELECT Style... SyncRuns" />
+            <marker date="1495555000972" expanded="false" signature="3864:3914" ph="INSERT INTO SyncRuns... " />
+            <marker date="1495555000972" expanded="false" signature="4290:4332" ph="SELECT Max(I... SyncRuns" />
+            <marker date="1495555000972" expanded="false" signature="4468:4807" ph="UPDATE SyncR... " />
+            <marker date="1495555000972" expanded="false" signature="5947:6053" ph="INSERT INTO Items... " />
+            <marker date="1495555000972" expanded="false" signature="6221:6482" ph="INSERT INTO StyleStream... " />
+            <marker date="1495555000972" expanded="true" signature="6996:7456" ph="UPDATE SyncR... " />
+            <marker date="1495555000972" expanded="true" signature="11219:11272" ph="select max(R... StyleStream" />
+            <marker date="1495555000972" expanded="true" signature="12857:13339" ph="INSERT INTO Items... " />
+            <marker date="1495555000972" expanded="true" signature="14860:14912" ph="SELECT MAX(Q... Items" />
+            <marker date="1495555000972" expanded="true" signature="14866:14912" ph="INSERT INTO Items... " />
+            <marker date="1495555000972" expanded="false" signature="16065:16105" ph="select ItemI... Items" />
+            <marker date="1495555000972" expanded="false" signature="16065:16129" ph="select ItemI... Items" />
+            <marker date="1495555000972" expanded="false" signature="16071:16105" ph="INSERT INTO Items... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shopifier.py">
-      <provider selected="true" editor-type-id="text-editor">
+    <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.Items">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="QtySent = '2017-05-23 21:34:09.252'" />
+            <filter text="StyleId = '4B49C547-1D9E-45D4-B41D-F947214DCD52'" />
+            <filter text="StyleId = 'C062ED96-5F8D-4A4E-87B2-CC0BFE45CDBD'" />
+            <filter text="StyleId = 'E44C69BA-7B4B-4B6F-926B-E16CF66795E8'" />
+            <filter text="StyleId = '967A1C74-5947-4C03-BE14-AD050A3175D6'" />
+            <filter text="StyleId LIKE '160BE94D-131D-45C4-A716-728FEC1722DC'" />
+            <filter text="StyleId LIKE '00AB9622-7F39-43ED-9727-F274D0BCDFDD'" />
+            <filter text="StyleId LIKE '005D52F5-92B4-4461-802E-AF5A96799A17'" />
+          </filtering>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#52#139#0" expanded="false" />
-            <element signature="e#1298#1502#0" expanded="false" />
-            <element signature="e#1809#1822#0" expanded="false" />
-            <element signature="e#3236#3435#0" expanded="false" />
-            <element signature="e#3273#3435#0" expanded="false" />
-            <element signature="e#5247#5403#0" expanded="false" />
-            <element signature="e#5939#6339#0" expanded="false" />
-            <element signature="e#6098#6339#0" expanded="false" />
-            <element signature="e#6200#6339#0" expanded="false" />
-            <element signature="e#6697#6878#0" expanded="false" />
-            <element signature="e#6906#7659#0" expanded="false" />
-            <element signature="e#6941#7320#0" expanded="false" />
-            <element signature="e#7097#7233#0" expanded="false" />
-            <element signature="e#7379#7523#0" expanded="false" />
-            <element signature="e#7558#7659#0" expanded="false" />
-            <element signature="e#7927#8018#0" expanded="false" />
-            <element signature="e#8119#8448#0" expanded="false" />
-            <element signature="e#8517#8984#0" expanded="false" />
-            <element signature="e#9375#9819#0" expanded="false" />
-            <element signature="e#9387#9670#0" expanded="false" />
-            <element signature="e#9701#9758#0" expanded="false" />
-            <element signature="e#10970#11198#0" expanded="false" />
-            <element signature="e#10982#11149#0" expanded="false" />
-            <element signature="e#11243#11578#0" expanded="false" />
-            <element signature="e#11621#11730#0" expanded="false" />
-            <element signature="e#11758#11958#0" expanded="false" />
-            <element signature="e#12311#12698#0" expanded="false" />
-            <element signature="e#12326#12697#0" expanded="false" />
-            <element signature="e#12849#13318#0" expanded="false" />
-            <element signature="e#12900#13049#0" expanded="false" />
-            <element signature="e#14453#15616#0" expanded="false" />
-            <element signature="e#14591#15311#0" expanded="false" />
-            <element signature="e#14606#14854#0" expanded="false" />
-            <element signature="e#14903#15021#0" expanded="false" />
-            <element signature="e#15070#15174#0" expanded="false" />
-            <element signature="e#15223#15286#0" expanded="false" />
-            <element signature="e#15408#15582#0" expanded="false" />
-            <element signature="e#15487#15582#0" expanded="false" />
-            <marker date="1495546936874" expanded="false" signature="5952:5991" ph="SELECT Qty F... Items" />
-            <marker date="1495546936874" expanded="false" signature="8518:8983" ph="UPDATE Style... " />
-            <marker date="1495546936874" expanded="false" signature="9388:9669" ph="UPDATE SyncR... " />
-            <marker date="1495546936874" expanded="true" signature="10064:10477" ph="INSERT INTO Items... " />
-            <marker date="1495546936874" expanded="false" signature="10983:11147" ph="UPDATE Items... " />
-            <marker date="1495546936874" expanded="false" signature="11244:11576" ph="SELECT s.ID StyleStream" />
-            <marker date="1495546936874" expanded="false" signature="11354:11406" ph="SELECT Produ... Styles" />
-            <marker date="1495546936874" expanded="false" signature="11426:11529" ph="SELECT Produ... StyleStream" />
-            <marker date="1495546936874" expanded="false" signature="12327:12695" ph="UPDATE Style... " />
-            <marker date="1495546936874" expanded="true" signature="13730:13881" ph="SELECT DISTI... Items" />
-            <marker date="1495546936874" expanded="true" signature="13730:13882" ph="SELECT DISTI... " />
-            <marker date="1495546936874" expanded="true" signature="14607:14852" ph="UPDATE Style... " />
-            <marker date="1495546936874" expanded="true" signature="14904:15019" ph="UPDATE SyncR... " />
-            <marker date="1495546936874" expanded="true" signature="15071:15172" ph="UPDATE Items... " />
-            <marker date="1495546936874" expanded="true" signature="15224:15284" ph="UPDATE Style... " />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
