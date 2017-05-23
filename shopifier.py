@@ -30,6 +30,7 @@ shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
 err_count = 0  # total number of errors from first run (persistent)
 db = None
 
+
 def init_sf():
     # Shopify init
     shopify.ShopifyResource.set_site(shop_url)
@@ -42,7 +43,7 @@ def init_sf():
     db = twmysql.get_db()
 
 
-def export_style(row, publish_zero_qty=False):
+def _export_style(row, publish_zero_qty=False):
     style = ET.fromstring(row['StyleXml'])
     oldProductID = row['ProductID']
 
@@ -271,26 +272,26 @@ def export_style(row, publish_zero_qty=False):
                 return product
 
 
-style_qry = ('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
+_style_qry = ('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
              'coalesce(s.ProductID,'
              '(SELECT ProductID FROM Styles WHERE StyleID=s.StyleID), '
              '(SELECT ProductID FROM StyleStream WHERE ID<s.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
              'FROM StyleStream s '
-            )
+              )
 
 
-def print_header():
+def _print_header():
     print('\t\t', '\t'.join(('#', 'ID', 'Var', 'Ers', 'ErC', 'StNo', 'PrID', 'Modif', 'Qty', 'Title', 'ErrMes')))
 
 
-def print_footer():
+def _print_footer():
     global done, filtered
     global tot_count, err_count, db
     print(f'\t\tProcessed: {done}. Filtered/Deactivated: {filtered}. Errors: {err_count}. Sent to "{shop_url_short}": {done-err_count-filtered}.')
 
 
 def export_styles(publish_zero_qty=False):
-    # Send data from MySQL to Shopify
+    # Send not sent Styles from MySQL to Shopify and mark them as sent
     global done, filtered
     global tot_count, err_count, db
     done = 0
@@ -309,28 +310,29 @@ def export_styles(publish_zero_qty=False):
     print(f'\tLooking for not sent Styles in DB "{db.host_info} {twmysql._DB}"')
     # Copy Styles to Items!
     with db.cursor() as cursor:
-        cursor.execute(style_qry +
+        cursor.execute(_style_qry +
                        'WHERE s.ProductSent IS NULL '
                        # DEBUG 'WHERE s.ID BETWEEN 170 AND 190 '
                        'ORDER BY s.RecModified, s.ID')
-        print_header()
+        _print_header()
         while db:
             row = cursor.fetchone()
             if not row:
                 break
-            export_style(row, publish_zero_qty)
+            _export_style(row, publish_zero_qty)
 
-    print_footer()
+    _print_footer()
 
 
 def export_qty():
+    # Send not sent RTA data to Shopify and mark them as sent
     global done, filtered
     global tot_count, err_count, db
     done = 0
     filtered = 0
 
     print(f'\tLooking for not sent RTA in DB "{db.host_info} {twmysql._DB}"...')
-    print_header()
+    _print_header()
     with db.cursor() as cursor:
         cursor.execute('SELECT DISTINCT StyleId '
                        'FROM Items '
@@ -343,14 +345,15 @@ def export_qty():
             if not row:
                 break
             with db.cursor() as cursor2:
-                cursor2.execute(style_qry + 'WHERE s.StyleID=%s',(row['StyleId'],))
+                cursor2.execute(_style_qry + 'WHERE s.StyleID=%s', (row['StyleId'],))
                 row2 = cursor2.fetchone()
                 if row2:
-                    export_style(row2, publish_zero_qty=True)
-    print_footer()
+                    _export_style(row2, publish_zero_qty=True)
+    _print_footer()
 
 
 def cleanup():
+    # Run it to start from scratch
     print('\tCleanup started...')
 
     # Mark All Styles as UnSent
@@ -393,7 +396,8 @@ if __name__ == '__main__':
 
     # Command line arguments processing
     parser = argparse.ArgumentParser(description='Sending Styles from MySql to Shopify ' + shop_url)
-    parser.add_argument('--cleanup', nargs='?', type=bool, const=False, help=f'Cleanup XML Received and Delete ALL Products (False)')
+    parser.add_argument('--cleanup', nargs='?', type=bool, const=False,
+                        help=f'Cleanup XML Received and Delete ALL Products (False)')
     args = parser.parse_args()
     if args.cleanup:
         cleanup()

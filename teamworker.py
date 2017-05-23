@@ -11,29 +11,30 @@ import xml.etree.ElementTree as ET
 import twmysql
 import utils
 
-# Teamwork
+# Teamwork constants
 TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-A507F55A03D6'
 TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
 TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
                 'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
 
-# Global
+# Settings
 start_date = dateutil.parser.parse('2000-01-01 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
-skip = 0
 max_wait = 60  # Max waiting time for Successfull status (seconds)
+need_save_responses = True
 
+# Global
 apiDocumentId = None
 apiRequestTime = None
 syncRunsID = None
 db = None
 last_response = None
-need_save_responses = True
+skip = 0
 
 
-def save_last_response(suffix=''):
+def _save_last_response(suffix=''):
     # Saving XML Response content to file
     if need_save_responses and last_response:
         try:
@@ -45,13 +46,13 @@ def save_last_response(suffix=''):
             pass
 
 
-def get_root_from_response(response):
+def _get_root_from_response(response):
     # Get Root from XML Response, removing All XML NameSpaces
     s = re.sub(r'\sxmlns="[^\"]+"', '', response.content.decode('utf-8'), flags=re.MULTILINE)
     return ET.fromstring(s)
 
 
-def get_xml_root(req, apitype):
+def _get_xml_root(req, apitype):
     # Get XML by api-type
     global apiDocumentId, apiRequestTime, last_response
     xml_root = None
@@ -62,7 +63,7 @@ def get_xml_root(req, apitype):
                 'ApiKey': TW_API_KEY, 'Async': 'true',
                 'ApiRequestType': apitype}
         last_response = requests.post(TW_URL + 'api.ashx', data=data)
-        xml_root = get_root_from_response(last_response)
+        xml_root = _get_root_from_response(last_response)
         a = xml_root.attrib['ApiDocumentId']
         status = xml_root.attrib['Status']
         count = 0
@@ -70,7 +71,7 @@ def get_xml_root(req, apitype):
         while status == 'InProcess':
             time.sleep(wait)
             last_response = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
-            xml_root = get_root_from_response(last_response)
+            xml_root = _get_root_from_response(last_response)
             status = xml_root.attrib['Status']
             count += 1
             if count > max_wait // wait:
@@ -88,7 +89,7 @@ def get_xml_root(req, apitype):
         return xml_root
 
 
-def process_styles_xml(xml_root):
+def _process_styles_xml(xml_root):
     # Proces XML from Teamwork and Save results to MySqL DB
     global chunk_num, skip, apiDocumentId, syncRunsID
     global db, last_response
@@ -101,7 +102,8 @@ def process_styles_xml(xml_root):
             data = cursor.fetchone()
             syncRunsID = data['SyncRunsID']
             if syncRunsID is not None:
-                cursor.execute('SELECT StylesFound, SessionFinishTime FROM SyncRuns WHERE ID=%s', (syncRunsID,))
+                cursor.execute('SELECT StylesFound, SessionFinishTime FROM SyncRuns WHERE ID = %s',
+                               (syncRunsID,))
                 data = cursor.fetchone()
             if syncRunsID is None or data['StylesFound'] > 0 or data['SessionFinishTime'] is None:
                 # 'SessionFinishTime is Null' means simultaneous executions or interrupted process (we keep this info)
@@ -153,9 +155,12 @@ def process_styles_xml(xml_root):
                                            (item.find('ItemId').text,
                                             styleid,))
 
-                        cursor.execute('INSERT INTO StyleStream (SyncRunsID, StyleNo, StyleId, RecModified, Title, VariantsCount, StyleXml) '
+                        cursor.execute('INSERT INTO StyleStream '
+                                       '(SyncRunsID, StyleNo, StyleId, RecModified, Title, '
+                                       'VariantsCount, StyleXml) '
                                        'VALUES (%s, %s, %s, %s, %s, %s, %s)',
-                                       (syncRunsID, styleno, styleid, start_date, title, var_count, ET.tostring(style), ))
+                                       (syncRunsID, styleno, styleid, start_date, title,
+                                        var_count, ET.tostring(style), ))
 
                     except Exception as e:
                         print('\t\t\t\t', e)
@@ -180,7 +185,7 @@ def process_styles_xml(xml_root):
             db = None
         finally:
             if done:
-                save_last_response('-styles')
+                _save_last_response('-styles')
 
     return done
 
@@ -204,7 +209,7 @@ def init_tw(drop=False):
     # Execute SQL scripts from .\SQL folder (if SyncRuns table not found in DB)
     with db.cursor() as cursor:
         if drop or not cursor.execute("SHOW TABLES LIKE 'SyncRuns'"):
-            for fn in sorted(glob.glob(os.path.join('sql','*.sql'))):
+            for fn in sorted(glob.glob(os.path.join('sql', '*.sql'))):
                 print(f'\tExecuting {fn}...')
                 with open(fn,'br') as f:
                         s = f.read().decode('utf-8')
@@ -218,12 +223,12 @@ def init_tw(drop=False):
                                 cursor.execute(sql)
 
 
-api_request_prefix = ('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
+_api_request_prefix = ('<ApiDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" '
                       'xmlns="http://microsoft.com/wsdl/types/"><Request>')
-api_request_suffix = '</Request></ApiDocument>'
+_api_request_suffix = '</Request></ApiDocument>'
 
 
-def multy_chunk_import(api_req, api_type, process_xml_function, onechunk=False):
+def _multi_chunk_import(api_req, api_type, process_xml_function, one_chunk=False):
     global apiDocumentId, apiRequestTime, chunk_size, chunk_num, skip
     apiDocumentId = None
     apiRequestTime = None
@@ -233,38 +238,41 @@ def multy_chunk_import(api_req, api_type, process_xml_function, onechunk=False):
     total_rec = '?'
 
     # Main Loop
-    req = (api_request_prefix +
+    req = (_api_request_prefix +
            api_req +
            f'<Top>{chunk_size}</Top>' +
-           api_request_suffix)
+           _api_request_suffix)
     # print('\t\tSend API request:',req)
-    xml_root = get_xml_root(req, api_type)
+    xml_root = _get_xml_root(req, api_type)
     if apiDocumentId is None:
         print("\tCan't get 'Successful' Status from Server!")
     else:
         if 'TotalRecords' in xml_root.attrib:
             total_rec = int(xml_root.attrib['TotalRecords'])
-            if not onechunk:
+            if not one_chunk:
                 print(f'\t\tChunk #{chunk_num} {skip}/{total_rec}...')
         if process_xml_function:
             done = process_xml_function(xml_root)
-        if not onechunk:
+        if not one_chunk:
             skip = done
             while db and done and done > 0 and (total_rec == '?' or skip < total_rec):
                 chunk_num += 1
                 print(f'\t\tChunk #{chunk_num} {skip}/{total_rec}...')
-                req = (api_request_prefix +
+                req = (_api_request_prefix +
                        f'<ParentApiDocumentId>{apiDocumentId}</ParentApiDocumentId>'
                        f'<Top>{chunk_size}</Top>'
                        f'<Skip>{skip}</Skip>' +
-                       api_request_suffix)
+                       _api_request_suffix)
                 # print('\t\tSend API request:',req)
-                xml_root = get_xml_root(req, api_type)
+                xml_root = _get_xml_root(req, api_type)
                 done = process_xml_function(xml_root)
                 skip += done
 
 
 def import_styles():
+    # Request styles modified after start_date from Teamwork API
+    # and save results to MySQL DB.
+    # Each next run will use start_date according to previous run
     global db, start_date
 
     with db.cursor() as cursor:
@@ -278,20 +286,21 @@ def import_styles():
         start_date_ = start_date.isoformat(timespec='milliseconds')
 
     print(f'\tRequesting Styles modified from {start_date_}.')
-    multy_chunk_import('<Filters>'
+    _multi_chunk_import('<Filters>'
                        f'<Filter Field="RecModified" Operator="Greater than or equal" Value="{start_date_}" />'
                        '</Filters>'
                        '<SortDescriptions>'
                        '<SortDescription Name="RecModified" Direction="Ascending" />'
                        '</SortDescriptions>',
                        'inventory-export',
-                       process_styles_xml)
+                        _process_styles_xml)
 
 
-locs = '|'.join(TW_LOCATIONS)
-loc_count = len(TW_LOCATIONS)
+_locs = '|'.join(TW_LOCATIONS)
+_loc_count = len(TW_LOCATIONS)
 
-def process_rta_xml(xml_root):
+
+def _process_rta_xml(xml_root):
     # Copy Styles to Items
     rtas = dict()
     done = 0
@@ -327,45 +336,49 @@ def process_rta_xml(xml_root):
 
     print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{twmysql._DB}"')
     if done > 0:
-        save_last_response('-rta')
+        _save_last_response('-rta')
     return done
 
 
-def import_rta_by_item(itemId):
-    print(f'\tRequesting RTA for Item {itemId}.')
+def import_rta_by_item(item_id):
+    # Request RTA by ItemId from Teamwork API
+    # and save results to MySQL DB
+    print(f'\tRequesting RTA for Item {item_id}.')
 
-    multy_chunk_import('<Settings>'
+    _multi_chunk_import('<Settings>'
                        '<ItemIdentifierSetting>TeamworkId</ItemIdentifierSetting>'
                        '<LocationIdentifierSetting>TeamworkId</LocationIdentifierSetting>'
                        '</Settings>'
                        '<Filters>'
-                       f'<Filter Field="ItemId" Operator="Equal" Value="{itemId}" />'
-                       f'<Filter Field="LocationId" Operator="Contains" Value="{locs}" />'
+                       f'<Filter Field="ItemId" Operator="Equal" Value="{item_id}" />'
+                       f'<Filter Field="LocationId" Operator="Contains" Value="{_locs}" />'
                        '</Filters>',
                        'location-quantity-export',
-                       process_rta_xml
-                       #,True
-                       )
+                        _process_rta_xml
+                        #,True
+                        )
 
 
 def import_rta_by_date(date, run_by_item_at_the_end=False):
+    # Request RTA modified after date from Teamwork API
+    # and save results to MySQL DB
     print(f'\tRequesting RTA for all Items starting from {date}.')
-    multy_chunk_import('<Settings>'
+    _multi_chunk_import('<Settings>'
                        '<ItemIdentifierSetting>TeamworkId</ItemIdentifierSetting>'
                        '<LocationIdentifierSetting>TeamworkId</LocationIdentifierSetting>'
                        '</Settings>'
                        '<Filters>'
-                       #f'<Filter Field="ItemId" Operator="Equal" Value="9E925D6D-6398-4B29-828C-1A5BE8600F00" />'
+                       # f'<Filter Field="ItemId" Operator="Equal" Value="9E925D6D-6398-4B29-828C-1A5BE8600F00" />'
                        f'<Filter Field="RecModified" Operator="Greater than or equal" Value="{date}" />'
-                       f'<Filter Field="LocationId" Operator="Contains" Value="{locs}" />'
+                       f'<Filter Field="LocationId" Operator="Contains" Value="{_locs}" />'
                        '</Filters>',
-                       'location-quantity-export',
-                       process_rta_xml)
+                        'location-quantity-export',
+                        _process_rta_xml)
 
     if run_by_item_at_the_end:
         global db
         with db.cursor() as cursor:
-            cursor.execute('select ItemId from Items where LocCount < %s and Qty is not Null',(loc_count,))
+            cursor.execute('select ItemId from Items where LocCount < %s and Qty is not Null', (_loc_count,))
             while db:
                 row = cursor.fetchone()
                 if not row:
@@ -394,7 +407,6 @@ if __name__ == '__main__':
         import_styles()
 
         import_rta_by_date(dateutil.parser.parse('2000-01-01 00:00:00'))
-
 
     finally:
         if db:
