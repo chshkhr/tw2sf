@@ -396,7 +396,7 @@ if __name__ == '__main__':
         parser.add_argument('--chunk', type=int, help=f'Chunk Size ({chunk_size})')
         parser.add_argument('--start', help=f'Start Date ({start_date})')
         parser.add_argument('--drop', nargs='?', type=bool, const=False,
-                            help=f'Drop tables in "{db.host_info} {twmysql._DB}"')
+                            help=f'Drop tables in "{twmysql._DB}"')
         args = parser.parse_args()
         if args.chunk is not None:
             chunk_size = int(args.chunk)

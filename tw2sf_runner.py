@@ -3,7 +3,6 @@ import time
 import utils
 import teamworker
 import shopifier
-from twmysql import stop, stop_message
 
 
 def log(s):
@@ -45,4 +44,4 @@ while True:
             break
 
     log('Sleep for 5 minutes\n')
-    time.sleep(3)
+    time.sleep(300)
