@@ -79,7 +79,7 @@ def _export_style(row, publish_zero_qty=False):
         filtered += 1
         return product  # filtered
 
-    while db and -1 < repeat < MAX_REPEAT:
+    while -1 < repeat < MAX_REPEAT:
         if repeat > 0:
             time.sleep(repeat * repeat)
 
@@ -136,10 +136,11 @@ def _export_style(row, publish_zero_qty=False):
                     break
                 sku = item.find('PLU').text or f'Empty PLU {varcount}'
                 variant = dict()
-                for v in product.variants:
-                    if v.sku == sku:
-                        variant['id'] = v.id
-                        break
+                if oldProductID and product.variants:
+                    for v in product.variants:
+                        if v.sku == sku:
+                            variant['id'] = v.id
+                            break
                 variant['sku'] = sku
                 # ??? 'barcode'
 
@@ -176,8 +177,6 @@ def _export_style(row, publish_zero_qty=False):
                     product.published_at = None
                 product.save()
 
-        except (KeyboardInterrupt, SystemExit) as e:
-            db = None
         except Exception as e:
             err_count += 1
             err_mes = e
@@ -207,77 +206,74 @@ def _export_style(row, publish_zero_qty=False):
                 err_delta = 0
                 repeat = -1
         finally:
-            if not db:
-                print('\tUSER TERMINATION!')
-            else:
-                if repeat <= 1:
-                    done += 1
-                if not channel_active:
-                    err_code = -3  # ErrCode=-3 means this Style belongs to inactive Channel
-                if not publish_zero_qty and style_qty == 0:
-                    err_code = -4  # ErrCode=-4 means total style qty equals zero
-                    filtered += 1
-                if product:
-                    productID = product.id
-                print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), str(err_code),
-                                         styleno, str(oldProductID or 'New-' + str(productID)),
-                                         modif_time, str(style_qty),
-                                         title,
-                                         str(err_mes or ''))))
-                with db.cursor() as upd:
-                    upd.execute('UPDATE StyleStream SET '
-                                'ProductSent = case when %s<=0 then CURRENT_TIMESTAMP(3) else Null end, '
-                                'ProductID = %s, '
-                                'OldProductID = %s, '
-                                'VariantsCount = %s, '
-                                'ErrMes = %s, '
-                                'ErrCode = %s, '
-                                'RetryCount = RetryCount + 1 '
-                                'WHERE ID = %s',
-                                (repeat,
-                                 productID,
-                                 oldProductID,
-                                 varcount,
-                                 err_mes,
-                                 err_code,
-                                 row['ID']
-                                 )
-                                )
-                with db.cursor() as upd:
-                    upd.execute('UPDATE SyncRuns SET '
-                                'DstLastSendTime = CURRENT_TIMESTAMP(3), '
-                                'DstProcessedEntities = DstProcessedEntities + 1, '
-                                'DstErrorCount = DstErrorCount + %s '
-                                'WHERE ID = %s',
-                                (err_delta,
-                                 row['SyncRunsID']
-                                 )
-                                )
-                if db and productID and not err_delta:
-                    # Save mappings Items to Variants:
-                    with db.cursor() as cur:
-                        for index, variant in enumerate(product.variants):
-                            cur.execute('INSERT INTO Items (ItemId, StyleId, VariantID, QtySent) '
-                                        'VALUES (%s, %s, %s, CURRENT_TIMESTAMP(3)) '
-                                        'ON DUPLICATE KEY UPDATE '
-                                        'StyleId = %s, '
-                                        'VariantID = %s, '
-                                        'QtySent = case when %s > 0 then CURRENT_TIMESTAMP(3) else Null end',
-                                        (variants[index]['ItemId'],  # variant['ItemId'] lost after product.save()
-                                         styleid,
-                                         variant.id,
-                                         styleid,
-                                         variant.id,
-                                         product.id,
-                                         )
-                                        )
-                        if err_code == -5:
-                            cur.execute('UPDATE Items SET QtySent = CURRENT_TIMESTAMP(3) '
-                                        'WHERE StyleId = %s '
-                                        'AND QtySent IS NULL ',
-                                        (styleid,))
+            if repeat <= 1:
+                done += 1
+            if not channel_active:
+                err_code = -3  # ErrCode=-3 means this Style belongs to inactive Channel
+            if not publish_zero_qty and style_qty == 0:
+                err_code = -4  # ErrCode=-4 means total style qty equals zero
+                filtered += 1
+            if product:
+                productID = product.id
+            print('\t\t', '\t'.join((str(done), str(row['ID']), str(varcount), str(err_count), str(err_code),
+                                     styleno, str(oldProductID or 'New-' + str(productID)),
+                                     modif_time, str(style_qty),
+                                     title,
+                                     str(err_mes or ''))))
+            with db.cursor() as upd:
+                upd.execute('UPDATE StyleStream SET '
+                            'ProductSent = case when %s<=0 then CURRENT_TIMESTAMP(3) else Null end, '
+                            'ProductID = %s, '
+                            'OldProductID = %s, '
+                            'VariantsCount = %s, '
+                            'ErrMes = %s, '
+                            'ErrCode = %s, '
+                            'RetryCount = RetryCount + 1 '
+                            'WHERE ID = %s',
+                            (repeat,
+                             productID,
+                             oldProductID,
+                             varcount,
+                             err_mes,
+                             err_code,
+                             row['ID']
+                             )
+                            )
+            with db.cursor() as upd:
+                upd.execute('UPDATE SyncRuns SET '
+                            'DstLastSendTime = CURRENT_TIMESTAMP(3), '
+                            'DstProcessedEntities = DstProcessedEntities + 1, '
+                            'DstErrorCount = DstErrorCount + %s '
+                            'WHERE ID = %s',
+                            (err_delta,
+                             row['SyncRunsID']
+                             )
+                            )
+            if productID and not err_delta:
+                # Save mappings Items to Variants:
+                with db.cursor() as cur:
+                    for index, variant in enumerate(product.variants):
+                        cur.execute('INSERT INTO Items (ItemId, StyleId, VariantID, QtySent) '
+                                    'VALUES (%s, %s, %s, CURRENT_TIMESTAMP(3)) '
+                                    'ON DUPLICATE KEY UPDATE '
+                                    'StyleId = %s, '
+                                    'VariantID = %s, '
+                                    'QtySent = case when %s > 0 then CURRENT_TIMESTAMP(3) else Null end',
+                                    (variants[index]['ItemId'],  # variant['ItemId'] lost after product.save()
+                                     styleid,
+                                     variant.id,
+                                     styleid,
+                                     variant.id,
+                                     product.id,
+                                     )
+                                    )
+                    if err_code == -5:
+                        cur.execute('UPDATE Items SET QtySent = CURRENT_TIMESTAMP(3) '
+                                    'WHERE StyleId = %s '
+                                    'AND QtySent IS NULL ',
+                                    (styleid,))
 
-                return product
+            return product
 
 
 _style_qry = ('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
@@ -294,7 +290,7 @@ def _print_header():
 
 def _print_footer():
     global done, filtered
-    global tot_count, err_count, db
+    global tot_count, err_count
     print(f'\t\tProcessed: {done}. Filtered/Deactivated: {filtered}. Errors: {err_count}. Sent to "{shop_url_short}": {done-err_count-filtered}.')
 
 
@@ -322,11 +318,14 @@ def export_styles(publish_zero_qty=False):
                        'WHERE s.ProductSent IS NULL '
                        # DEBUG 'WHERE s.ID BETWEEN 170 AND 190 '
                        'ORDER BY s.RecModified, s.ID')
-        _print_header()
-        while db:
+        first_run = True
+        while True:
             row = cursor.fetchone()
             if not row:
                 break
+            if first_run:
+                first_run = False
+                _print_header()
             _export_style(row, publish_zero_qty)
 
     _print_footer()
@@ -340,7 +339,6 @@ def export_qty(resend=False):
     filtered = 0
 
     print(f'\tLooking for not sent RTA in DB "{db.host_info} {twmysql._DB}"...')
-    _print_header()
     if resend:
         s = ''
     else:
@@ -352,10 +350,14 @@ def export_qty(resend=False):
                        'AND StyleId IS NOT NULL ' +
                        s
                        )
-        while db:
+        first_run = True
+        while True:
             row = cursor.fetchone()
             if not row:
                 break
+            if first_run:
+                first_run = False
+                _print_header()
             with db.cursor() as cursor2:
                 cursor2.execute(_style_qry + 'WHERE s.StyleID=%s', (row['StyleId'],))
                 row2 = cursor2.fetchone()

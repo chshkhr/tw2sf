@@ -18,7 +18,7 @@ TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
                 'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
 
 # Settings
-start_date = dateutil.parser.parse('2000-01-01 00:00:00')  # used on first run, get from DB later
+start_date = dateutil.parser.parse('2014-01-01 00:00:00')  # used on first run, get from DB later
 shift_ms = 3  # set 3 at minimum to avoid repeatable sending of the last record
 chunk_size = 100  # Number of records per one request
 chunk_num = 0  # Current chunk number
@@ -57,36 +57,31 @@ def _get_xml_root(req, apitype):
     global apiDocumentId, apiRequestTime, last_response
     xml_root = None
     last_response = None
-    try:
-        data = {'Data': req,
-                'Source': 'VC_Test', 'UseApiVersion2': 'true',
-                'ApiKey': TW_API_KEY, 'Async': 'true',
-                'ApiRequestType': apitype}
-        last_response = requests.post(TW_URL + 'api.ashx', data=data)
+    data = {'Data': req,
+            'Source': 'VC_Test', 'UseApiVersion2': 'true',
+            'ApiKey': TW_API_KEY, 'Async': 'true',
+            'ApiRequestType': apitype}
+    last_response = requests.post(TW_URL + 'api.ashx', data=data)
+    xml_root = _get_root_from_response(last_response)
+    a = xml_root.attrib['ApiDocumentId']
+    status = xml_root.attrib['Status']
+    count = 0
+    wait = 3
+    while status == 'InProcess':
+        time.sleep(wait)
+        last_response = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
         xml_root = _get_root_from_response(last_response)
-        a = xml_root.attrib['ApiDocumentId']
         status = xml_root.attrib['Status']
-        count = 0
-        wait = 3
-        while status == 'InProcess':
-            time.sleep(wait)
-            last_response = requests.post(TW_URL + 'ApiStatus.ashx', data={'ID': a})
-            xml_root = _get_root_from_response(last_response)
-            status = xml_root.attrib['Status']
-            count += 1
-            if count > max_wait // wait:
-                break
-        if apiDocumentId is None and status == 'Successful':
-            apiDocumentId = a  # None otherwise
-        if 'apiRequestTime' in xml_root.attrib:
-            apiRequestTime = xml_root.attrib['apiRequestTime']
-    except (KeyboardInterrupt, SystemExit) as e:
-        db = None
-        return None
-    else:
-        if status == 'Error':
-            print('\t\t'+xml_root.attrib[status])
-        return xml_root
+        count += 1
+        if count > max_wait // wait:
+            break
+    if apiDocumentId is None and status == 'Successful':
+        apiDocumentId = a  # None otherwise
+    if 'apiRequestTime' in xml_root.attrib:
+        apiRequestTime = xml_root.attrib['apiRequestTime']
+    if status == 'Error':
+        print('\t\t'+xml_root.attrib[status])
+    return xml_root
 
 
 def _process_styles_xml(xml_root):
@@ -113,7 +108,7 @@ def _process_styles_xml(xml_root):
                 syncRunsID = data['SyncRunsID']
 
 
-    if db and xml_root and apiDocumentId:
+    if xml_root and apiDocumentId:
         try:
             with db.cursor() as cursor:
                 # Write Starting Time on First run
@@ -166,7 +161,7 @@ def _process_styles_xml(xml_root):
                         print('\t\t\t\t', e)
                     finally:
                         done += 1
-                print(f'\t\t\tStyles received: {done}. Saved to DB "{twmysql._DB}"')
+                print(f'\t\t\tStyles received: {done}. Saved to DB "{db.host_info} {twmysql._DB}"')
 
                 # Write current time and counters on each run
                 cursor.execute('UPDATE SyncRuns SET '                      
@@ -181,8 +176,6 @@ def _process_styles_xml(xml_root):
                                 done,
                                 syncRunsID,
                                 ))
-        except (KeyboardInterrupt, SystemExit) as e:
-            db = None
         finally:
             if done:
                 _save_last_response('-styles')
@@ -249,13 +242,13 @@ def _multi_chunk_import(api_req, api_type, process_xml_function, one_chunk=False
     else:
         if 'TotalRecords' in xml_root.attrib:
             total_rec = int(xml_root.attrib['TotalRecords'])
-            if not one_chunk:
+            if not one_chunk and (total_rec is None or total_rec>0):
                 print(f'\t\tChunk #{chunk_num} {skip}/{total_rec}...')
         if process_xml_function:
             done = process_xml_function(xml_root)
         if not one_chunk:
             skip = done
-            while db and done and done > 0 and (total_rec == '?' or skip < total_rec):
+            while done and done > 0 and (total_rec == '?' or skip < total_rec):
                 chunk_num += 1
                 print(f'\t\tChunk #{chunk_num} {skip}/{total_rec}...')
                 req = (_api_request_prefix +
@@ -278,9 +271,9 @@ def import_styles():
     with db.cursor() as cursor:
         # We are starting from the modification time of the last received record
         cursor.execute('select max(RecModified) as startdate from StyleStream;')
-        data = cursor.fetchone()
-        if data['startdate']:
-            start_date = data['startdate']
+        row = cursor.fetchone()
+        if row['startdate']:
+            start_date = row['startdate']
             if shift_ms:
                 start_date += datetime.timedelta(milliseconds=shift_ms)
         start_date_ = start_date.isoformat(timespec='milliseconds')
@@ -334,7 +327,7 @@ def _process_rta_xml(xml_root):
                             apiRequestTime,
                             ))
 
-    print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{twmysql._DB}"')
+    print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{db.host_info} {twmysql._DB}"')
     if done > 0:
         _save_last_response('-rta')
     return done
@@ -359,9 +352,20 @@ def import_rta_by_item(item_id):
                         )
 
 
-def import_rta_by_date(date, run_by_item_at_the_end=False):
+def import_rta_by_date(date=None, run_by_item_at_the_end=False):
     # Request RTA modified after date from Teamwork API
     # and save results to MySQL DB
+    if not date:
+        with db.cursor() as cursor:
+            cursor.execute('SELECT MAX(QtyApiRequestTime) startdate FROM Items ')
+            row = cursor.fetchone()
+            if row['startdate']:
+                date = row['startdate']
+                if shift_ms:
+                    date += datetime.timedelta(milliseconds=shift_ms)
+            else:
+                date = start_date
+
     print(f'\tRequesting RTA for all Items starting from {date}.')
     _multi_chunk_import('<Settings>'
                        '<ItemIdentifierSetting>TeamworkId</ItemIdentifierSetting>'
@@ -376,10 +380,9 @@ def import_rta_by_date(date, run_by_item_at_the_end=False):
                         _process_rta_xml)
 
     if run_by_item_at_the_end:
-        global db
         with db.cursor() as cursor:
             cursor.execute('select ItemId from Items where LocCount < %s and Qty is not Null', (_loc_count,))
-            while db:
+            while True:
                 row = cursor.fetchone()
                 if not row:
                     break
@@ -393,7 +396,7 @@ if __name__ == '__main__':
         parser.add_argument('--chunk', type=int, help=f'Chunk Size ({chunk_size})')
         parser.add_argument('--start', help=f'Start Date ({start_date})')
         parser.add_argument('--drop', nargs='?', type=bool, const=False,
-                            help=f'Drop tables in {twmysql._DB}')
+                            help=f'Drop tables in "{db.host_info} {twmysql._DB}"')
         args = parser.parse_args()
         if args.chunk is not None:
             chunk_size = int(args.chunk)
@@ -406,7 +409,7 @@ if __name__ == '__main__':
 
         import_styles()
 
-        import_rta_by_date(dateutil.parser.parse('2000-01-01 00:00:00'))
+        import_rta_by_date()  #dateutil.parser.parse('2000-01-01 00:00:00'))
 
     finally:
         if db:
