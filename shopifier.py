@@ -11,10 +11,17 @@ import utils
 import time
 
 # Shopify constants
-API_KEY = 'ed295b157652f8fbe1ca8de4b8db4e72'
-PASSWORD = 'bf7c0c7e9e085459c3eeb022d32e8202'
-SHARED_SECRET = '5f6f9d277b736295637ca8e9fa642b41'
-SHOP_NAME = 'vicrom'
+from sys import platform
+if platform == 'linux' or platform == 'linux2':
+    API_KEY = 'ed295b157652f8fbe1ca8de4b8db4e72'
+    PASSWORD = 'bf7c0c7e9e085459c3eeb022d32e8202'
+    SHARED_SECRET = '5f6f9d277b736295637ca8e9fa642b41'
+    SHOP_NAME = 'vicrom'
+else:
+    API_KEY = '31a29b1f8ec4c1440ee60d0134a66dd0'
+    PASSWORD = '529fe579821097684f543a8660c714f7'
+    SHARED_SECRET = '50a5e6d13d4dd436f2a78fe3cb276b66'
+    SHOP_NAME = 'cloudworktest'
 
 # Settings
 MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
@@ -311,7 +318,7 @@ def export_styles(publish_zero_qty=False):
                        'AND s2.ProductSent IS NULL '
                        'AND s.RecModified < s2.RecModified ')
 
-    print(f'\tLooking for not sent Styles in DB "{db.host_info} {twmysql._DB}"')
+    print(f'\tLooking for not sent Styles in DB "{twmysql._HOST} {twmysql._DB}"')
     # Copy Styles to Items!
     with db.cursor() as cursor:
         cursor.execute(_style_qry +
@@ -338,7 +345,7 @@ def export_qty(resend=False):
     done = 0
     filtered = 0
 
-    print(f'\tLooking for not sent RTA in DB "{db.host_info} {twmysql._DB}"...')
+    print(f'\tLooking for not sent RTA in DB "{twmysql._HOST} {twmysql._DB}"...')
     if resend:
         s = ''
     else:

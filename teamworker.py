@@ -161,7 +161,7 @@ def _process_styles_xml(xml_root):
                         print('\t\t\t\t', e)
                     finally:
                         done += 1
-                print(f'\t\t\tStyles received: {done}. Saved to DB "{db.host_info} {twmysql._DB}"')
+                print(f'\t\t\tStyles received: {done}. Saved to DB "{twmysql._HOST} {twmysql._DB}"')
 
                 # Write current time and counters on each run
                 cursor.execute('UPDATE SyncRuns SET '                      
@@ -327,7 +327,7 @@ def _process_rta_xml(xml_root):
                             apiRequestTime,
                             ))
 
-    print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{db.host_info} {twmysql._DB}"')
+    print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{twmysql._HOST} {twmysql._DB}"')
     if done > 0:
         _save_last_response('-rta')
     return done
