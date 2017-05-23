@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="teamwork@95.47.116.157" uuid="fb066b9f-bcf2-4a9a-832d-7acfbd950fa1">
+    <data-source source="LOCAL" name="teamwork@localhost" uuid="fb066b9f-bcf2-4a9a-832d-7acfbd950fa1">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/teamwork</jdbc-url>
+      <driver-properties>
+        <property name="autoReconnect" value="true" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="yearIsDateType" value="false" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="khar_local" uuid="e955df1a-0cb4-4f7a-8940-ed223f992c99">
+      <driver-ref>java.sql.Driver</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.firebirdsql.jdbc.FBDriver</jdbc-driver>
+      <jdbc-url>jdbc:firebirdsql://192.168.108.8:3050/f:/data/db/stv25.fdb</jdbc-url>
+      <driver-properties>
+        <property name="charSet" value="utf-8" />
+      </driver-properties>
+    </data-source>
+    <data-source source="LOCAL" name="teamwork@95.47.116.157" uuid="0fea9e77-9949-459a-a6ef-3f11d2916e26">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>

@@ -10,4 +10,3 @@ git_init.bat
 build/
 dist/
 install_ipython_notebook.bat
-.idea/

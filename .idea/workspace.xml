@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/teamworker.py" line="366" mnemonic="1" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="">
+    <list default="true" id="40352c53-224b-4390-a3bc-335229e1688b" name="Default" comment="Styles With Qty">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shopifier.py" afterPath="$PROJECT_DIR$/shopifier.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/02 StyleStream.sql" afterPath="$PROJECT_DIR$/sql/02 StyleStream.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/03 Styles.sql" afterPath="$PROJECT_DIR$/sql/03 Styles.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/04 Items.sql" afterPath="$PROJECT_DIR$/sql/04 Items.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teamworker.py" afterPath="$PROJECT_DIR$/teamworker.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,17 +18,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1494605739471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$tw2sf_runner.coverage" NAME="tw2sf_runner Coverage Results" MODIFIED="1495548261780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$guardian.coverage" NAME="guardian Coverage Results" MODIFIED="1492816412704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$teamworker___drop.coverage" NAME="teamworker --drop Coverage Results" MODIFIED="1495206226877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1495206678061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier.coverage" NAME="shopifier Coverage Results" MODIFIED="1495547495519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$teamworker___drop.coverage" NAME="teamworker --drop Coverage Results" MODIFIED="1495547534363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$shopifier_cleanup.coverage" NAME="shopifier+cleanup Coverage Results" MODIFIED="1494511188468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$TW2SF.coverage" NAME="TW2SF Coverage Results" MODIFIED="1492786731215" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamworker_drop.coverage" NAME="teamworker+drop Coverage Results" MODIFIED="1494509660983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$shopifier___cleanup.coverage" NAME="shopifier --cleanup Coverage Results" MODIFIED="1495206503099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$shopifier___cleanup.coverage" NAME="shopifier --cleanup Coverage Results" MODIFIED="1495547952224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$pyqt_test.coverage" NAME="pyqt_test Coverage Results" MODIFIED="1494508658545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$multiprocessing_test.coverage" NAME="multiprocessing_test Coverage Results" MODIFIED="1492531071028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/tw2sf$teamworker.coverage" NAME="teamworker Coverage Results" MODIFIED="1495198293546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/tw2sf$teamworker.coverage" NAME="teamworker Coverage Results" MODIFIED="1495550502098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$test.coverage" NAME="test Coverage Results" MODIFIED="1492529966292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/tw2sf$teamwork.coverage" NAME="teamwork Coverage Results" MODIFIED="1492702760322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -39,41 +40,104 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="teamwork@95.47.116.157" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="teamwork@95.47.116.157" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="teamwork" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="tw2sf" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file leaf-file-name="teamworker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/teamworker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5454">
-              <caret line="314" column="36" lean-forward="false" selection-start-line="314" selection-start-column="36" selection-end-line="314" selection-end-column="36" />
+            <state relative-caret-position="846">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding>
-                <marker date="1495206226862" expanded="true" signature="3214:3256" ph="SELECT Max(I... SyncRuns" />
-                <marker date="1495206226862" expanded="true" signature="3411:3474" ph="SELECT Style... SyncRuns" />
-                <marker date="1495206226862" expanded="true" signature="3783:3833" ph="INSERT INTO SyncRuns... " />
-                <marker date="1495206226862" expanded="true" signature="4216:4258" ph="SELECT Max(I... SyncRuns" />
-                <marker date="1495206226862" expanded="true" signature="4394:4733" ph="UPDATE SyncR... " />
-                <marker date="1495206226862" expanded="true" signature="5426:5511" ph="INSERT INTO StyleStream... " />
-                <marker date="1495206226862" expanded="true" signature="5426:5512" ph="INSERT INTO StyleStream... " />
-                <marker date="1495206226862" expanded="true" signature="5426:5584" ph="INSERT INTO StyleStream... " />
-                <marker date="1495206226862" expanded="true" signature="5426:5586" ph="INSERT INTO StyleStream... " />
-                <marker date="1495206226862" expanded="true" signature="6042:6502" ph="UPDATE SyncR... " />
-                <marker date="1495206226862" expanded="true" signature="9625:9678" ph="select max(R... StyleStream" />
-                <marker date="1495206226862" expanded="true" signature="11089:11226" ph="INSERT INTO Items... " />
-                <marker date="1495206226862" expanded="true" signature="11089:11230" ph="INSERT INTO Items... " />
-                <marker date="1495206226862" expanded="true" signature="11233:13778" ph="UPDATE Items... " />
+                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#492#588#0" expanded="false" />
+                <element signature="e#1129#1496#0" expanded="false" />
+                <element signature="e#1221#1496#0" expanded="false" />
+                <element signature="e#1238#1463#0" expanded="false" />
+                <element signature="e#1542#1721#0" expanded="false" />
+                <element signature="e#1895#2057#0" expanded="false" />
+                <element signature="e#2326#2598#0" expanded="false" />
+                <element signature="e#3206#4077#0" expanded="false" />
+                <element signature="e#3246#4077#0" expanded="false" />
+                <element signature="e#3443#3613#0" expanded="false" />
+                <element signature="e#3729#4077#0" expanded="false" />
+                <element signature="e#4184#7707#0" expanded="false" />
+                <element signature="e#4274#4910#0" expanded="false" />
+                <element signature="e#4467#4808#0" expanded="false" />
+                <element signature="e#4846#4908#0" expanded="false" />
+                <element signature="e#5024#6799#0" expanded="false" />
+                <element signature="e#5053#6647#0" expanded="false" />
+                <element signature="e#5582#5674#0" expanded="false" />
+                <element signature="e#5888#6179#0" expanded="false" />
+                <element signature="e#5946#6053#0" expanded="false" />
+                <element signature="e#6099#6177#0" expanded="false" />
+                <element signature="e#6220#6483#0" expanded="false" />
+                <element signature="e#6525#6644#0" expanded="false" />
+                <element signature="e#6994#7457#0" expanded="false" />
+                <element signature="e#7491#7672#0" expanded="false" />
+                <element signature="e#7737#7792#0" expanded="false" />
+                <element signature="e#8048#8270#0" expanded="false" />
+                <element signature="e#8088#8270#0" expanded="false" />
+                <element signature="e#8161#8264#0" expanded="false" />
+                <element signature="e#8386#9017#0" expanded="false" />
+                <element signature="e#8460#9017#0" expanded="false" />
+                <element signature="e#8535#9017#0" expanded="false" />
+                <element signature="e#8630#9017#0" expanded="false" />
+                <element signature="e#8872#9017#0" expanded="false" />
+                <element signature="e#9043#9187#0" expanded="false" />
+                <element signature="e#10468#10625#0" expanded="false" />
+                <element signature="e#11121#11542#0" expanded="false" />
+                <element signature="e#11631#11965#0" expanded="false" />
+                <element signature="e#13842#14618#0" expanded="false" />
+                <element signature="e#13995#14468#0" expanded="false" />
+                <element signature="e#14690#16312#0" expanded="false" />
+                <element signature="e#16047#16312#0" expanded="false" />
+                <marker date="1495550001962" expanded="false" signature="3262:3304" ph="SELECT Max(I... SyncRuns" />
+                <marker date="1495550001962" expanded="false" signature="3459:3524" ph="SELECT Style... SyncRuns" />
+                <marker date="1495550001962" expanded="false" signature="3864:3914" ph="INSERT INTO SyncRuns... " />
+                <marker date="1495550001962" expanded="false" signature="4290:4332" ph="SELECT Max(I... SyncRuns" />
+                <marker date="1495550001962" expanded="false" signature="4468:4807" ph="UPDATE SyncR... " />
+                <marker date="1495550001962" expanded="false" signature="5947:6053" ph="INSERT INTO Items... " />
+                <marker date="1495550001962" expanded="false" signature="6221:6482" ph="INSERT INTO StyleStream... " />
+                <marker date="1495550001962" expanded="false" signature="6995:7455" ph="UPDATE SyncR... " />
+                <marker date="1495550001962" expanded="false" signature="11218:11271" ph="select max(R... StyleStream" />
+                <marker date="1495550001962" expanded="false" signature="12856:12985" ph="INSERT INTO Items... " />
+                <marker date="1495550001962" expanded="true" signature="12856:13288" ph="INSERT INTO Items... " />
+                <marker date="1495550001962" expanded="true" signature="12856:13338" ph="INSERT INTO Items... " />
+                <marker date="1495550001962" expanded="true" signature="14858:14910" ph="SELECT MAX(Q... Items" />
+                <marker date="1495550001962" expanded="true" signature="14864:14910" ph="INSERT INTO Items... " />
+                <marker date="1495550001962" expanded="false" signature="16063:16103" ph="select ItemI... Items" />
+                <marker date="1495550001962" expanded="false" signature="16063:16127" ph="select ItemI... Items" />
+                <marker date="1495550001962" expanded="false" signature="16069:16103" ph="INSERT INTO Items... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tw2sf_runner.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-198">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="16" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -81,23 +145,63 @@
       <file leaf-file-name="shopifier.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shopifier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1495206770238" expanded="true" signature="1625:1804" ph="UPDATE teamw... " />
-                <marker date="1495206770238" expanded="true" signature="1625:2017" ph="UPDATE teamw... " />
-                <marker date="1495206770238" expanded="true" signature="2187:2360" ph="SELECT s.ID " />
-                <marker date="1495206770238" expanded="true" signature="2187:2725" ph="SELECT s.ID Styles" />
-                <marker date="1495206770238" expanded="true" signature="2187:2731" ph="SELECT s.ID StyleStream" />
-                <marker date="1495206770238" expanded="true" signature="2317:2360" ph="SELECT Produ... STYLES" />
-                <marker date="1495206770238" expanded="true" signature="2398:2501" ph="SELECT Produ... Styles" />
-                <marker date="1495206770238" expanded="true" signature="7471:7510" ph="SELECT Qty F... Items" />
-                <marker date="1495206770238" expanded="true" signature="10269:10797" ph="UPDATE Style... " />
-                <marker date="1495206770238" expanded="true" signature="11290:11603" ph="UPDATE SyncR... " />
-                <marker date="1495206770238" expanded="true" signature="12038:12266" ph="INSERT INTO Items... " />
-                <marker date="1495206770238" expanded="true" signature="12971:13216" ph="UPDATE Style... " />
-                <marker date="1495206770238" expanded="true" signature="13244:13359" ph="UPDATE SyncR... " />
+                <element signature="e#52#139#0" expanded="false" />
+                <element signature="e#1298#1502#0" expanded="false" />
+                <element signature="e#1809#1822#0" expanded="false" />
+                <element signature="e#3236#3435#0" expanded="false" />
+                <element signature="e#3273#3435#0" expanded="false" />
+                <element signature="e#5247#5403#0" expanded="false" />
+                <element signature="e#5939#6339#0" expanded="false" />
+                <element signature="e#6098#6339#0" expanded="false" />
+                <element signature="e#6200#6339#0" expanded="false" />
+                <element signature="e#6697#6878#0" expanded="false" />
+                <element signature="e#6906#7659#0" expanded="false" />
+                <element signature="e#6941#7320#0" expanded="false" />
+                <element signature="e#7097#7233#0" expanded="false" />
+                <element signature="e#7379#7523#0" expanded="false" />
+                <element signature="e#7558#7659#0" expanded="false" />
+                <element signature="e#7927#8018#0" expanded="false" />
+                <element signature="e#8119#8448#0" expanded="false" />
+                <element signature="e#8517#8984#0" expanded="false" />
+                <element signature="e#9375#9819#0" expanded="false" />
+                <element signature="e#9387#9670#0" expanded="false" />
+                <element signature="e#9701#9758#0" expanded="false" />
+                <element signature="e#10970#11198#0" expanded="false" />
+                <element signature="e#10982#11149#0" expanded="false" />
+                <element signature="e#11243#11578#0" expanded="false" />
+                <element signature="e#11621#11730#0" expanded="false" />
+                <element signature="e#11758#11958#0" expanded="false" />
+                <element signature="e#12311#12698#0" expanded="false" />
+                <element signature="e#12326#12697#0" expanded="false" />
+                <element signature="e#12849#13318#0" expanded="false" />
+                <element signature="e#12900#13049#0" expanded="false" />
+                <element signature="e#14453#15616#0" expanded="false" />
+                <element signature="e#14591#15311#0" expanded="false" />
+                <element signature="e#14606#14854#0" expanded="false" />
+                <element signature="e#14903#15021#0" expanded="false" />
+                <element signature="e#15070#15174#0" expanded="false" />
+                <element signature="e#15223#15286#0" expanded="false" />
+                <element signature="e#15408#15582#0" expanded="false" />
+                <element signature="e#15487#15582#0" expanded="false" />
+                <marker date="1495546936874" expanded="false" signature="5952:5991" ph="SELECT Qty F... Items" />
+                <marker date="1495546936874" expanded="false" signature="8518:8983" ph="UPDATE Style... " />
+                <marker date="1495546936874" expanded="false" signature="9388:9669" ph="UPDATE SyncR... " />
+                <marker date="1495546936874" expanded="true" signature="10064:10477" ph="INSERT INTO Items... " />
+                <marker date="1495546936874" expanded="false" signature="10983:11147" ph="UPDATE Items... " />
+                <marker date="1495546936874" expanded="false" signature="11244:11576" ph="SELECT s.ID StyleStream" />
+                <marker date="1495546936874" expanded="false" signature="11354:11406" ph="SELECT Produ... Styles" />
+                <marker date="1495546936874" expanded="false" signature="11426:11529" ph="SELECT Produ... StyleStream" />
+                <marker date="1495546936874" expanded="false" signature="12327:12695" ph="UPDATE Style... " />
+                <marker date="1495546936874" expanded="true" signature="13730:13881" ph="SELECT DISTI... Items" />
+                <marker date="1495546936874" expanded="true" signature="13730:13882" ph="SELECT DISTI... " />
+                <marker date="1495546936874" expanded="true" signature="14607:14852" ph="UPDATE Style... " />
+                <marker date="1495546936874" expanded="true" signature="14904:15019" ph="UPDATE SyncR... " />
+                <marker date="1495546936874" expanded="true" signature="15071:15172" ph="UPDATE Items... " />
+                <marker date="1495546936874" expanded="true" signature="15224:15284" ph="UPDATE Style... " />
               </folding>
             </state>
           </provider>
@@ -114,36 +218,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mys</find>
-      <find>mysh</find>
-      <find>errors</find>
-      <find>errmes</find>
-      <find>Saving Response</find>
-      <find>DEBUG</find>
-      <find>???</find>
-      <find>CHANNELS</find>
-      <find>styleno</find>
-      <find>varcount</find>
-      <find>product.id</find>
-      <find>cle</find>
-      <find>clea</find>
-      <find>drop</find>
-      <find>Styles</find>
-      <find>session</find>
-      <find>apiDocumentId</find>
-      <find>xml_root</find>
-      <find>last_response</find>
-      <find>start_datestart_date</find>
-      <find>skip</find>
-      <find>chunk_num</find>
-      <find>syncRunsID</find>
+      <find>start_date</find>
+      <find>twm</find>
+      <find>db.ho</find>
+      <find>PUBLISH_ZERO_QTY</find>
+      <find>apire</find>
+      <find>ApiRequestTime</find>
+      <find>styleStreamFilter</find>
+      <find>repeat</find>
+      <find>done</find>
+      <find>return</find>
+      <find>ErC</find>
+      <find>export_styles</find>
+      <find>partia</find>
+      <find>Processed</find>
       <find>start_date_</find>
-      <find>save_last_response</find>
-      <find>RCA</find>
-      <find>rca</find>
-      <find>send</find>
-      <find>channel_active</find>
-      <find>ErrCode</find>
+      <find>Chunk #</find>
+      <find>_print_header</find>
+      <find>global db</find>
+      <find>looking for</find>
+      <find>Can't get 'Successful' Status from Server!</find>
+      <find>looking fo</find>
+      <find>db</find>
+      <find>while db</find>
+      <find>Can't get 'Successful' Statu</find>
+      <find>user t</find>
+      <find>keyb</find>
+      <find>KeyboardInterrupt</find>
+      <find>stop</find>
+      <find>import</find>
+      <find>_db</find>
     </findStrings>
     <replaceStrings>
       <replace>logger.info</replace>
@@ -178,30 +282,34 @@
         <option value="$PROJECT_DIR$/sql/00 Drop All.sql" />
         <option value="$PROJECT_DIR$/old/TW2SF.py" />
         <option value="$PROJECT_DIR$/shopifier.log" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/mylog.py" />
         <option value="$PROJECT_DIR$/guardian.py" />
         <option value="$PROJECT_DIR$/service.py" />
         <option value="$PROJECT_DIR$/start_service.bat" />
         <option value="$PROJECT_DIR$/stop_service.bat" />
-        <option value="$PROJECT_DIR$/tw2sf_service.py" />
-        <option value="$PROJECT_DIR$/tw2sf_runner.py" />
         <option value="$PROJECT_DIR$/pyqt_test.py" />
         <option value="$PROJECT_DIR$/tw2sf_dev_install.sh" />
         <option value="$PROJECT_DIR$/myshopify/__init__.py" />
         <option value="$PROJECT_DIR$/shopify/base.py" />
         <option value="$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py" />
-        <option value="$PROJECT_DIR$/twmysql.py" />
         <option value="$PROJECT_DIR$/sql/01 SyncRuns.sql" />
         <option value="$PROJECT_DIR$/sql/02 Styles.sql" />
         <option value="$PROJECT_DIR$/sql/04 Variants.sql" />
         <option value="$PROJECT_DIR$/sql/readme.txt" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/sql/03 Styles.sql" />
-        <option value="$PROJECT_DIR$/sql/04 Items.sql" />
         <option value="$PROJECT_DIR$/sql/02 StyleStream.sql" />
-        <option value="$PROJECT_DIR$/teamworker.py" />
+        <option value="$PROJECT_DIR$/sql/03 Styles.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console.sql" />
+        <option value="dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.Styles" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/e955df1a-0cb4-4f7a-8940-ed223f992c99/console.sql" />
+        <option value="/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/schema/teamwork/table/Items/trigger/trbuItems_Qty.sql" />
+        <option value="$PROJECT_DIR$/sql/04 Items.sql" />
+        <option value="$PROJECT_DIR$/tw2sf_service.py" />
         <option value="$PROJECT_DIR$/shopifier.py" />
+        <option value="$PROJECT_DIR$/twmysql.py" />
+        <option value="$PROJECT_DIR$/tw2sf_runner.py" />
+        <option value="$PROJECT_DIR$/teamworker.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -215,13 +323,13 @@
     <option name="x" value="64" />
     <option name="y" value="-11" />
     <option name="width" value="1857" />
-    <option name="height" value="937" />
+    <option name="height" value="945" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -235,7 +343,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Changed Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="tw2sf">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="tw2sf">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -255,9 +388,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Firebird JDBC/jaybird-full-3.0.0.jar" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="DDL Data Source&#10;MySQL" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/SQL Dialects" value="MySQL" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -284,7 +419,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.shopifier">
+  <component name="RunManager" selected="Python.teamworker">
     <configuration default="false" name="TW2SF" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -794,7 +929,77 @@
       <option name="project" value="LOCAL" />
       <updated>1495187604840</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Styles With Qty">
+      <created>1495206790166</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1495206790166</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Styles With Qty">
+      <created>1495206843493</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1495206843493</updated>
+    </task>
+    <task id="LOCAL-00027" summary="RTA send with styles">
+      <created>1495449689475</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1495449689475</updated>
+    </task>
+    <task id="LOCAL-00028" summary="For reference">
+      <created>1495482123178</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1495482123179</updated>
+    </task>
+    <task id="LOCAL-00029" summary="RTA for Test">
+      <created>1495487589278</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1495487589279</updated>
+    </task>
+    <task id="LOCAL-00030" summary="RTA export">
+      <created>1495536657726</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1495536657726</updated>
+    </task>
+    <task id="LOCAL-00031" summary="RTA export">
+      <created>1495537102269</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1495537102269</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Keep same VariantID on RTA update">
+      <created>1495541784381</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1495541784381</updated>
+    </task>
+    <task id="LOCAL-00033" summary="RTA for Testing">
+      <created>1495547935036</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1495547935036</updated>
+    </task>
+    <task id="LOCAL-00034" summary="RTA for Testing">
+      <created>1495550775080</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1495550775080</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TodoView">
@@ -807,28 +1012,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="937" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="945" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.4979448" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16981132" sideWeight="0.49373883" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853717" sideWeight="0.4979448" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808718" sideWeight="0.50205517" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32808718" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42736077" sideWeight="0.48803827" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16981132" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32687652" sideWeight="0.49559602" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4297821" sideWeight="0.8561362" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13207547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4268585" sideWeight="0.48803827" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16981132" sideWeight="0.50626117" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.558753" sideWeight="0.8561362" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991913" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297362" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3261391" sideWeight="0.49559602" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -911,21 +1118,18 @@
     <MESSAGE value="Wait for Successful status limited" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Refactoring for reuse of TW code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring for reuse of TW code" />
+    <MESSAGE value="Styles With Qty" />
+    <MESSAGE value="RTA send with styles" />
+    <MESSAGE value="For reference" />
+    <MESSAGE value="RTA for Test" />
+    <MESSAGE value="RTA export" />
+    <MESSAGE value="Keep same VariantID on RTA update" />
+    <MESSAGE value="RTA for Testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="RTA for Testing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/shopify/session.py</url>
-          <line>41</line>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/shopify/session.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file:///usr/local/lib/python3.6/site-packages/pyactiveresource/activeresource.py</url>
           <line>831</line>
@@ -942,65 +1146,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="173" />
+      <option name="time" value="263" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/pymysql/cursors.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/pymysql/connections.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/pymysql/err.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/dateutil/parser.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/OpenSSL/SSL.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/xml/etree/ElementTree.py" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/pymysql/__init__.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="1577" column="0" lean-forward="false" selection-start-line="1577" selection-start-column="0" selection-end-line="1577" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/test.sql_" />
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/152262123/_elementtree.py" />
-    <entry file="file://$PROJECT_DIR$/sql/00 Drop All.sql_" />
-    <entry file="file://$PROJECT_DIR$/shopifier.log" />
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/codecs.py" />
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/152262123/builtins.py" />
-    <entry file="file://$PROJECT_DIR$/mylog.py" />
-    <entry file="file://$PROJECT_DIR$/start_service.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stop_service.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/TW2SF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="229" column="36" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Miniconda3/Lib/site-packages/PyQt5/QtGui.pyi" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console.sql" />
-    <entry file="file://C:/Miniconda3/Lib/site-packages/pymysql/cursors.py" />
-    <entry file="file://C:/Miniconda3/Lib/codecs.py" />
-    <entry file="file://C:/Miniconda3/Lib/ssl.py" />
     <entry file="file://$PROJECT_DIR$/tw2sf_dev_install.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1009,20 +1159,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopify/session.py" />
-    <entry file="file://$PROJECT_DIR$/shopify/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python3.6/site-packages/pyactiveresource/activeresource.py" />
     <entry file="file://$PROJECT_DIR$/shopify/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1033,16 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shopify/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#10#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shopify/resources/asset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
@@ -1050,44 +1181,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="846" column="19" lean-forward="true" selection-start-line="846" selection-start-column="19" selection-end-line="846" selection-end-column="19" />
-          <folding>
-            <element signature="e#145#154#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/twmysql.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="13" lean-forward="true" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shopify/resources/shop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/site-packages/pymysql/cursors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,15 +1206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="54" lean-forward="false" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="71" column="71" lean-forward="false" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,16 +1213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.6/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1642">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1142,7 +1220,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="5072" column="8" lean-forward="false" selection-start-line="5072" selection-start-column="8" selection-end-line="5072" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1150,87 +1227,959 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="1167" column="0" lean-forward="false" selection-start-line="1167" selection-start-column="0" selection-end-line="1167" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/04 Items.sql">
+    <entry file="file:///usr/local/lib/python3.6/site-packages/pymysql/cursors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="201">
+          <caret line="281" column="0" lean-forward="false" selection-start-line="281" selection-start-column="0" selection-end-line="281" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/03 Styles.sql">
+    <entry file="file://$PROJECT_DIR$/old/TW2SF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-          <folding />
+        <state relative-caret-position="2485">
+          <caret line="229" column="36" lean-forward="false" selection-start-line="229" selection-start-column="36" selection-end-line="229" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="1584" column="0" lean-forward="false" selection-start-line="1584" selection-start-column="0" selection-end-line="1584" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/pyactiveresource/activeresource.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="388" column="0" lean-forward="false" selection-start-line="388" selection-start-column="0" selection-end-line="388" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/http/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="936" column="0" lean-forward="false" selection-start-line="936" selection-start-column="0" selection-end-line="936" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopify/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.SyncRuns">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.StyleStream">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" text="SyncRunsID = 1">
+            <filter text="SyncRunsID = 1" />
+            <filter text="ID BETWEEN  20 AND 30" />
+          </filtering>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbview:/18faac18/e955df1a-0cb4-4f7a-8940-ed223f992c99/VADDRESS">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbview:/18faac18/e955df1a-0cb4-4f7a-8940-ed223f992c99/VCLIENTPROFILEMASK">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/e955df1a-0cb4-4f7a-8940-ed223f992c99/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>fb066b9f-bcf2-4a9a-832d-7acfbd950fa1</OriginalElement>
+          <nodes>
+            <node x="" y="">fb066b9f-bcf2-4a9a-832d-7acfbd950fa1.TABLE:teamwork.StyleStream</node>
+            <node x="" y="">fb066b9f-bcf2-4a9a-832d-7acfbd950fa1.TABLE:teamwork.Items</node>
+            <node x="" y="">fb066b9f-bcf2-4a9a-832d-7acfbd950fa1.TABLE:teamwork.Styles</node>
+            <node x="" y="">fb066b9f-bcf2-4a9a-832d-7acfbd950fa1.TABLE:teamwork.SyncRuns</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.6403061224489796" x="375.0" y="362.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/e955df1a-0cb4-4f7a-8940-ed223f992c99">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>e955df1a-0cb4-4f7a-8940-ed223f992c99</OriginalElement>
+          <nodes>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLAN_KBD</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VPICEONDATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SENSITIVITYMATRIX</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREGOODSSTATUS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRPDET2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RUNTIMEFIELDS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REVISEINMIGR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REPRICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DRTT_ISIS_CHANGE_OLDDATA</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPGOODSREMAINDERONDATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VANMODELS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RECIPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$REF_CONSTRAINTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PAYEXPORDERLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SECTOR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OVERHTYPEINCINVLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RECIPEEXCH</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REPRICEDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORESETTING</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BPOPTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SCANCODES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_PROMOAVAL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$LOG_FILES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AGENTCLASS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTTWS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MACROSLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOCLIENTLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSINMIGRDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BUSINESS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OVERHTYPEDOCTYPELINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VTARGETALIST</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:KOMERSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRICECAT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USREASONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AREA</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOLDHISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INNERMIGRATIONDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CREDLIMITS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VRPVAN</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INVENTAR_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICESETTINGSDESCR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INNERMIGRATIONCELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREBRIGADE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPCLNT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ANY_DESCRIPTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DRTT_ISIS_OLDDATA</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:UNIQCLIENT_HISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$COLLATIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$DEPENDENCIES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AUTOTRANSPORT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$PROCEDURES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REPORT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:QUOTAS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:LOSTCRITICALDATA2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLAN_KAM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:LOSTCRITICALDATA1</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPCFR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$TRIGGERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FIXEDPRICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VADDRESS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$EXCEPTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SMI_PROVIDERLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INCOMEINVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_ISIS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_REMAINDER_REPORT1</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OBLEXPORDERLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AVAILABILITYCSKU</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_PROMOAVAL_CSKU</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USERHOST</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DOCHISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPCRDREM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VFIXEDPRICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CSKUSTYLEBASE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FUNCTION_ARGUMENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USERSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSTORES_USING_FOR_LAST_YEAR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REVISESLIV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASKSTATUS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORESETS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODUCTIONCARDS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOORDERLINK_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORECELLSTATUS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FILES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSALECUBEGOODSTREE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODSOVERHTYPELINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DISCOUNTS_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OBJECTUSERRIGHTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_REMAINDER_REPORTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PETROL2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MIDDAYOUT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMORECOMMENDPRICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREBOXESSTATUS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OVERHEADSTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:WORKIT_LNK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPENSESLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICEGRIDCOLUMNS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPVRP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCCARDSMOTION_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ALIST_TARGET_CATEGORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODUCTIONDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPIRATIONDATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODSETS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODSGROUP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PMERCHRESULT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOFILIALSBUDGET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MISSING_CATEGORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDINMIGRLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MEASURE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICESETTINGSTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLAN_GROUP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:NEWCLIENTADD</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$CHECK_CONSTRAINTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OUTCOMEINVOICECELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DRTT_HISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCCOMMONEXT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ALIST</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:MONITORING_DB</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRPVAN</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INCOMEINVOICEDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDER_PG_CONFIRM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_MASTERDATA</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICESETTINGS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OVERHTYPEINMIGRLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRICE4CLIENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$DATABASE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TOTALS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:LOSTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:HOUSING</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICEGROUPS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VANSIZES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VANTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREBOXES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FIELDS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREBOXESTURNGATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OPD_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ROUTECARSDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OVERHTYPEOUTINVLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:NOTDELIV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICEPROCEDURESGROUPS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:IBO$SCHEMA_VERSION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXTRAFEE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMO_PG_REPORT_TMP2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDINCINVLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODLINK_KOMERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTPAYMENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPTBS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$STATEMENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SALESCOND</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VFIRMLIST</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:LOSTLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REVISEOUTINV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ROUTES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MERCHTASK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORECONTROLINVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TASKOBJECTLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CSKUSTYLECURRENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DRTT_ISIS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TASK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_BASEPGPRICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PMERCHTASK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SMI_CLIENTTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:WORKIT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SELLINOUTSTOCK_KORM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MACROS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSTORECELLS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCCOMMON_CHANGE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDER_PG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCLIENT_STV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPGOODSGROUP_ANT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CARDINDEXCHANGE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CRITICALSKU</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REVISEBONUS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSINMIGR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSOUTINVDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VANS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCOMPLEXPRODUCT1</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VERRORLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PGCATEGORY_LINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AGENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRIORGOODS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTCONTRACTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOCKWAVELOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:KOMERSTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCHISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCURRENT_CONNECTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REVISECASH</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRICELOGPG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:NASPUNKTY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REPERRLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODUCTION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PG_CATEGORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DESCRIPTIONDATA</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORESEGMENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CODE1_LINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASKINVENTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INCOMEINVOICEDET_RET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PERIODS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VBUSINESS_PROCESSES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSDET_ANT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOCTPR_ISACTIVE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STATLOSTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REFBOOK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$INDEX_SEGMENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SMI_CLIENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORESCALES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$VIEW_RELATIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODUCTIONDETRAW</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOCKWAVESORTACTION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCDELIVERYDATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SALARYCOEF</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USVISITS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_ACTTION_EXEC</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILESDET2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CHECKINVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MERCHTASKCAT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILIALSDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILESDET3</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_SCORECARD</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BANK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:MONITORING_DB_LOGIST</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$TYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TAXINVOICENUMBERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPGOODS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REVISEGOODS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLANS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPCLIENTFILIALS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRPRT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREUSERSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$RELATION_CONSTRAINTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_PROMOAVAL_CSKU_NOV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXCEPTIONDATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASKLINK_WAVE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GROUPINVOICENOTCELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AGENTSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SALESCONDDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BILLLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREBOXESMOTION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPEDITORCLND</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$RELATIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASKDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DISCOUNT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCCOMMONDETUKTZED</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODSETLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCLIENTPROFILEMASK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AUTOFEATURES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SYSSET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OUTCOMEINVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMO_PG_REPORT_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FIELD_DIMENSIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOCKWAVESORTSTATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VANCLND</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRPCLIENTTWS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BANKTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GCASLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BUSINESSRULES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$GENERATORS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPORTDOCUMENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$BACKUP_HISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICESTYLES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREUSERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICEVERSIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OUTCOMEINVOICECARDS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLANTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PETROL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PMERCHTASKCAT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERHEADS_SW</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPORTDOCLINKS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDOUTINVLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FILTERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VORDERSDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLANS_DETAIL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SQL_QUERIES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOCLIENTFORPERIOD</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SEND_INTERNET_INVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCOMPLEXPRODUCT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AUTOEXPORT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREROUTE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$RELATION_FIELDS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MESSAGESTP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOACTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTGROUPNN</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSTREET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPCRDREM2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSDET_SW</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRINTPRICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOREASON</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLAN_FIL_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCELLTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VRPROUTES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MIGRATION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODSCELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CSKUSTYLEBASE1</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CTPRCAUSES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MERCHRESULT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CSKUPRIORITET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$CONTEXT_VARIABLES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOCKWAVESORTCELLS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:LOSTCRITICALDATA</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VOVERHTYPEOUTINVLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INNERMIGRATION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPTBS3</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPLOSTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRICEHISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$DATABASE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLANSDATE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TAXINVOICENUMBERS_GROUP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPORTDOCDETAILS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ACTUALREMAINDERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VGOODSMEASURELINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOCKSTV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOACTIONS_PG_TMP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:V_ADDRESGPS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREUSERSELECTHISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VRP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VOVERHTYPEINCINVLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSCGOODSBYINVOIC</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREBOXESDRIVERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLAN_FILIAL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DIVISIONAL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$INDICES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREUSERSAREALINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$TRANSACTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$RECORD_STATS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODSET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VOLAP_TMP_IHGKWB43</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILIALS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROFILE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GROUPINVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CARDINDEX</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$PAGES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILESDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERSOUTINV</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AUTODRIVERREASON</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCLIENTSALDOCURVE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VRUNREPORTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$TRANSACTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICESYNCTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ISIS_HISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOORDERLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$PROCEDURE_PARAMETERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODSCSKU</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREROUTENAME</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOSETSLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:WORKIT_LINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRIORITET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPORDER</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRIORPLAN</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CONTACTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRICETYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTREM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ADDRESS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SMI_PROVIDER</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$TRIGGER_MESSAGES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREINVENTORYCOMMENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASKTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPGTDINVOICE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DISTRCHANNEL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$CHARACTER_SETS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AGENTROUTE_ANT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:KOMERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MAILLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODTREE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTSALDO</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$CALL_STACK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DELIVPOINTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ERRORMESSAGE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPCRD</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SELLINPLANS_KORM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VCLIENT_DP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MIGRATIONCELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:NOVINKI</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DEVICESTEPS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLANS_LOCAL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$MEMORY_USAGE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FIXEDPRICE_PREVIEW</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PAYTYPECLASS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_KAVADRIVE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:VRPDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VUSERRIGHTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SHEDREPLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SYSSETDESC</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VINOUTDOCSDETAILS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FUNCTIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DRIVERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INNERMIGRATIONCARDS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CITIES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USVISITS2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$USER_PRIVILEGES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCSTATUSEDI</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DOCCOMMON</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CHECKVERSION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRICELOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DIVISIONALLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ASSORTMENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DRTT_ISIS_CHANGE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODSSENSITIVITYLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:FILTERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DESCRIPTIONDATADET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSTORE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_LOSTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODTREELINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SHEDULER</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DRTT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:GOODSMEASURELINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VOVERHTYPEINMIGRLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:USVISITS2DET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PLAN_CLEAR</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPEDITORS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DIVISIONALTYPES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTHISTORY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ZONE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$SECURITY_CLASSES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PRODLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INCOMEGTDPRIORITY</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOCKWAVESORTUSERACTION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRP</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TEMPGM</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PAYDOCLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$IO_STATS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:DOCCARDSMOTION_FORPG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PAYTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ROUTECARS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BILL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSTOREGOODSMEASURES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OBJECTRIGHTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPQUOTAS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CRITICALSKUOUT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMO_FILIALS_PG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OUTCOMEINVOICEDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PG_TRADE_TEST</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:IBE$TODO</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STOREINVREPORT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MON$ATTACHMENTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_ISIS_CHANGE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STORETASKLINK</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMPLASTSTORESET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BPDOCTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$FORMATS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REFBOOKDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENTCONTRACTSPROXYS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:REGION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOFORPERIODOUT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ERRORLOG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CELLINDEX</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:SECTION</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPENSES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PROMOSETS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRPDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OLDCLIENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:DRIVERCLND</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:PAYCAT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:STREET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPENSTYPE1</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:EXPENSTYPE2</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:ORDERHEADS_ANT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:INCOMEINVOICECELL</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:CLIENT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:BUSINESS_PROCESSES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DEFEXECUTION_STORETASKDET</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_DRTT_REPORT</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OBLIGATIONS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RANS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:RDB$ROLES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TMP_REPLICATION_TIME</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:OUTCOME_TTN</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VSTORESCANCODES</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:AGENTTYPE</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.VIEW:VTMPGOODS1</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:MDVRPAG</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:TASKUSERRIGHTS</node>
+            <node x="" y="">e955df1a-0cb4-4f7a-8940-ed223f992c99.TABLE:IBE$PARAMS_HISTORY</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.4" x="25172.0" y="6818.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.Styles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/02 StyleStream.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="81" lean-forward="true" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
-          <folding />
+        <state relative-caret-position="-702">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/03 Styles.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbSrc:///18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/schema/teamwork/table/Items/trigger/trbuItems_Qty.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/04 Items.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/01 SyncRuns.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tw2sf_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="70" column="42" lean-forward="false" selection-start-line="70" selection-start-column="42" selection-end-line="70" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/18faac18/fb066b9f-bcf2-4a9a-832d-7acfbd950fa1/teamwork.Items">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="StyleId = 'C062ED96-5F8D-4A4E-87B2-CC0BFE45CDBD'" />
+            <filter text="StyleId = 'E44C69BA-7B4B-4B6F-926B-E16CF66795E8'" />
+            <filter text="StyleId = '967A1C74-5947-4C03-BE14-AD050A3175D6'" />
+            <filter text="StyleId LIKE '160BE94D-131D-45C4-A716-728FEC1722DC'" />
+            <filter text="StyleId LIKE '00AB9622-7F39-43ED-9727-F274D0BCDFDD'" />
+            <filter text="StyleId LIKE '005D52F5-92B4-4461-802E-AF5A96799A17'" />
+          </filtering>
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tw2sf_runner.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="16" />
-          <folding />
+        <state relative-caret-position="774">
+          <caret line="46" column="18" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twmysql.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/0fea9e77-9949-459a-a6ef-3f11d2916e26/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/abc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/_collections_abc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="395" column="0" lean-forward="false" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/requests/structures.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/requests/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="741" column="0" lean-forward="false" selection-start-line="741" selection-start-column="0" selection-end-line="741" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="340" column="0" lean-forward="false" selection-start-line="340" selection-start-column="0" selection-end-line="340" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python3.6/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/18faac18/0fea9e77-9949-459a-a6ef-3f11d2916e26/teamwork.items">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/teamworker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5454">
-          <caret line="314" column="36" lean-forward="false" selection-start-line="314" selection-start-column="36" selection-end-line="314" selection-end-column="36" />
+        <state relative-caret-position="846">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding>
-            <marker date="1495206226862" expanded="true" signature="3214:3256" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1495206226862" expanded="true" signature="3411:3474" ph="SELECT Style... SyncRuns" />
-            <marker date="1495206226862" expanded="true" signature="3783:3833" ph="INSERT INTO SyncRuns... " />
-            <marker date="1495206226862" expanded="true" signature="4216:4258" ph="SELECT Max(I... SyncRuns" />
-            <marker date="1495206226862" expanded="true" signature="4394:4733" ph="UPDATE SyncR... " />
-            <marker date="1495206226862" expanded="true" signature="5426:5511" ph="INSERT INTO StyleStream... " />
-            <marker date="1495206226862" expanded="true" signature="5426:5512" ph="INSERT INTO StyleStream... " />
-            <marker date="1495206226862" expanded="true" signature="5426:5584" ph="INSERT INTO StyleStream... " />
-            <marker date="1495206226862" expanded="true" signature="5426:5586" ph="INSERT INTO StyleStream... " />
-            <marker date="1495206226862" expanded="true" signature="6042:6502" ph="UPDATE SyncR... " />
-            <marker date="1495206226862" expanded="true" signature="9625:9678" ph="select max(R... StyleStream" />
-            <marker date="1495206226862" expanded="true" signature="11089:11226" ph="INSERT INTO Items... " />
-            <marker date="1495206226862" expanded="true" signature="11089:11230" ph="INSERT INTO Items... " />
-            <marker date="1495206226862" expanded="true" signature="11233:13778" ph="UPDATE Items... " />
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#492#588#0" expanded="false" />
+            <element signature="e#1129#1496#0" expanded="false" />
+            <element signature="e#1221#1496#0" expanded="false" />
+            <element signature="e#1238#1463#0" expanded="false" />
+            <element signature="e#1542#1721#0" expanded="false" />
+            <element signature="e#1895#2057#0" expanded="false" />
+            <element signature="e#2326#2598#0" expanded="false" />
+            <element signature="e#3206#4077#0" expanded="false" />
+            <element signature="e#3246#4077#0" expanded="false" />
+            <element signature="e#3443#3613#0" expanded="false" />
+            <element signature="e#3729#4077#0" expanded="false" />
+            <element signature="e#4184#7707#0" expanded="false" />
+            <element signature="e#4274#4910#0" expanded="false" />
+            <element signature="e#4467#4808#0" expanded="false" />
+            <element signature="e#4846#4908#0" expanded="false" />
+            <element signature="e#5024#6799#0" expanded="false" />
+            <element signature="e#5053#6647#0" expanded="false" />
+            <element signature="e#5582#5674#0" expanded="false" />
+            <element signature="e#5888#6179#0" expanded="false" />
+            <element signature="e#5946#6053#0" expanded="false" />
+            <element signature="e#6099#6177#0" expanded="false" />
+            <element signature="e#6220#6483#0" expanded="false" />
+            <element signature="e#6525#6644#0" expanded="false" />
+            <element signature="e#6994#7457#0" expanded="false" />
+            <element signature="e#7491#7672#0" expanded="false" />
+            <element signature="e#7737#7792#0" expanded="false" />
+            <element signature="e#8048#8270#0" expanded="false" />
+            <element signature="e#8088#8270#0" expanded="false" />
+            <element signature="e#8161#8264#0" expanded="false" />
+            <element signature="e#8386#9017#0" expanded="false" />
+            <element signature="e#8460#9017#0" expanded="false" />
+            <element signature="e#8535#9017#0" expanded="false" />
+            <element signature="e#8630#9017#0" expanded="false" />
+            <element signature="e#8872#9017#0" expanded="false" />
+            <element signature="e#9043#9187#0" expanded="false" />
+            <element signature="e#10468#10625#0" expanded="false" />
+            <element signature="e#11121#11542#0" expanded="false" />
+            <element signature="e#11631#11965#0" expanded="false" />
+            <element signature="e#13842#14618#0" expanded="false" />
+            <element signature="e#13995#14468#0" expanded="false" />
+            <element signature="e#14690#16312#0" expanded="false" />
+            <element signature="e#16047#16312#0" expanded="false" />
+            <marker date="1495550001962" expanded="false" signature="3262:3304" ph="SELECT Max(I... SyncRuns" />
+            <marker date="1495550001962" expanded="false" signature="3459:3524" ph="SELECT Style... SyncRuns" />
+            <marker date="1495550001962" expanded="false" signature="3864:3914" ph="INSERT INTO SyncRuns... " />
+            <marker date="1495550001962" expanded="false" signature="4290:4332" ph="SELECT Max(I... SyncRuns" />
+            <marker date="1495550001962" expanded="false" signature="4468:4807" ph="UPDATE SyncR... " />
+            <marker date="1495550001962" expanded="false" signature="5947:6053" ph="INSERT INTO Items... " />
+            <marker date="1495550001962" expanded="false" signature="6221:6482" ph="INSERT INTO StyleStream... " />
+            <marker date="1495550001962" expanded="false" signature="6995:7455" ph="UPDATE SyncR... " />
+            <marker date="1495550001962" expanded="false" signature="11218:11271" ph="select max(R... StyleStream" />
+            <marker date="1495550001962" expanded="false" signature="12856:12985" ph="INSERT INTO Items... " />
+            <marker date="1495550001962" expanded="true" signature="12856:13288" ph="INSERT INTO Items... " />
+            <marker date="1495550001962" expanded="true" signature="12856:13338" ph="INSERT INTO Items... " />
+            <marker date="1495550001962" expanded="true" signature="14858:14910" ph="SELECT MAX(Q... Items" />
+            <marker date="1495550001962" expanded="true" signature="14864:14910" ph="INSERT INTO Items... " />
+            <marker date="1495550001962" expanded="false" signature="16063:16103" ph="select ItemI... Items" />
+            <marker date="1495550001962" expanded="false" signature="16063:16127" ph="select ItemI... Items" />
+            <marker date="1495550001962" expanded="false" signature="16069:16103" ph="INSERT INTO Items... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopifier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1495206770238" expanded="true" signature="1625:1804" ph="UPDATE teamw... " />
-            <marker date="1495206770238" expanded="true" signature="1625:2017" ph="UPDATE teamw... " />
-            <marker date="1495206770238" expanded="true" signature="2187:2360" ph="SELECT s.ID " />
-            <marker date="1495206770238" expanded="true" signature="2187:2725" ph="SELECT s.ID Styles" />
-            <marker date="1495206770238" expanded="true" signature="2187:2731" ph="SELECT s.ID StyleStream" />
-            <marker date="1495206770238" expanded="true" signature="2317:2360" ph="SELECT Produ... STYLES" />
-            <marker date="1495206770238" expanded="true" signature="2398:2501" ph="SELECT Produ... Styles" />
-            <marker date="1495206770238" expanded="true" signature="7471:7510" ph="SELECT Qty F... Items" />
-            <marker date="1495206770238" expanded="true" signature="10269:10797" ph="UPDATE Style... " />
-            <marker date="1495206770238" expanded="true" signature="11290:11603" ph="UPDATE SyncR... " />
-            <marker date="1495206770238" expanded="true" signature="12038:12266" ph="INSERT INTO Items... " />
-            <marker date="1495206770238" expanded="true" signature="12971:13216" ph="UPDATE Style... " />
-            <marker date="1495206770238" expanded="true" signature="13244:13359" ph="UPDATE SyncR... " />
+            <element signature="e#52#139#0" expanded="false" />
+            <element signature="e#1298#1502#0" expanded="false" />
+            <element signature="e#1809#1822#0" expanded="false" />
+            <element signature="e#3236#3435#0" expanded="false" />
+            <element signature="e#3273#3435#0" expanded="false" />
+            <element signature="e#5247#5403#0" expanded="false" />
+            <element signature="e#5939#6339#0" expanded="false" />
+            <element signature="e#6098#6339#0" expanded="false" />
+            <element signature="e#6200#6339#0" expanded="false" />
+            <element signature="e#6697#6878#0" expanded="false" />
+            <element signature="e#6906#7659#0" expanded="false" />
+            <element signature="e#6941#7320#0" expanded="false" />
+            <element signature="e#7097#7233#0" expanded="false" />
+            <element signature="e#7379#7523#0" expanded="false" />
+            <element signature="e#7558#7659#0" expanded="false" />
+            <element signature="e#7927#8018#0" expanded="false" />
+            <element signature="e#8119#8448#0" expanded="false" />
+            <element signature="e#8517#8984#0" expanded="false" />
+            <element signature="e#9375#9819#0" expanded="false" />
+            <element signature="e#9387#9670#0" expanded="false" />
+            <element signature="e#9701#9758#0" expanded="false" />
+            <element signature="e#10970#11198#0" expanded="false" />
+            <element signature="e#10982#11149#0" expanded="false" />
+            <element signature="e#11243#11578#0" expanded="false" />
+            <element signature="e#11621#11730#0" expanded="false" />
+            <element signature="e#11758#11958#0" expanded="false" />
+            <element signature="e#12311#12698#0" expanded="false" />
+            <element signature="e#12326#12697#0" expanded="false" />
+            <element signature="e#12849#13318#0" expanded="false" />
+            <element signature="e#12900#13049#0" expanded="false" />
+            <element signature="e#14453#15616#0" expanded="false" />
+            <element signature="e#14591#15311#0" expanded="false" />
+            <element signature="e#14606#14854#0" expanded="false" />
+            <element signature="e#14903#15021#0" expanded="false" />
+            <element signature="e#15070#15174#0" expanded="false" />
+            <element signature="e#15223#15286#0" expanded="false" />
+            <element signature="e#15408#15582#0" expanded="false" />
+            <element signature="e#15487#15582#0" expanded="false" />
+            <marker date="1495546936874" expanded="false" signature="5952:5991" ph="SELECT Qty F... Items" />
+            <marker date="1495546936874" expanded="false" signature="8518:8983" ph="UPDATE Style... " />
+            <marker date="1495546936874" expanded="false" signature="9388:9669" ph="UPDATE SyncR... " />
+            <marker date="1495546936874" expanded="true" signature="10064:10477" ph="INSERT INTO Items... " />
+            <marker date="1495546936874" expanded="false" signature="10983:11147" ph="UPDATE Items... " />
+            <marker date="1495546936874" expanded="false" signature="11244:11576" ph="SELECT s.ID StyleStream" />
+            <marker date="1495546936874" expanded="false" signature="11354:11406" ph="SELECT Produ... Styles" />
+            <marker date="1495546936874" expanded="false" signature="11426:11529" ph="SELECT Produ... StyleStream" />
+            <marker date="1495546936874" expanded="false" signature="12327:12695" ph="UPDATE Style... " />
+            <marker date="1495546936874" expanded="true" signature="13730:13881" ph="SELECT DISTI... Items" />
+            <marker date="1495546936874" expanded="true" signature="13730:13882" ph="SELECT DISTI... " />
+            <marker date="1495546936874" expanded="true" signature="14607:14852" ph="UPDATE Style... " />
+            <marker date="1495546936874" expanded="true" signature="14904:15019" ph="UPDATE SyncR... " />
+            <marker date="1495546936874" expanded="true" signature="15071:15172" ph="UPDATE Items... " />
+            <marker date="1495546936874" expanded="true" signature="15224:15284" ph="UPDATE Style... " />
           </folding>
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
