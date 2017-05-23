@@ -19,7 +19,7 @@ SHOP_NAME = 'vicrom'
 # Settings
 MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
                 # https://help.shopify.com/api/getting-started/response-status-codes
-MAX_VARIANTS = 100  # used to avoid error 'Max varians exceeded', variants after MAX_VARIANTS will be ignored
+MAX_VARIANTS = 100  # used to avoid error 'Max variants exceeded', variants after MAX_VARIANTS will be ignored
 CHANNELS = ['store','Amazon','Magento']  # Only these channels will be sent to Shopify
 recreate = False  # True - Delete existent product and create the new one, False - update old products
 
@@ -27,6 +27,9 @@ recreate = False  # True - Delete existent product and create the new one, False
 shop_url_short = f'{SHOP_NAME}.myshopify.com'
 shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
 err_count = 0  # total number of errors from first run (persistent)
+done = 0
+filtered = 0
+tot_count = 0
 db = None
 
 
@@ -72,6 +75,8 @@ def _export_style(row, publish_zero_qty=False):
         if channel_active:
             break
     if not channel_active:
+        done += 1
+        filtered += 1
         return product  # filtered
 
     while db and -1 < repeat < MAX_REPEAT:
@@ -129,8 +134,12 @@ def _export_style(row, publish_zero_qty=False):
                 varcount += 1
                 if varcount > MAX_VARIANTS:
                     break
-                variant = dict()
                 sku = item.find('PLU').text or f'Empty PLU {varcount}'
+                variant = dict()
+                for v in product.variants:
+                    if v.sku == sku:
+                        variant['id'] = v.id
+                        break
                 variant['sku'] = sku
                 # ??? 'barcode'
 
@@ -276,7 +285,7 @@ _style_qry = ('SELECT s.ID as ID, s.StyleNo, s.StyleXml, s.SyncRunsID, '
              '(SELECT ProductID FROM Styles WHERE StyleID=s.StyleID), '
              '(SELECT ProductID FROM StyleStream WHERE ID<s.ID AND s.StyleNo=StyleNo ORDER BY RecModified Desc LIMIT 1)) ProductID '
              'FROM StyleStream s '
-              )
+             )
 
 
 def _print_header():
@@ -323,8 +332,8 @@ def export_styles(publish_zero_qty=False):
     _print_footer()
 
 
-def export_qty():
-    # Send not sent RTA data to Shopify and mark them as sent
+def export_qty(resend=False):
+    # Send RTA data to Shopify and mark them as sent
     global done, filtered
     global tot_count, err_count, db
     done = 0
@@ -332,12 +341,16 @@ def export_qty():
 
     print(f'\tLooking for not sent RTA in DB "{db.host_info} {twmysql._DB}"...')
     _print_header()
+    if resend:
+        s = ''
+    else:
+        s = 'AND QtySent IS NULL '
     with db.cursor() as cursor:
         cursor.execute('SELECT DISTINCT StyleId '
                        'FROM Items '
-                       'WHERE QtySent IS NULL '
-                       'AND StyleId IS NOT NULL '
-                       'AND Qty >= 0 '
+                       'WHERE Qty >= 0 '
+                       'AND StyleId IS NOT NULL ' +
+                       s
                        )
         while db:
             row = cursor.fetchone()
