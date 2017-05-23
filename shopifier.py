@@ -10,23 +10,22 @@ import twmysql
 import utils
 import time
 
-# Shopify
+# Shopify constants
 API_KEY = 'ed295b157652f8fbe1ca8de4b8db4e72'
 PASSWORD = 'bf7c0c7e9e085459c3eeb022d32e8202'
 SHARED_SECRET = '5f6f9d277b736295637ca8e9fa642b41'
 SHOP_NAME = 'vicrom'
-# https://help.shopify.com/api/getting-started/response-status-codes
-MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
-MAX_VARIANTS = 100  # skip rest
-# Only these channels will be transfered to Shopify
-CHANNELS = ['store','Amazon','Magento']
 
-# Global
+# Settings
+MAX_REPEAT = 5  # max number of retry on response errors 429, 503?, 504?
+                # https://help.shopify.com/api/getting-started/response-status-codes
+MAX_VARIANTS = 100  # used to avoid error 'Max varians exceeded', variants after MAX_VARIANTS will be ignored
+CHANNELS = ['store','Amazon','Magento']  # Only these channels will be sent to Shopify
 recreate = False  # True - Delete existent product and create the new one, False - update old products
 
+# Global variables
 shop_url_short = f'{SHOP_NAME}.myshopify.com'
 shop_url = f'https://{API_KEY}:{PASSWORD}@{shop_url_short}/admin'
-
 err_count = 0  # total number of errors from first run (persistent)
 db = None
 
