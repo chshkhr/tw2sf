@@ -11,6 +11,7 @@ def log(s):
 utils.mkdirs()
 
 while True:
+    tw = None
     try:
         log('Run Teamworker')
         tw = teamworker.Teamwork2Shopify()
@@ -20,13 +21,11 @@ while True:
     except Exception as e:
         log(e)
     finally:
-        if tw.db:
+        if tw and tw.db:
             try:
                 tw.db.close()
             except Exception:
                 pass
-        else:
-            break
 
     try:
         log('Run Shopifier')
@@ -41,8 +40,6 @@ while True:
                 shopifier.db.close()
             except Exception:
                 pass
-        else:
-            break
 
     log('Sleep for 5 minutes\n')
     time.sleep(300)
