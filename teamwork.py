@@ -44,21 +44,21 @@ class Teamwork:
     def _get_xml_root(self, req, apitype):
         # Get XML on the request with thn api-type
         xml_root = None
-        last_response = None
+        self.last_response = None
         data = {'Data': req,
                 'Source': 'VC_Test', 'UseApiVersion2': 'true',
                 'ApiKey': self.api_key, 'Async': 'true',
                 'ApiRequestType': apitype}
-        last_response = requests.post(self.url + 'api.ashx', data=data)
-        xml_root = Teamwork._get_root_from_response(last_response)
+        self.last_response = requests.post(self.url + 'api.ashx', data=data)
+        xml_root = Teamwork._get_root_from_response(self.last_response)
         a = xml_root.attrib['ApiDocumentId']
         status = xml_root.attrib['Status']
         count = 0
         wait = 3
         while status == 'InProcess':
             time.sleep(wait)
-            last_response = requests.post(self.url + 'ApiStatus.ashx', data={'ID': a})
-            xml_root = self._get_root_from_response(last_response)
+            self.last_response = requests.post(self.url + 'ApiStatus.ashx', data={'ID': a})
+            xml_root = self._get_root_from_response(self.last_response)
             status = xml_root.attrib['Status']
             count += 1
             if count > self.max_wait // wait:
