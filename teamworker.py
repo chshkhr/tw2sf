@@ -14,7 +14,7 @@ TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-
 TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
 TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
                 'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
-START_DATE = dateutil.parser.parse('2017-01-01 00:00:00')
+START_DATE = dateutil.parser.parse('2014-01-01 00:00:00')
 _locs = '|'.join(TW_LOCATIONS)
 _loc_count = len(TW_LOCATIONS)
 
