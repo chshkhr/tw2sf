@@ -20,7 +20,6 @@ class PySvc(win32serviceutil.ServiceFramework):
 
     # core logic of the service
     def SvcDoRun(self):
-        import servicemanager
         import sys
         import os
         import teamworker
@@ -43,16 +42,20 @@ class PySvc(win32serviceutil.ServiceFramework):
             while rc != win32event.WAIT_OBJECT_0:
                 try:
                     log('Run Teamworker')
-                    teamworker.init_tw()
-                    teamworker.import_styles()
-                    teamworker.import_rta_by_date()
+                    tw = teamworker.Teamwork2Shopify()
+                    tw.init_tw()
+                    tw.import_styles()
+                    tw.import_rta_by_date()
                 except Exception as e:
                     log(e)
                 finally:
-                    try:
-                        teamworker.db.close()
-                    except Exception:
-                        pass
+                    if tw.db:
+                        try:
+                            tw.db.close()
+                        except Exception:
+                            pass
+                    else:
+                        break
 
                 try:
                     log('Run Shopifier')
