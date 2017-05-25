@@ -104,7 +104,9 @@ class Teamwork2Shopify(Teamwork):
                             print('\t\t\t\t', e)
                         finally:
                             done += 1
-                    print(f'\t\t\tStyles received: {done}. Saved to DB "{twmysql._HOST} {twmysql._DB}"')
+
+                    if done > 0:
+                        print(f'\t\t\tStyles received: {done}. Saved to DB "{twmysql.HOST} {twmysql.DB}"')
 
                     # Write current time and counters on each run
                     cursor.execute('UPDATE SyncRuns SET '                      
@@ -130,6 +132,8 @@ class Teamwork2Shopify(Teamwork):
 
         # MySql Init
         self.db = twmysql.get_db()
+        if not self.db:
+            return False
 
         # if we want to start from scratch then we drop all of our tables
         if drop:
@@ -154,6 +158,7 @@ class Teamwork2Shopify(Teamwork):
                                 #print(sql)
                                 if sql:
                                     cursor.execute(sql)
+        return True
 
     def import_styles(self):
         # Request styles modified after start_date from Teamwork API
@@ -168,9 +173,10 @@ class Teamwork2Shopify(Teamwork):
                 self.start_date = row['startdate']
                 if self.shift_ms:
                     self.start_date += datetime.timedelta(milliseconds=self.shift_ms)
-            start_date_ = self.start_date.isoformat(timespec='milliseconds')
 
-        print(f'\tRequesting Styles modified from {start_date_}.')
+        start_date_ = self.start_date
+        print(f'\tRequesting {self.url} for Styles modified from\t{start_date_}...')
+        start_date_ = start_date_.isoformat(timespec='milliseconds')
         self.multi_chunk_import('<Filters>'
                                 f'<Filter Field="RecModified" Operator="Greater than or equal" Value="{start_date_}" />'
                                 '</Filters>'
@@ -182,7 +188,6 @@ class Teamwork2Shopify(Teamwork):
 
     def _process_rta_xml(self, xml_root):
         # Copy Styles to Items
-        rtas = dict()
         done = 0
         for rta in xml_root.iter('LocationQuantity'):
             try:
@@ -191,38 +196,30 @@ class Teamwork2Shopify(Teamwork):
                 qty = (float(rta.find('Qty').text) -
                        float(rta.find('CommittedQty').text) -
                        float(rta.find('DamagedQty').text))
-                if itemid in rtas:
-                    rtas[itemid][0] += qty
-                    rtas[itemid][1] += 1
-                else:
-                    rtas[itemid] = [qty, 1]  # second - location counter
+                with self.db.cursor() as cursor:
+                    cursor.execute('INSERT INTO Items (ItemId, Qty, LocCount, QtySent, QtyApiRequestTime) '
+                                   'VALUES (%s, %s, 1, NULL, %s) '
+                                   'ON DUPLICATE KEY UPDATE '
+                                   'QtySent = NULL, '
+                                   'Qty = case when QtyApiRequestTime = %s then Qty else 0 end + %s, '
+                                   'LocCount = case when QtyApiRequestTime = %s then LocCount else 0 end + 1, '
+                                   'QtyApiRequestTime = %s',
+                                   (itemid, qty, self.apiRequestTime,
+                                    self.apiRequestTime, qty,
+                                    self.apiRequestTime,
+                                    self.apiRequestTime,
+                                    ))
             except Exception as e:
                 print('\t\t\t', e)
-
-        for itemid in rtas:
-            with self.db.cursor() as cursor:
-                cursor.execute('INSERT INTO Items (ItemId, Qty, LocCount, QtySent, QtyApiRequestTime) '
-                               'VALUES (%s, %s, %s, NULL, %s) '
-                               'ON DUPLICATE KEY UPDATE '
-                               'QtySent = NULL, '
-                               'Qty = case when QtyApiRequestTime = %s then Qty else 0 end + %s, '
-                               'LocCount = case when QtyApiRequestTime = %s then LocCount else 0 end + %s, '
-                               'QtyApiRequestTime = %s',
-                               (itemid, rtas[itemid][0], rtas[itemid][1], self.apiRequestTime,
-                                self.apiRequestTime, rtas[itemid][0],
-                                self.apiRequestTime, rtas[itemid][1],
-                                self.apiRequestTime,
-                                ))
-
-        print(f'\t\t\tRTA: {done} received, {len(rtas)} calculated, saved to DB "{twmysql._HOST} {twmysql._DB}"')
         if done > 0:
+            print(f'\t\t\tRTA: {done} received, saved to DB "{twmysql.HOST} {twmysql.DB}"')
             self.save_last_response('-rta')
         return done
 
     def import_rta_by_item(self, item_id):
         # Request RTA by ItemId from Teamwork API
         # and save results to MySQL DB
-        print(f'\tRequesting RTA for Item {item_id}.')
+        print(f'\tRequesting {self.url} for RTA on Item {item_id}...')
 
         self.db.autocommit(False)
         try:
@@ -258,7 +255,7 @@ class Teamwork2Shopify(Teamwork):
                 else:
                     date = START_DATE
 
-        print(f'\tRequesting RTA for all Items starting from {date}.')
+        print(f'\tRequesting {self.url} for RTA data modified from\t{date}...')
         self.db.autocommit(False)
         try:
             self.multi_chunk_import('<Settings>'
@@ -306,10 +303,7 @@ if __name__ == '__main__':
     if args.start is not None:
         tw.start_date = args.start
 
-    tw.init_tw(args.drop)
-
-    #import_rta_by_item('9E925D6D-6398-4B29-828C-1A5BE8600F00')
-
-    tw.import_styles()
-
-    tw.import_rta_by_date()  #dateutil.parser.parse('2000-01-01 00:00:00'))
+    if tw.init_tw(args.drop):
+        #import_rta_by_item('9E925D6D-6398-4B29-828C-1A5BE8600F00')
+        tw.import_styles()
+        tw.import_rta_by_date()  #dateutil.parser.parse('2000-01-01 00:00:00'))

@@ -50,6 +50,7 @@ def init_sf():
     # MySql init
     global db
     db = twmysql.get_db()
+    return db is not None
 
 
 def _export_style(row, publish_zero_qty=False):
@@ -312,7 +313,7 @@ def export_styles(publish_zero_qty=False):
                        'AND s2.ProductSent IS NULL '
                        'AND s.RecModified < s2.RecModified ')
 
-    print(f'\tLooking for not sent Styles in DB "{twmysql._HOST} {twmysql._DB}"')
+    print(f'\tLooking for not sent Styles in DB "{twmysql.HOST} {twmysql.DB}"...')
     # Copy Styles to Items!
     with db.cursor() as cursor:
         cursor.execute(_style_qry +
@@ -328,8 +329,8 @@ def export_styles(publish_zero_qty=False):
                 first_run = False
                 _print_header()
             _export_style(row, publish_zero_qty)
-
-    _print_footer()
+    if row:
+        _print_footer()
 
 
 def export_qty(resend=False):
@@ -339,7 +340,7 @@ def export_qty(resend=False):
     done = 0
     filtered = 0
 
-    print(f'\tLooking for not sent RTA in DB "{twmysql._HOST} {twmysql._DB}"...')
+    print(f'\tLooking for not sent RTA in DB "{twmysql.HOST} {twmysql.DB}"...')
     if resend:
         s = ''
     else:
@@ -364,7 +365,8 @@ def export_qty(resend=False):
                 row2 = cursor2.fetchone()
                 if row2:
                     _export_style(row2, publish_zero_qty=True)
-    _print_footer()
+    if row:
+        _print_footer()
 
 
 def cleanup():
@@ -407,17 +409,16 @@ def cleanup():
 
 if __name__ == '__main__':
 
-    init_sf()
+    if init_sf():
+        # Command line arguments processing
+        parser = argparse.ArgumentParser(description='Sending Styles from MySql to Shopify ' + shop_url)
+        parser.add_argument('--cleanup', nargs='?', type=bool, const=False,
+                            help=f'Cleanup XML Received and Delete ALL Products (False)')
+        args = parser.parse_args()
+        if args.cleanup:
+            cleanup()
 
-    # Command line arguments processing
-    parser = argparse.ArgumentParser(description='Sending Styles from MySql to Shopify ' + shop_url)
-    parser.add_argument('--cleanup', nargs='?', type=bool, const=False,
-                        help=f'Cleanup XML Received and Delete ALL Products (False)')
-    args = parser.parse_args()
-    if args.cleanup:
-        cleanup()
+        export_styles()
 
-    export_styles()
-
-    export_qty()
+        export_qty()
 

@@ -15,9 +15,9 @@ while True:
     try:
         log('Run Teamworker')
         tw = teamworker.Teamwork2Shopify()
-        tw.init_tw()
-        tw.import_styles()
-        tw.import_rta_by_date()
+        if tw.init_tw():
+            tw.import_styles()
+            tw.import_rta_by_date()
     except Exception as e:
         log(e)
     finally:
@@ -29,9 +29,9 @@ while True:
 
     try:
         log('Run Shopifier')
-        shopifier.init_sf()
-        shopifier.export_styles()
-        shopifier.export_qty()
+        if shopifier.init_sf():
+            shopifier.export_styles()
+            shopifier.export_qty()
     except Exception as e:
         log(e)
     finally:
