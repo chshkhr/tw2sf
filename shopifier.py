@@ -81,10 +81,6 @@ def _export_style(row, publish_zero_qty=False):
         channel_active = channel.attrib['Name'] in CHANNELS
         if channel_active:
             break
-    if not channel_active:
-        done += 1
-        filtered += 1
-        return product  # filtered
 
     while -1 < repeat < MAX_REPEAT:
         if repeat > 0:
@@ -110,8 +106,6 @@ def _export_style(row, publish_zero_qty=False):
                         product.destroy()
                         product = shopify.Product()
             else:
-                if not channel_active:
-                    return product  # filtered
                 product = shopify.Product()
 
             product.title = title
