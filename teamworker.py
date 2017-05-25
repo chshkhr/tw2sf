@@ -14,12 +14,13 @@ TW_API_KEY = '4f684ea6-f949-42d0-837b-7eaabf10ae03'  # '9CA9E29D-D258-48DC-886E-
 TW_URL = 'https://qa03chq.teamworkinsight.com/'  # 'https://hattestchq.teamworkinsight.com/'
 TW_LOCATIONS = ['7A2151DB-EFC2-49BD-913B-66EEE0DF38C1',
                 'CA2E5100-1853-419C-9661-F11D6CFC4FB1']  # for RTA
+START_DATE = dateutil.parser.parse('2017-01-01 00:00:00')
 _locs = '|'.join(TW_LOCATIONS)
 _loc_count = len(TW_LOCATIONS)
 
 
 class Teamwork2Shopify(Teamwork):
-    def __init__(self, api_key=TW_API_KEY, url=TW_URL, start_date=dateutil.parser.parse('2014-01-01 00:00:00'), shift_ms=3):
+    def __init__(self, api_key=TW_API_KEY, url=TW_URL, start_date=START_DATE, shift_ms=3):
         super().__init__(api_key, url)
         # Settings
         self.start_date = start_date  # dateutil.parser.parse('2014-01-01 00:00:00')  # used on first run, get from DB later
@@ -255,7 +256,7 @@ class Teamwork2Shopify(Teamwork):
                     if self.shift_ms:
                         date += datetime.timedelta(milliseconds=self.shift_ms)
                 else:
-                    date = self.start_date
+                    date = START_DATE
 
         print(f'\tRequesting RTA for all Items starting from {date}.')
         self.db.autocommit(False)
