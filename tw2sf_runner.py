@@ -13,15 +13,16 @@ utils.mkdirs()
 while True:
     try:
         log('Run Teamworker')
-        teamworker.init_tw()
-        teamworker.import_styles()
-        teamworker.import_rta_by_date()
+        tw = teamworker.Teamwork2Shopify()
+        tw.init_tw()
+        tw.import_styles()
+        tw.import_rta_by_date()
     except Exception as e:
         log(e)
     finally:
-        if teamworker.db:
+        if tw.db:
             try:
-                teamworker.db.close()
+                tw.db.close()
             except Exception:
                 pass
         else:

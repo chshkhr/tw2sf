@@ -13,7 +13,7 @@ _PASSWORD = 'teamwork123'
 _DB = 'teamwork'
 
 
-def get_db(cursorclass=pymysql.cursors.DictCursor,autocommit=True):
+def get_db(cursorclass=pymysql.cursors.DictCursor):
     db = None
     try:
         db = pymysql.connect(host=_HOST,
@@ -23,9 +23,8 @@ def get_db(cursorclass=pymysql.cursors.DictCursor,autocommit=True):
                              db=_DB,
                              charset='utf8mb4',
                              cursorclass=cursorclass)
+        db.autocommit(True)
         print(f"\tConnected to {_HOST}:{_PORT}")
     except Exception as e:
         print(f"\tCan't connect to {_HOST}:{_PORT}")
-
-    db.autocommit(autocommit)
     return db
