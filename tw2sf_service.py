@@ -40,6 +40,7 @@ class PySvc(win32serviceutil.ServiceFramework):
 
             # if the stop event hasn't been fired keep looping
             while rc != win32event.WAIT_OBJECT_0:
+                tw = None
                 try:
                     log('Run Teamworker')
                     tw = teamworker.Teamwork2Shopify()
@@ -49,13 +50,11 @@ class PySvc(win32serviceutil.ServiceFramework):
                 except Exception as e:
                     log(e)
                 finally:
-                    if tw.db:
+                    if tw and tw.db:
                         try:
                             tw.db.close()
                         except Exception:
                             pass
-                    else:
-                        break
 
                 try:
                     log('Run Shopifier')
