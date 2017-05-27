@@ -1,5 +1,6 @@
 import argparse
 import xml.etree.ElementTree as ET
+from sys import platform
 
 # pip install --upgrade ShopifyAPI / sudo python3.6 -m pip install --upgrade ShopifyAPI
 # pip uninstall ShopifyAPI --yes / sudo python3.6 -m pip uninstall ShopifyAPI --yes
@@ -11,7 +12,6 @@ import utils
 import time
 
 # Shopify constants
-from sys import platform
 if platform == 'linux' or platform == 'linux2':
     API_KEY = 'ed295b157652f8fbe1ca8de4b8db4e72'
     PASSWORD = 'bf7c0c7e9e085459c3eeb022d32e8202'
